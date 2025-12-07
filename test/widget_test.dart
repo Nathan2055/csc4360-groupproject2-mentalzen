@@ -7,13 +7,24 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:mentalzen/firebase_options.dart';
+import 'package:mentalzen/models/firestore_helper.dart';
+import 'package:mentalzen/authservice.dart';
 
 import 'package:mentalzen/main.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
+    WidgetsFlutterBinding.ensureInitialized();
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
+    final FirestoreHelper dbHelper = FirestoreHelper();
+    final AuthService authService = AuthService(dbHelper);
+
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(MyApp(authService, dbHelper));
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);
