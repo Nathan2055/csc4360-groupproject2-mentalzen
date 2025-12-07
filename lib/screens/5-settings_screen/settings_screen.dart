@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:chatapp/authservice.dart';
-import 'package:chatapp/models/firestore_helper.dart';
-import 'package:chatapp/screens/5-settings_screen/update_password_form.dart';
+import 'package:mentalzen/authservice.dart';
+import 'package:mentalzen/models/firestore_helper.dart';
+import 'package:mentalzen/screens/5-settings_screen/update_password_form.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen(this.authService, this.dbHelper, {super.key});

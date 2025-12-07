@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:chatapp/authservice.dart';
-import 'package:chatapp/models/firestore_helper.dart';
-import 'package:chatapp/models/user_entry.dart';
+import 'package:mentalzen/authservice.dart';
+import 'package:mentalzen/models/firestore_helper.dart';
+import 'package:mentalzen/models/user_entry.dart';
 
 // Update Profile form
 class UpdateProfileForm extends StatefulWidget {

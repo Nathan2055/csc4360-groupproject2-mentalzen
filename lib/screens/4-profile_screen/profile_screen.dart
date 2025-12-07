@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:chatapp/authservice.dart';
-import 'package:chatapp/models/firestore_helper.dart';
-import 'package:chatapp/screens/4-profile_screen/update_profile_form.dart';
+import 'package:mentalzen/authservice.dart';
+import 'package:mentalzen/models/firestore_helper.dart';
+import 'package:mentalzen/screens/4-profile_screen/update_profile_form.dart';
 
 // Profile Screen
 // Displays the Update Profile form

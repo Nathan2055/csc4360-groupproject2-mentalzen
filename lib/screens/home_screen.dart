@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:chatapp/authservice.dart';
-import 'package:chatapp/models/firestore_helper.dart';
-import 'package:chatapp/screens/2-message_boards_listing/message_boards_listing.dart';
-import 'package:chatapp/screens/4-profile_screen/profile_screen.dart';
-import 'package:chatapp/screens/5-settings_screen/settings_screen.dart';
+import 'package:mentalzen/authservice.dart';
+import 'package:mentalzen/models/firestore_helper.dart';
+import 'package:mentalzen/screens/2-message_boards_listing/message_boards_listing.dart';
+import 'package:mentalzen/screens/4-profile_screen/profile_screen.dart';
+import 'package:mentalzen/screens/5-settings_screen/settings_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen(this.authService, this.dbHelper, {super.key});

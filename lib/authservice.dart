@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:chatapp/models/firestore_helper.dart';
-import 'package:chatapp/models/user_entry.dart';
+import 'package:mentalzen/models/firestore_helper.dart';
+import 'package:mentalzen/models/user_entry.dart';
 
 // AuthService handles all functions associated with user authentication
 class AuthService {

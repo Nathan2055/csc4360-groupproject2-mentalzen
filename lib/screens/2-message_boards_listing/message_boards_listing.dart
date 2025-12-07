@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:chatapp/authservice.dart';
-import 'package:chatapp/models/firestore_helper.dart';
-import 'package:chatapp/screens/3-message_board/message_board.dart';
+import 'package:mentalzen/authservice.dart';
+import 'package:mentalzen/models/firestore_helper.dart';
+import 'package:mentalzen/screens/3-message_board/message_board.dart';
 
 class MessageBoardsListing extends StatefulWidget {
   const MessageBoardsListing(this.authService, this.dbHelper, {super.key});

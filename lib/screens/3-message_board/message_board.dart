@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:chatapp/authservice.dart';
-import 'package:chatapp/models/firestore_helper.dart';
+import 'package:mentalzen/authservice.dart';
+import 'package:mentalzen/models/firestore_helper.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:chatapp/models/chat_entry.dart';
-import 'package:chatapp/models/user_entry.dart';
+import 'package:mentalzen/models/chat_entry.dart';
+import 'package:mentalzen/models/user_entry.dart';
 
 class MessageBoard extends StatefulWidget {
   const MessageBoard(

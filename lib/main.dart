@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:chatapp/firebase_options.dart';
-import 'package:chatapp/authservice.dart';
-import 'package:chatapp/screens/1-welcome_screen/welcome_screen.dart';
-import 'package:chatapp/models/firestore_helper.dart';
+import 'package:mentalzen/firebase_options.dart';
+import 'package:mentalzen/authservice.dart';
+import 'package:mentalzen/screens/1-welcome_screen/welcome_screen.dart';
+import 'package:mentalzen/models/firestore_helper.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

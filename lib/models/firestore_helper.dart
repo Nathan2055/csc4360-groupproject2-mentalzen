@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:chatapp/models/user_entry.dart';
-import 'package:chatapp/models/chat_entry.dart';
+import 'package:mentalzen/models/user_entry.dart';
+import 'package:mentalzen/models/chat_entry.dart';
 
 // FirestoreHelper handles all interaction with the Cloud Firestore databases
 class FirestoreHelper {
