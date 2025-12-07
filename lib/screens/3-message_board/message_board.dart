@@ -3,7 +3,6 @@ import 'package:mentalzen/authservice.dart';
 import 'package:mentalzen/models/firestore_helper.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:mentalzen/models/chat_entry.dart';
-import 'package:mentalzen/models/user_entry.dart';
 
 class MessageBoard extends StatefulWidget {
   const MessageBoard(
@@ -39,34 +38,6 @@ class _MessageBoardState extends State<MessageBoard> {
 
     _chatStream = widget.dbHelper.getChatStream(widget.messageBoard);
     _email = widget.authService.getEmail();
-  }
-
-  Future<String> _getUsernameFromEmail(String email) async {
-    String username = '';
-
-    UserEntry? result = await widget.dbHelper.getUserEntryFromEmail(email);
-
-    if (result != null) {
-      if (result.username != null) {
-        username = result.username!;
-      }
-    }
-
-    return username;
-  }
-
-  String _getUsernameFromEmailSync(String email) {
-    bool complete = false;
-    String username = '';
-
-    _getUsernameFromEmail(email).then((result) {
-      complete = true;
-      username = result;
-    });
-
-    while (!complete) {}
-
-    return username;
   }
 
   void _submitChatForm() async {
