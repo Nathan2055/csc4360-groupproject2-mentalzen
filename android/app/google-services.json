@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "894474126176",
+    "project_id": "csc4360-grpproject2-mentalzen",
+    "storage_bucket": "csc4360-grpproject2-mentalzen.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:894474126176:android:12e41223759e633ac75405",
+        "android_client_info": {
+          "package_name": "com.example.mentalzen"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAofJcZisf3BPWozbrAfJknotcTBmH7CH0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
