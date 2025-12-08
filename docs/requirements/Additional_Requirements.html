@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 2 Additional Requirements</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #1a1a2e;
+            color: #eee;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(30, 30, 46, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            padding: 40px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: #667eea;
+            font-size: 22px;
+            margin: 25px 0 15px 0;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        h3 {
+            color: #667eea;
+            font-size: 18px;
+            margin: 20px 0 10px 0;
+        }
+
+        .underline {
+            text-decoration: underline;
+            text-decoration-color: #667eea;
+            text-underline-offset: 4px;
+        }
+
+        .mark {
+            background-color: rgba(255, 193, 7, 0.2);
+            padding: 2px 4px;
+            border-radius: 3px;
+            color: #ffc107;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            color: #ccc;
+        }
+
+        .highlight-box {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .requirement-section {
+            margin-bottom: 30px;
+        }
+
+        .grading-criteria {
+            background: rgba(102, 126, 234, 0.1);
+            padding: 20px;
+            border-radius: 6px;
+            margin-top: 30px;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+        }
+
+        .submission-reminder {
+            background: rgba(255, 193, 7, 0.1);
+            border: 1px solid rgba(255, 193, 7, 0.3);
+            border-radius: 6px;
+            padding: 15px;
+            margin-top: 20px;
+            font-weight: 500;
+            color: #ffc107;
+        }
+
+        /* Grading Rubric Table Styles */
+        .rubric-container {
+            margin: 30px 0;
+            overflow-x: auto;
+        }
+
+        .rubric-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .rubric-table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: left;
+            padding: 12px 15px;
+        }
+
+        .rubric-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            color: #ccc;
+        }
+
+        .rubric-table tr:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .rubric-table tr:hover {
+            background-color: rgba(102, 126, 234, 0.1);
+        }
+
+        .points-column {
+            width: 80px;
+            text-align: center;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .criterion-column {
+            width: 200px;
+            font-weight: 600;
+            color: #ddd;
+        }
+
+        .total-row {
+            background: rgba(44, 62, 80, 0.8) !important;
+            color: white;
+            font-weight: bold;
+        }
+
+        .total-row td {
+            border-bottom: none;
+        }
+
+        /* Christmas-styled link (red & green) */
+        .christmas-link {
+            display: inline-block;
+            margin: 12px 0 20px;
+            padding: 10px 16px;
+            background: linear-gradient(135deg, #006400 0%, #b22222 100%);
+            color: #fff;
+            border-radius: 8px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+            transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+        }
+
+        .christmas-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 24px rgba(0,0,0,0.5);
+            background: linear-gradient(135deg, #b22222 0%, #006400 100%);
+        }
+
+        /* New styles for video duration highlight */
+        .duration-highlight {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ffa500 100%);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin: 15px 0;
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+            animation: shake 2s infinite;
+            text-align: center;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+            20%, 40%, 60%, 80% { transform: translateX(5px); }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            h2 {
+                font-size: 20px;
+            }
+            
+            .rubric-table {
+                font-size: 14px;
+            }
+            
+            .rubric-table th, 
+            .rubric-table td {
+                padding: 8px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="underline">Project 2 Additional Requirements</h1>
+        </header>
+          <div style="text-align:left; margin-top: -4px;">
+            <span style="display: inline-block;">
+                <a href="index.html" class="christmas-link" aria-label="Return to Project Hub">Return to Project Hub</a>
+            </span>
+        </div>
+        <section class="requirement-section">
+            <h2 class="underline">You will create a PowerPoint Presentation</h2>
+            <ul>
+                <li>Create a PowerPoint presentation adhering to the requirements below.</li>
+                <li>Utilize Conference Call Recording Software:
+                    <ul>
+                        <li>Employ conference call recording software such as Zoom, WebEx, or MS Teams for the presentation.</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        
+        <section class="requirement-section">
+            <h2>Video Hosting and Upload:</h2>
+            <ul>
+                <li>Upload your presentation video to either YouTube or Google Drive as per the specified requirements.</li>
+            </ul>
+            
+            <h3>Submission Process:</h3>
+            <ul>
+                <li>Copy the video link (from either YouTube or Google Drive) and upload it to the designated dropbox in iCollege.</li>
+            </ul>
+        </section>
+        
+        <section class="requirement-section">
+            <h2>PowerPoint Slide Show Guidelines:</h2>
+            <div class="highlight-box">
+                <h3>User:</h3>
+                <p>Clearly state the problem and outline general requirements including inputs and outputs.</p>
+                
+                <h3>Design:</h3>
+                <p>Provide an overview of the solution, highlighting key design features, user interface, UML class diagrams, and pseudo code. Utilize Transforms, Transitions, and Animation for enhanced presentation.</p>
+                
+                <h3>Testing (if applicable):</h3>
+                <p>Explain the testing process, including the test plan, data used, and bug tracking/reporting.</p>
+                
+                <h3>Group Team Name:</h3>
+                <p>Assign a team name related to Mobile Application Dev Project.</p>
+                
+                <h3>Presenter(s):</h3>
+                <p>It is mandatory for all team members to participate in the presentation. Options for presenting include: Allowing each team member to present their individual work. All parties must actively engage in the presentation process.</p>
+                
+                <h3>Incorporate Code Snippets:</h3>
+                <p>Utilize PowerPoint to present, ensuring to insert code snippets within slides.</p>
+            </div>
+        </section>
+        
+        <section class="requirement-section">
+            <h2>Video Hosting Guidelines:</h2>
+            <ul>
+                <li><strong>Title Video:</strong> Name it following the format "Task Name_Team Name".</li>
+                <li>
+                    <div class="duration-highlight">
+                        Duration: Aim for a video length of 20-25 minutes
+                    </div>
+                </li>
+                <li><strong>Participation:</strong> All team members must contribute to the video.</li>
+                <li><strong>Hosting Options:</strong> 
+                    <ul>
+                        <li>YouTube: Establish a YouTube channel with the group name and upload your video</li>
+                        <li>Google Drive: Upload your video to a shared Google Drive folder with appropriate sharing permissions</li>
+                    </ul>
+                </li>
+                <li><strong>Recording Presentation Software:</strong> Choose from options such as Zoom, Microsoft Teams, WebEx, or Discord.</li>
+                <li><strong>Upload Process:</strong> Once prepared, upload the video to your chosen platform for future reference and submissions.</li>
+            </ul>
+        </section>
+        
+        <section class="requirement-section">
+            <h2>Grading Rubric (100 Points Total)</h2>
+            <div class="rubric-container">
+                <table class="rubric-table">
+                    <thead>
+                        <tr>
+                            <th>Criterion</th>
+                            <th class="points-column">Points</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="criterion-column">Version Control Activity</td>
+                            <td class="points-column">10</td>
+                            <td>Consistent commits showing steady progress throughout the 25-day sprint</td>
+                        </tr>
+                        <tr>
+                            <td class="criterion-column">Design Documentation</td>
+                            <td class="points-column">10</td>
+                            <td>Includes wireframes, UML diagrams, and design reasoning</td>
+                        </tr>
+                        <tr>
+                            <td class="criterion-column">Code Explanation (Demo)</td>
+                            <td class="points-column">20</td>
+                            <td>Team explains core logic and Firebase integration during demo</td>
+                        </tr>
+                        <tr>
+                            <td class="criterion-column">Team Collaboration Logs</td>
+                            <td class="points-column">10</td>
+                            <td>Demonstrates shared responsibility and effective teamwork</td>
+                        </tr>
+                        <tr>
+                            <td class="criterion-column">Code Readability & Comments</td>
+                            <td class="points-column">10</td>
+                            <td>Flutter/Dart code is clean, organized, and well-documented</td>
+                        </tr>
+                        <tr>
+                            <td class="criterion-column">Milestone Achievement</td>
+                            <td class="points-column">15</td>
+                            <td>All weekly milestones completed as required per 25-day timeline</td>
+                        </tr>
+                        <tr>
+                            <td class="criterion-column">Functionality & Testing</td>
+                            <td class="points-column">15</td>
+                            <td>App runs smoothly with expected Firebase integration results</td>
+                        </tr>
+                        <tr>
+                            <td class="criterion-column">Presentation & Reflection</td>
+                            <td class="points-column">10</td>
+                            <td>Clear final presentation and comprehensive learning summary</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td class="criterion-column">TOTAL</td>
+                            <td class="points-column">100</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+        <section class="grading-criteria">
+            <h2>Grading Criteria:</h2>
+            <ul>
+                <li>Key aspects include effective application of Flutter & Firebase concepts, aesthetic choices such as font and color, creativity, navigation usability, and adherence to design principles.</li>
+                <li>Ensure compliance with all stated requirements for submission to receive full credit, including the presentation description, team member details, wireframe UI, and the presentation link on YouTube or Google Drive.</li>
+            </ul>
+            
+            <div class="submission-reminder">
+                <p><span class="mark">Submit the <strong>GitHub Repository link</strong> and the presentation <strong>video link (YouTube or Google Drive)</strong> to the designated dropbox for accurate grading and reporting. Simply submitting the file to iCollege will not suffice.</span></p>
+            </div>
+        </section>
+        
+        <div style="text-align: center; margin-top: 30px;">
+            <span style="display: inline-block;">
+                <a href="index.html" class="christmas-link" aria-label="Return to Project Hub">Return to Project Hub</a>
+            </span>
+        </div>
+    </div>
+</body>
+</html>

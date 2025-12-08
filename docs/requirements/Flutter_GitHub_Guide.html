@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flutter GitHub Setup Guide</title>
+    <style>
+        :root {
+            --primary-color: #0175C2;
+            --secondary-color: #02569B;
+            --accent-color: #13B9FD;
+            --text-color: #333333;
+            --light-bg: #f8f9fa;
+            --border-color: #e1e4e8;
+            --code-bg: #f6f8fa;
+            --success-color: #28a745;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: #ffffff;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        h1 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .steps-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .step {
+            background: var(--light-bg);
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--primary-color);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .step:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .step-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .step-number {
+            background: var(--primary-color);
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .step-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+        
+        .step-content {
+            margin-left: 51px;
+        }
+        
+        .step-content ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .step-content li {
+            margin-bottom: 8px;
+        }
+        
+        code {
+            background: var(--code-bg);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+        
+        .code-block {
+            background: var(--code-bg);
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+            overflow-x: auto;
+            border: 1px solid var(--border-color);
+        }
+        
+        .code-block code {
+            background: none;
+            padding: 0;
+        }
+        
+        .note {
+            background: #fff8e1;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .important {
+            background: #e3f2fd;
+            border-left: 4px solid var(--accent-color);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .success {
+            color: var(--success-color);
+            font-weight: bold;
+        }
+        
+        /* Christmas-styled link (red & green) */
+        .christmas-link {
+            display: inline-block;
+            margin: 12px 0 20px;
+            padding: 10px 16px;
+            background: linear-gradient(135deg, #006400 0%, #b22222 100%);
+            color: #fff;
+            border-radius: 8px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+            transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+        }
+
+        .christmas-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 24px rgba(0,0,0,0.5);
+            background: linear-gradient(135deg, #b22222 0%, #006400 100%);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .step {
+                padding: 20px;
+            }
+            
+            .step-content {
+                margin-left: 0;
+            }
+            
+            .step-header {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Flutter GitHub Setup Guide</h1>
+        <p class="subtitle">A step-by-step guide to setting up your Flutter project with GitHub for version control and collaboration</p>
+        
+        <div style="text-align: center; margin-top: 20px;">
+            <span style="display: inline-block;">
+                <a href="index.html" class="christmas-link" aria-label="Return to Project Hub">🏠 Return to Project Hub</a>
+            </span>
+        </div>
+    </header>
+    
+    <main class="steps-container">
+        <section class="step">
+            <div class="step-header">
+                <div class="step-number">1</div>
+                <h2 class="step-title">Create a GitHub Repository</h2>
+            </div>
+            <div class="step-content">
+                <ul>
+                    <li>Go to <a href="https://github.com/" target="_blank">GitHub</a> and sign in to your account.</li>
+                    <li>Click on the "+" icon in the top right corner of the page and select "New repository".</li>
+                    <li>Enter a name for your repository, add a description if you want, and choose whether the repository will be public or private.</li>
+                    <li>Click on the "Create repository" button.</li>
+                    <li>Add your team members as collaborators.</li>
+                </ul>
+                <div class="note">
+                    <strong>Note:</strong> Choose a descriptive name for your repository that reflects your project's purpose.
+                </div>
+            </div>
+        </section>
+        
+        <section class="step">
+            <div class="step-header">
+                <div class="step-number">2</div>
+                <h2 class="step-title">Clone the Repository</h2>
+            </div>
+            <div class="step-content">
+                <ul>
+                    <li>On your local machine, open a terminal or command prompt.</li>
+                    <li>Use the git clone command to clone the repository to your local machine.</li>
+                </ul>
+                <div class="code-block">
+                    <code>git clone [repository URL]</code>
+                </div>
+                <p>Replace <code>[repository URL]</code> with the URL of your GitHub repository.</p>
+                <ul>
+                    <li>Navigate into the cloned repository directory using the cd command.</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section class="step">
+            <div class="step-header">
+                <div class="step-number">3</div>
+                <h2 class="step-title">Initialize Flutter Project</h2>
+            </div>
+            <div class="step-content">
+                <p>Create a new Flutter project with the following command:</p>
+                <div class="code-block">
+                    <code>flutter create [project_name]</code>
+                </div>
+                <p>Replace <code>[project_name]</code> with your desired project name.</p>
+                <p>Navigate into the newly created project directory:</p>
+                <div class="code-block">
+                    <code>cd [project_name]</code>
+                </div>
+                <div class="important">
+                    <strong>Important:</strong> Make sure you have Flutter installed and properly set up on your machine before running these commands.
+                </div>
+            </div>
+        </section>
+        
+        <section class="step">
+            <div class="step-header">
+                <div class="step-number">4</div>
+                <h2 class="step-title">Commit and Push Changes</h2>
+            </div>
+            <div class="step-content">
+                <p>Add all the files in your project to the staging area using the following command:</p>
+                <div class="code-block">
+                    <code>git add .</code>
+                </div>
+                <p>Commit the changes with a descriptive message:</p>
+                <div class="code-block">
+                    <code>git commit -m "Initial commit"</code>
+                </div>
+                <p>Push the changes to the GitHub repository:</p>
+                <div class="code-block">
+                    <code>git push origin main</code>
+                </div>
+                <div class="note">
+                    <strong>Note:</strong> Depending on your Git configuration, the default branch might be named "master" instead of "main".
+                </div>
+            </div>
+        </section>
+        
+        <section class="step">
+            <div class="step-header">
+                <div class="step-number">5</div>
+                <h2 class="step-title">Verify Changes on GitHub</h2>
+            </div>
+            <div class="step-content">
+                <ul>
+                    <li>Go back to your GitHub repository page in your web browser.</li>
+                    <li>Verify that your Flutter project files are now visible.</li>
+                </ul>
+                <p class="success">If you can see your project files, congratulations! Your Flutter project is now successfully set up with GitHub.</p>
+            </div>
+        </section>
+        
+        <section class="step">
+            <div class="step-header">
+                <div class="step-number">6</div>
+                <h2 class="step-title">Additional Steps</h2>
+            </div>
+            <div class="step-content">
+                <ul>
+                    <li>If you're working with a team, you may want to set up branch protection rules and use pull requests for code review.</li>
+                    <li>Include a README.md file in your project directory with instructions on how to run and use your Flutter app.</li>
+                </ul>
+                <div class="important">
+                    <strong>Pro Tip:</strong> A well-written README file helps others understand your project and contributes to better collaboration.
+                </div>
+            </div>
+        </section>
+        
+        <section class="step">
+            <div class="step-header">
+                <div class="step-number">7</div>
+                <h2 class="step-title">Submit the GitHub Repository Link</h2>
+            </div>
+            <div class="step-content">
+                <ul>
+                    <li>Once your Flutter project is set up on GitHub, submit the link to your repository as required for your project submission.</li>
+                    <li>Include the Repository link in the proposal.</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div style="text-align: center; margin-bottom: 20px;">
+            <span style="display: inline-block;">
+                <a href="index.html" class="christmas-link" aria-label="Return to Project Hub">🏠 Return to Project Hub</a>
+            </span>
+        </div>
+        <p>Flutter GitHub Setup Guide &copy; 2025 | Professional Development Documentation</p>
+    </footer>
+</body>
+</html>

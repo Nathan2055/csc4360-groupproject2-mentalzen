@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <title>Group Project Instructions</title>
+    <!-- Tailwind CSS for modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for a clean, professional look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+         body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        /* Christmas-styled link (red & green) */
+        .christmas-link {
+            display: inline-block;
+            margin: 12px 0 20px;
+            padding: 10px 16px;
+            background: linear-gradient(135deg, #006400 0%, #b22222 100%);
+            color: #fff;
+            border-radius: 8px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+            transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+        }
+
+        .christmas-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 24px rgba(0,0,0,0.5);
+            background: linear-gradient(135deg, #b22222 0%, #006400 100%);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- Header Section -->
+    <header class="bg-slate-800 shadow-lg">
+        <div class="container mx-auto px-6 py-8">
+            <h1 class="text-4xl font-bold text-white">Group Project Instructions</h1>
+            <p class="text-lg text-slate-300 mt-2">Guidelines for successful project completion</p>
+            
+            <div class="text-center mt-6">
+                <a href="index.html" class="christmas-link" aria-label="Return to Project Hub">🏠 Return to Project Hub</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content: Instructions Grid -->
+    <main class="container mx-auto px-6 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Card 1: Project Structure -->
+            <div class="lg:col-span-2 bg-white p-8 rounded-xl shadow-md border border-slate-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <div class="flex items-center mb-6">
+                    <div class="flex-shrink-0 w-10 h-10 bg-slate-800 text-white rounded-full flex items-center justify-center font-bold text-lg">1</div>
+                    <h2 class="ml-4 text-2xl font-semibold text-slate-900">Project Structure</h2>
+                </div>
+                <ul class="space-y-4 list-disc list-inside text-slate-600">
+                    <li>Each group will select one project topic from the provided list.</li>
+                    <li>Every project includes a clear set of required features and extended functionalities.</li>
+                    <li>Development will follow two main milestones:
+                        <ul class="pl-8 mt-2 space-y-2 list-disc list-inside">
+                            <li><span class="font-semibold text-slate-700 bg-yellow-100 px-2 py-1 rounded">Milestone 1:</span> Focus on UI design, layout, and basic navigation.</li>
+                            <li><span class="font-semibold text-slate-700 bg-yellow-100 px-2 py-1 rounded">Milestone 2:</span> Implement full functionality, database/local storage integration, and testing.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Card 2: AI Usage Guidelines -->
+            <div class="lg:row-span-2 bg-white p-8 rounded-xl shadow-md border border-slate-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col">
+                <div class="flex items-center mb-6">
+                    <div class="flex-shrink-0 w-10 h-10 bg-slate-800 text-white rounded-full flex items-center justify-center font-bold text-lg">2</div>
+                    <h2 class="ml-4 text-2xl font-semibold text-slate-900">AI Usage Guidelines</h2>
+                </div>
+                <div class="flex-grow">
+                    <ul class="space-y-4 list-disc list-inside text-slate-600">
+                        <li>Students may use AI tools (ChatGPT, GitHub Copilot, Gemini, etc.) as assistants for learning, debugging, and brainstorming.</li>
+                        <li>AI should not be used to generate entire codebases or bypass original development work.</li>
+                        <li>Each team must maintain an AI Transparency Log (e.g., <code class="text-sm bg-slate-100 p-1 rounded">AI_Usage_Log.md</code> in GitHub) that records:
+                            <ul class="pl-8 mt-2 space-y-2 list-disc list-inside">
+                                <li>Date and AI tool used</li>
+                                <li>What was asked or generated</li>
+                                <li>How it was applied</li>
+                                <li>Reflection on what was learned</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="mt-6 bg-blue-50 border-l-4 border-blue-500 text-blue-800 p-4 rounded-r-lg">
+                    <p class="font-bold">Note:</p>
+                    <p class="text-sm">We will be closely monitoring GitHub commits during grading to ensure progress is natural and consistent. Any irregularities or lack of updates will affect the grade.</p>
+                </div>
+            </div>
+
+            <!-- Card 3: Version Control & Progress -->
+            <div class="bg-white p-8 rounded-xl shadow-md border border-slate-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <div class="flex items-center mb-6">
+                    <div class="flex-shrink-0 w-10 h-10 bg-slate-800 text-white rounded-full flex items-center justify-center font-bold text-lg">3</div>
+                    <h2 class="ml-4 text-2xl font-semibold text-slate-900">Version Control & Progress</h2>
+                </div>
+                <ul class="space-y-4 list-disc list-inside text-slate-600">
+                    <li>The use of GitHub is mandatory for project submission and development.</li>
+                    <li>Commits should clearly show gradual development.</li>
+                    <li>Teams must collaborate actively, with commits reflecting each member's contribution.</li>
+                    <li>Lack of version control activity may result in grade deductions.</li>
+                </ul>
+            </div>
+
+            <!-- Card 4: Milestones Submission -->
+            <div class="bg-white p-8 rounded-xl shadow-md border border-slate-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <div class="flex items-center mb-6">
+                    <div class="flex-shrink-0 w-10 h-10 bg-slate-800 text-white rounded-full flex items-center justify-center font-bold text-lg">4</div>
+                    <h2 class="ml-4 text-2xl font-semibold text-slate-900">Milestones Submission</h2>
+                </div>
+                <ul class="space-y-4 list-disc list-inside text-slate-600">
+                    <li>Each milestone will be reviewed via GitHub commits and brief progress summaries.</li>
+                    <li>Make specific Git commits after reaching each milestone (e.g., "Milestone 1 achieved").</li>
+                    <li>Late submissions or incomplete milestones will result in point deductions.</li>
+                </ul>
+            </div>
+
+            <!-- Card 5: Submission Requirements -->
+            <div class="lg:col-span-2 bg-white p-8 rounded-xl shadow-md border border-slate-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <div class="flex items-center mb-6">
+                    <div class="flex-shrink-0 w-10 h-10 bg-slate-800 text-white rounded-full flex items-center justify-center font-bold text-lg">5</div>
+                    <h2 class="ml-4 text-2xl font-semibold text-slate-900">Submission Requirements</h2>
+                </div>
+                <ul class="space-y-4 list-disc list-inside text-slate-600">
+                    <li>Final project submission must include the following:
+                        <ul class="pl-8 mt-2 space-y-2 list-disc list-inside">
+                            <li>GitHub Repository URL (mandatory for all teams)</li>
+                            <li>Team YouTube Demo Video Link</li>
+                            <li>PowerPoint Slide Deck</li>
+                            <li>APK File for Testing</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Card 6: Bonus Credit -->
+            <div class="bg-white p-8 rounded-xl shadow-md border border-slate-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <div class="flex items-center mb-6">
+                    <div class="flex-shrink-0 w-10 h-10 bg-slate-800 text-white rounded-full flex items-center justify-center font-bold text-lg">6</div>
+                    <h2 class="ml-4 text-2xl font-semibold text-slate-900">Bonus Credit</h2>
+                </div>
+                <ul class="space-y-4 list-disc list-inside text-slate-600">
+                    <li>Groups that add extra or innovative functionalities beyond the project description may receive bonus credit for creativity and technical effort.</li>
+                </ul>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-slate-800 mt-8">
+        <div class="container mx-auto px-6 py-4 text-center">
+            <div class="text-center mb-4">
+                <a href="index.html" class="christmas-link" aria-label="Return to Project Hub">🏠 Return to Project Hub</a>
+            </div>
+            <p class="text-slate-400">&copy; 2025 Group Project Guidelines. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
