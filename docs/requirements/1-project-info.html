@@ -1,0 +1,963 @@
+<!DOCTYPE html><html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flutter &amp; Firebase Projects - Final Group Project</title>
+        <link rel="stylesheet" href="https://codd.cs.gsu.edu/~lhenry23/mobileappdev/Projects/Project2/styles1.css">
+</head>
+<body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress" style="width: 100%;"></div>
+
+    <!-- Sticky Navigation -->
+    <!-- <nav class="sticky-nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span>🚀</span> Flutter & Firebase Projects
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="#hero" class="nav-link">Home</a>
+                <a href="#dates" class="nav-link">Dates</a>
+                <a href="#resources" class="nav-link">Resources</a>
+                <a href="#timeline" class="nav-link">Timeline</a>
+                <a href="#projects" class="nav-link">Projects</a>
+            </div>-->
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+        
+    
+
+   <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>🚀 Flutter &amp; Firebase Projects</h1>
+            <p class="hero-subtitle">Master Mobile App Development Through 11 Comprehensive Projects</p>
+            <p style="color: #aaa; max-width: 800px; margin: 0 auto; font-size: 0.95rem;">
+                Embark on an exciting journey through comprehensive mobile application projects designed to master 
+                Flutter development with Firebase integration. Transform learning into building with our intensive 
+                25-day sprint framework.
+            </p>
+            <div class="tech-stack">
+                <div class="tech-badge">📱 Flutter</div>
+                <div class="tech-badge">🔥 Firebase</div>
+                <div class="tech-badge">⚡ Firestore</div>
+                <div class="tech-badge">🔐 Auth</div>
+                <div class="tech-badge">☁️ Storage</div>
+                <div class="tech-badge">📲 Messaging</div>
+            </div>
+        </div>
+
+        <!-- Important Dates -->
+        <div class="dates-banner">
+            <h2>📅 Important Dates</h2>
+            <div class="dates-flex">
+                <div class="date-item">
+                    <strong>November 22, 2025</strong>
+                    <div>Proposal Due @ 11:59 PM</div>
+                </div>
+                <div class="date-item">
+                    <strong>December 14, 2025</strong>
+                    <div>Final Project Due</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Resources Section - Moved to be directly under Important Dates -->
+        <div class="resources-section">
+            <h2>📚 Project Resources &amp; Guides</h2>
+            
+            <div class="resources-grid">
+                <div class="resource-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                    <h3>Project Requirements</h3>
+                    <ul>
+                        <li>Additional Requirements</li>
+                        <li>Grading Rubric</li>
+                        <li>Submission Guidelines</li>
+                        <li>Presentation Details</li>
+                    </ul>
+                    <a href="https://codd.cs.gsu.edu/~lhenry23/mobileappdev/Projects/Project2/Additional_Requirements.html" class="resource-button" aria-label="View Additional Requirements">View Requirements</a>
+                </div>
+                <div class="resource-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                    <h3>Development Tools</h3>
+                    <ul>
+                        <li>GitHub Setup Guide</li>
+                        <li>Version Control</li>
+                        <li>Repository Setup</li>
+                        <li>Team Collaboration</li>
+                    </ul>
+                    <a href="https://codd.cs.gsu.edu/~lhenry23/mobileappdev/Projects/Project2/Flutter_GitHub_Guide.html" class="resource-button" aria-label="View GitHub Guide">View GitHub Guide</a>
+                </div>
+                <div class="resource-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                    <h3>Project Guidelines</h3>
+                    <ul>
+                        <li>Team Instructions</li>
+                        <li>AI Usage Policy</li>
+                        <li>Milestone Details</li>
+                        <li>Submission Process</li>
+                    </ul>
+                    <a href="https://codd.cs.gsu.edu/~lhenry23/mobileappdev/Projects/Project2/Special_Project_Instructions.html" class="resource-button" aria-label="View Project Instructions">View Instructions</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Transform Learning Section -->
+        <div class="transform-section">
+            <h2>🚀 Transform Learning into Building</h2>
+            <p>This intensive program takes you beyond theory into practical implementation. Through our carefully structured 25-day sprint framework, you'll transform innovative concepts into fully functional mobile applications that solve real-world problems. Each project serves as a comprehensive learning laboratory where cutting-edge technology meets practical application.</p>
+
+            <div class="why-stands-out">
+                <h3>🌟 Why This Project Stands Out </h3>
+                <div class="highlights-grid">
+                    <div class="highlight-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                        <h4>⚡ Accelerated Mastery</h4>
+                        <p>Our 25-day timeline creates focused intensity that mirrors professional development cycles, ensuring rapid skill acquisition and practical expertise.</p>
+                    </div>
+                    <div class="highlight-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                        <h4>🛠️ Industry-Relevant Stack</h4>
+                        <p>Master Flutter with Dart for beautiful, cross-platform interfaces paired with Firebase's powerful backend services used by companies worldwide.</p>
+                    </div>
+                    <div class="highlight-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                        <h4>📂 Portfolio-Focused Outcomes</h4>
+                        <p>Each completed project represents a significant, demonstrable achievement for your professional portfolio that impresses employers and clients.</p>
+                    </div>
+                    <div class="highlight-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                        <h4>📈 Progressive Complexity</h4>
+                        <p>Projects build systematically from social applications to advanced integrations with AR, GPS, and external APIs like Spotify.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tech-section">
+                <h3>💻 Technology Stack</h3>
+                <div class="tech-items">
+                    <div class="tech-item">
+                        <div class="tech-item-label">📱 Frontend Framework</div>
+                        <div class="tech-item-value">Flutter (Dart)</div>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-item-label">☁️ Backend Services</div>
+                        <div class="tech-item-value">Firebase (Firestore, Authentication, Cloud Messaging, Storage)</div>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-item-label">⏱️ Development Timeline</div>
+                        <div class="tech-item-value">25 days per project</div>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-item-label">📊 Level</div>
+                        <div class="tech-item-value">Designed for learners progressing beyond the basics</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timeline Section -->
+        <div class="timeline-section">
+            <h2>📆 25-Day Development Timeline</h2>
+            <p>Universal framework applicable to all projects</p>
+            <div class="timeline-grid">
+                <div class="timeline-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                    <h3>Week 1: Foundation</h3>
+                    <ul>
+                        <li>Firebase setup &amp; auth</li>
+                        <li>Database schema</li>
+                        <li>Security rules</li>
+                        <li>UI/UX framework</li>
+                        <li>Navigation &amp; theme</li>
+                    </ul>
+                </div>
+                <div class="timeline-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                    <h3>Week 2: Core Features</h3>
+                    <ul>
+                        <li>Primary features (2-3)</li>
+                        <li>Real-time sync</li>
+                        <li>Data management</li>
+                        <li>Secondary features</li>
+                        <li>User interactions</li>
+                    </ul>
+                </div>
+                <div class="timeline-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                    <h3>Week 3: Enhancement</h3>
+                    <ul>
+                        <li>Additional feature</li>
+                        <li>Feature integration</li>
+                        <li>Animations &amp; polish</li>
+                        <li>Testing (unit/widget)</li>
+                        <li>Bug fixes</li>
+                    </ul>
+                </div>
+                <div class="timeline-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                    <h3>Week 4: Deployment</h3>
+                    <ul>
+                        <li>Performance optimization</li>
+                        <li>Edge case handling</li>
+                        <li>Deployment prep</li>
+                        <li>Documentation</li>
+                        <li>Final demo</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Requirements Section -->
+        <div class="requirements-section">
+            <h2>📋 Project Proposal Requirements</h2>
+            
+            <div class="requirements-grid">
+                <div class="requirement-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                    <h3>Team Information</h3>
+                    <ul>
+                        <li>Proposed Group Members</li>
+                        <li>Project Summary</li>
+                        <li>GitHub Repository Link</li>
+                        <li>Individual Signed Statement</li>
+                    </ul>
+                </div>
+                <div class="requirement-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                    <h3>Wireframe &amp; Design</h3>
+                    <ul>
+                        <li>Visual UI representation</li>
+                        <li>Layouts - Screen names &amp; count</li>
+                        <li>Functionality - Navigation flows</li>
+                        <li>User Experience - Use cases</li>
+                        <li>Iterative design &amp; test cases</li>
+                    </ul>
+                </div>
+                <div class="requirement-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                    <h3>Technical Details</h3>
+                    <ul>
+                        <li>Proposed APIs to integrate</li>
+                        <li>Technology stack justification</li>
+                        <li>Database schema outline</li>
+                        <li>Security considerations</li>
+                    </ul>
+                </div>
+            </div> <br>
+   <!-- 
+           <div style="text-align: center;">
+                <span style="display: inline-block;">
+                    <a href="Sprint_box.html" class="resource-button" aria-label="Open Sprint time Box" style="width: auto; padding: 12px 30px;">Track your Sprint Box timeline here</a>
+                </span>
+            </div>-->
+        </div>
+
+        <!-- Christmas Festive Container -->
+        <div class="festive-container">
+            <div class="snowflakes" id="snowflakes"><div class="snowflake" style="font-size: 12.035px; left: 11.1741%; animation-duration: 6.86489s; animation-delay: 0.163012s;">❄</div><div class="snowflake" style="font-size: 28.7853px; left: 38.7818%; animation-duration: 5.34243s; animation-delay: 2.10948s;">❄</div><div class="snowflake" style="font-size: 22.2065px; left: 34.7658%; animation-duration: 14.3458s; animation-delay: 1.8779s;">❄</div><div class="snowflake" style="font-size: 19.9144px; left: 4.91557%; animation-duration: 8.89273s; animation-delay: 0.396591s;">❄</div><div class="snowflake" style="font-size: 22.8078px; left: 50.0145%; animation-duration: 13.4173s; animation-delay: 0.894745s;">❄</div><div class="snowflake" style="font-size: 18.9577px; left: 58.2624%; animation-duration: 9.44523s; animation-delay: 2.87158s;">❄</div><div class="snowflake" style="font-size: 12.9451px; left: 25.7799%; animation-duration: 5.60152s; animation-delay: 0.0904151s;">❄</div><div class="snowflake" style="font-size: 21.3696px; left: 42.5909%; animation-duration: 8.56212s; animation-delay: 2.86302s;">❄</div><div class="snowflake" style="font-size: 28.4471px; left: 84.7621%; animation-duration: 10.722s; animation-delay: 3.71316s;">❄</div><div class="snowflake" style="font-size: 13.9651px; left: 82.0797%; animation-duration: 11.0908s; animation-delay: 1.5123s;">❄</div><div class="snowflake" style="font-size: 14.2405px; left: 25.7896%; animation-duration: 10.9828s; animation-delay: 4.03196s;">❄</div><div class="snowflake" style="font-size: 10.0273px; left: 79.2769%; animation-duration: 5.96885s; animation-delay: 4.27511s;">❄</div><div class="snowflake" style="font-size: 13.2966px; left: 14.1103%; animation-duration: 6.47393s; animation-delay: 4.93837s;">❄</div><div class="snowflake" style="font-size: 10.1076px; left: 86.2275%; animation-duration: 10.4081s; animation-delay: 3.74181s;">❄</div><div class="snowflake" style="font-size: 25.7083px; left: 69.5425%; animation-duration: 5.95777s; animation-delay: 3.08434s;">❄</div><div class="snowflake" style="font-size: 18.5064px; left: 43.2178%; animation-duration: 9.46705s; animation-delay: 2.0014s;">❄</div><div class="snowflake" style="font-size: 19.9492px; left: 31.0052%; animation-duration: 10.6444s; animation-delay: 2.76544s;">❄</div><div class="snowflake" style="font-size: 16.4137px; left: 48.3395%; animation-duration: 13.0768s; animation-delay: 3.99491s;">❄</div><div class="snowflake" style="font-size: 11.2451px; left: 97.741%; animation-duration: 10.5108s; animation-delay: 4.23128s;">❄</div><div class="snowflake" style="font-size: 14.9321px; left: 98.7859%; animation-duration: 12.5856s; animation-delay: 4.68364s;">❄</div><div class="snowflake" style="font-size: 22.4824px; left: 20.0736%; animation-duration: 13.3153s; animation-delay: 2.15809s;">❄</div><div class="snowflake" style="font-size: 18.5007px; left: 85.7368%; animation-duration: 13.2296s; animation-delay: 3.11637s;">❄</div><div class="snowflake" style="font-size: 22.0094px; left: 67.4769%; animation-duration: 9.97296s; animation-delay: 3.86548s;">❄</div><div class="snowflake" style="font-size: 12.1441px; left: 23.8737%; animation-duration: 5.10743s; animation-delay: 3.14235s;">❄</div><div class="snowflake" style="font-size: 13.9706px; left: 77.391%; animation-duration: 10.8309s; animation-delay: 0.907498s;">❄</div><div class="snowflake" style="font-size: 10.1224px; left: 65.9207%; animation-duration: 6.40373s; animation-delay: 1.26639s;">❄</div><div class="snowflake" style="font-size: 16.0006px; left: 12.8152%; animation-duration: 8.05917s; animation-delay: 1.72955s;">❄</div><div class="snowflake" style="font-size: 16.143px; left: 58.2961%; animation-duration: 10.8557s; animation-delay: 2.32267s;">❄</div><div class="snowflake" style="font-size: 14.7039px; left: 59.5527%; animation-duration: 11.678s; animation-delay: 0.831933s;">❄</div><div class="snowflake" style="font-size: 25.7704px; left: 63.5163%; animation-duration: 12.3693s; animation-delay: 1.06476s;">❄</div></div>
+            <div class="festive-content">
+                <h2 class="festive-title">
+                    <span>🎄 Holiday Sprint Tracker 🎅</span>
+                    <div class="festive-icons">
+                        <span class="festive-icon">⛄</span>
+                        <span class="festive-icon">🎁</span>
+                        <span class="festive-icon">🌟</span>
+                    </div>
+                </h2>
+                <p style="color: white; margin-bottom: 20px; font-size: 1.1rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.3);">
+                    Stay on track with your project timeline during the holiday season!
+                </p>
+                <div class="festive-buttons">
+                    <a href="https://codd.cs.gsu.edu/~lhenry23/mobileappdev/Projects/Project2/Sprint_box.html" class="festive-link">
+                        <span>🎁</span>
+                        Track your Sprint Box timeline here
+                    </a>
+                    <button id="festiveMustReadBtn" class="festive-button">
+                        <span>⚠️</span>
+                        MUST READ
+                        <span class="button-pulse"></span>
+                    </button>
+                </div>
+           </div>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid">
+            <!-- Project 1 -->
+            <div class="project-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                <div class="project-header">
+                    <div class="project-icon">🎵</div>
+                    <h3 class="project-title">Vibzcheck</h3>
+                    <p class="project-subtitle">Collaborative Music App</p>
+                </div>
+                <div class="project-body">
+                    <div class="project-concept">
+                        <h4>Core Concept</h4>
+                        <p>Move beyond solitary playlists. Vibzcheck transforms music into a shared, dynamic language for friends and communities. It's the digital equivalent of passing around the aux cable at a party, but supercharged: everyone can add to the queue, vote on the next track, and chat in real-time, ensuring the music perfectly mirrors the collective vibe of any gathering.</p>
+                    </div>
+                    
+                    <button class="features-toggle">
+                        <span>View Core Features &amp; Challenges</span>
+                        <span class="toggle-icon">▼</span>
+                    </button>
+                    <div class="features-content">
+                        <div class="features-list">
+                            <div class="feature-item">
+                                <span class="feature-week">Week 1</span>
+                                User Authentication &amp; Profiles
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-week">Week 2</span>
+                                Collaborative Playlist System
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-week">Week 2</span>
+                                Democratic Voting System
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-week">Week 2</span>
+                                Spotify API Integration
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-week">Week 3</span>
+                                Playlist Chat Rooms
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-week">Week 3</span>
+                                Music Genre &amp; Mood Tagging: Automatically tag added songs with genres and moods using the Spotify API, allowing users to filter and sort playlists by vibe.
+                            </div>
+                        </div>
+                        <div class="challenges">
+                            <h4>⚡ Must-Solve Challenge</h4>
+                            <div class="challenge-item">Real-time vote synchronization across multiple users</div>
+                            <div class="challenge-item">Integrating external Spotify API with Firebase data</div>
+                            <div class="challenge-item">Managing complex playlist state with voting logic</div>
+                            <div class="challenge-item">Caching and offline playback of 30-second previews for a seamless experience</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                <div class="project-header">
+                    <div class="project-icon">🎓</div>
+                    <h3 class="project-title">QuadConnect</h3>
+                    <p class="project-subtitle">Student Social Network</p>
+                </div>
+                <div class="project-body">
+                    <div class="project-concept">
+                        <h4>Core Concept</h4>
+                        <p>Campus life is a world unto itself, and QuadConnect is its digital heartbeat. This platform closes the gap between classmates, clubs, and courses, creating a hyper-relevant social layer for academic life where students discover study partners, rally for events, and build lasting connections.</p>
+                    </div>
+                    
+                    <button class="features-toggle">
+                        <span>View Core Features &amp; Challenges</span>
+                        <span class="toggle-icon">▼</span>
+                    </button>
+                    <div class="features-content">
+                        <div class="features-list">
+                            <div class="feature-item">
+                                <span class="feature-week">Week 1</span>
+                                Authentication &amp; Student Profiles
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-week">Week 2</span>
+                                Dynamic News Feed
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-week">Week 2</span>
+                                Social Engagement System
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-week">Week 3</span>
+                                Direct Messaging
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-week">Week 3</span>
+                                Push Notifications
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-week">Week 3</span>
+                                Campus Events &amp; Club Hub: A dedicated section for discovering, promoting, and RSVPing to campus events and club meetings, integrated with the main feed.
+                            </div>
+                        </div>
+                        <div class="challenges">
+                            <h4>⚡ Must-Solve Challenge</h4>
+                            <div class="challenge-item">Building an efficient real-time feed with image loading</div>
+                            <div class="challenge-item">Managing notification state across app and system</div>
+                            <div class="challenge-item">Implementing threaded comments with proper nesting</div>
+                            <div class="challenge-item">Handling data pagination for large feeds and user lists to ensure app performance</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                <div class="project-header">
+                    <div class="project-icon">🍔</div>
+                    <h3 class="project-title">The Food Runner</h3>
+                    <p class="project-subtitle">Food Delivery Platform</p>
+                </div>
+                <div class="project-body">
+                    <div class="project-concept">
+                        <h4>Core Concept</h4>
+                        <p>The Food Runner is a synchronized ecosystem that orchestrates the dance between a customer's craving, a restaurant's kitchen, and a driver's route, creating a seamless, transparent flow of information and goods.</p>
+                    </div>
+                    
+                    <button class="features-toggle">
+                        <span>View Core Features &amp; Challenges</span>
+                        <span class="toggle-icon">▼</span>
+                    </button>
+                    <div class="features-content">
+                        <div class="features-list">
+                            <div class="feature-item">
+                                <span class="feature-week">Week 1</span>
+                                Multi-Role Authentication
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-week">Week 2</span>
+                                Restaurant Discovery &amp; Menus
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-week">Week 2</span>
+                                Order Placement &amp; Tracking
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-week">Week 3</span>
+                                Driver Order Management
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-week">Week 3</span>
+                                Order History &amp; Reviews
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-week">Week 3</span>
+                                Live Driver GPS Tracking: Integrate a map view for customers to see the real-time location of their delivery driver on the way to their door.
+                            </div>
+                        </div>
+                        <div class="challenges">
+                            <h4>⚡ Must-Solve Challenge</h4>
+                            <div class="challenge-item">Managing three distinct user experiences in one app</div>
+                            <div class="challenge-item">Real-time order status synchronization across all parties</div>
+                            <div class="challenge-item">Building efficient role-based data access patterns</div>
+                            <div class="challenge-item">Optimizing the driver assignment logic based on proximity and current order load</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="project-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                <div class="project-header">
+                    <div class="project-icon">🏠</div>
+                    <h3 class="project-title">PropertyPulse</h3>
+                    <p class="project-subtitle">Real Estate Marketplace</p>
+                </div>
+                <div class="project-body">
+                    <div class="project-concept">
+                        <h4>Core Concept</h4>
+                        <p>PropertyPulse moves beyond static listings to create an interactive exploration experience, empowering users to make one of life's biggest decisions with confidence and clarity by curating shortlists and communicating directly with sellers.</p>
+                    </div>
+                    
+                    <button class="features-toggle">
+                        <span>View Core Features &amp; Challenges</span>
+                        <span class="toggle-icon">▼</span>
+                    </button>
+                    <div class="features-content">
+                        <div class="features-list">
+                            <div class="feature-item">
+                                <span class="feature-week">Week 1</span>
+                                User Authentication &amp; Profiles
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-week">Week 2</span>
+                                Property Listing Management
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-week">Week 2</span>
+                                Advanced Property Search
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-week">Week 3</span>
+                                Favorites &amp; Comparison
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-week">Week 3</span>
+                                In-App Messaging
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-week">Week 3</span>
+                                Virtual Tour Scheduling: Allow potential buyers to schedule live virtual tours or in-person viewings directly through the app, syncing with the seller's calendar.
+                            </div>
+                        </div>
+                        <div class="challenges">
+                            <h4>⚡ Must-Solve Challenge</h4>
+                            <div class="challenge-item">Implementing complex search filters with Firestore queries</div>
+                            <div class="challenge-item">Managing large image galleries efficiently</div>
+                            <div class="challenge-item">Building an intuitive property comparison interface</div>
+                            <div class="challenge-item">Implementing a robust calendar synchronization system to avoid double-booking</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 5 -->
+            <div class="project-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                <div class="project-header">
+                    <div class="project-icon">🗺️</div>
+                    <h3 class="project-title">ARQuest</h3>
+                    <p class="project-subtitle">AR Scavenger Hunt</p>
+                </div>
+                <div class="project-body">
+                    <div class="project-concept">
+                        <h4>Core Concept</h4>
+                        <p>ARQuest turns the entire world into a playground for imagination, overlaying a layer of magic and mystery onto familiar locations. Users follow digital clues to discover hidden virtual treasures, transforming a simple walk into an epic adventure.</p>
+                    </div>
+                    
+                    <button class="features-toggle">
+                        <span>View Core Features &amp; Challenges</span>
+                        <span class="toggle-icon">▼</span>
+                    </button>
+                    <div class="features-content">
+                        <div class="features-list">
+                            <div class="feature-item">
+                                <span class="feature-week">Week 1</span>
+                                User Authentication &amp; Profiles
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-week">Week 2</span>
+                                Hunt Creation System
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-week">Week 2</span>
+                                GPS Location Integration
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-week">Week 3</span>
+                                AR Discovery Experience
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-week">Week 3</span>
+                                Leaderboards &amp; Progress
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-week">Week 3</span>
+                                AR Photo Mode with Stickers: Allow users to take photos within the AR view, automatically adding fun filters and virtual object stickers related to the treasure they found.
+                            </div>
+                        </div>
+                        <div class="challenges">
+                            <h4>⚡ Must-Solve Challenge</h4>
+                            <div class="challenge-item">Integrating AR camera with GPS coordinates</div>
+                            <div class="challenge-item">Managing location permissions and accuracy</div>
+                            <div class="challenge-item">Creating an engaging AR discovery experience</div>
+                            <div class="challenge-item">Handling AR scene persistence and object stability across different device models and lighting conditions</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 6 -->
+            <div class="project-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                <div class="project-header">
+                    <div class="project-icon">📚</div>
+                    <h3 class="project-title">FocusNFlow</h3>
+                    <p class="project-subtitle">Campus Study Organizer</p>
+                </div>
+                <div class="project-body">
+                    <div class="project-concept">
+                        <h4>Core Concept</h4>
+                        <p>FocusNFlow solves the universal student struggle with data-driven efficiency, providing a live map of campus resource availability and a direct line to form study groups, replacing frantic chats with organized, productive collaboration.</p>
+                    </div>
+                    
+                    <button class="features-toggle">
+                        <span>View Core Features &amp; Challenges</span>
+                        <span class="toggle-icon">▼</span>
+                    </button>
+                    <div class="features-content">
+                        <div class="features-list">
+                            <div class="feature-item">
+                                <span class="feature-week">Week 1</span>
+                                Campus Authentication
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-week">Week 2</span>
+                                Study Room Finder
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-week">Week 2</span>
+                                Study Group Formation
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-week">Week 3</span>
+                                Group Chat System
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-week">Week 3</span>
+                                Study Session Scheduling
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-week">Week 3</span>
+                                Shared Study Timer &amp; Goals: Integrate a collaborative Pomodoro timer and session goal-setting feature within study groups to maximize focused work time.
+                            </div>
+                        </div>
+                        <div class="challenges">
+                            <h4>⚡ Must-Solve Challenge</h4>
+                            <div class="challenge-item">Building a real-time occupancy tracking system</div>
+                            <div class="challenge-item">Managing course-centric data organization</div>
+                            <div class="challenge-item">Coordinating group schedules efficiently</div>
+                            <div class="challenge-item">Synchronizing the state of a shared timer across all group members in real-time</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 7 -->
+            <div class="project-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                <div class="project-header">
+                    <div class="project-icon">⚔️</div>
+                    <h3 class="project-title">StepQuest</h3>
+                    <p class="project-subtitle">Fitness RPG Game</p>
+                </div>
+                <div class="project-body">
+                    <div class="project-concept">
+                        <h4>Core Concept</h4>
+                        <p>StepQuest re-frames exercise from a chore into an epic narrative, where your daily steps power a heroic journey across fantastical lands, fuel battles, and earn legendary loot, making fitness addictive and rewarding.</p>
+                    </div>
+                    
+                    <button class="features-toggle">
+                        <span>View Core Features &amp; Challenges</span>
+                        <span class="toggle-icon">▼</span>
+                    </button>
+                    <div class="features-content">
+                        <div class="features-list">
+                            <div class="feature-item">
+                                <span class="feature-week">Week 1</span>
+                                Character Creation &amp; Profiles
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-week">Week 2</span>
+                                Step Tracking Integration
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-week">Week 2</span>
+                                Battle &amp; Encounter System
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-week">Week 3</span>
+                                Character Progression
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-week">Week 3</span>
+                                Daily Quest System
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-week">Week 3</span>
+                                Guilds &amp; Cooperative Quests: Allow players to form "Guilds" and work together on weekly cooperative step goals to earn exclusive shared rewards.
+                            </div>
+                        </div>
+                        <div class="challenges">
+                            <h4>⚡ Must-Solve Challenge</h4>
+                            <div class="challenge-item">Integrating device pedometer with game logic</div>
+                            <div class="challenge-item">Balancing game mechanics tied to real fitness activity</div>
+                            <div class="challenge-item">Managing persistent character state in Firebase</div>
+                            <div class="challenge-item">Designing and implementing a fair and engaging guild-based leaderboard system</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 8 -->
+            <div class="project-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                <div class="project-header">
+                    <div class="project-icon">✈️</div>
+                    <h3 class="project-title">TropicaGuide</h3>
+                    <p class="project-subtitle">Travel Planner</p>
+                </div>
+                <div class="project-body">
+                    <div class="project-concept">
+                        <h4>Core Concept</h4>
+                        <p>TropicaGuide transforms stressful trip planning into a fun, collaborative, and gamified part of the adventure, acting as a digital travel buddy that helps groups build dream itineraries together.</p>
+                    </div>
+                    
+                    <button class="features-toggle">
+                        <span>View Core Features &amp; Challenges</span>
+                        <span class="toggle-icon">▼</span>
+                    </button>
+                    <div class="features-content">
+                        <div class="features-list">
+                            <div class="feature-item">
+                                <span class="feature-week">Week 1</span>
+                                Traveler Authentication &amp; Profiles
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-week">Week 2</span>
+                                Itinerary Creation
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-week">Week 2</span>
+                                Activity Database &amp; Search
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-week">Week 3</span>
+                                Collaborative Trip Planning
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-week">Week 3</span>
+                                Trip Checklist &amp; Toolkit
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-week">Week 3</span>
+                                Real-Time Collaborative Packing List: A shared packing list for travel groups where members can check off items, preventing duplicates and ensuring nothing is forgotten.
+                            </div>
+                        </div>
+                        <div class="challenges">
+                            <h4>⚡ Must-Solve Challenge</h4>
+                            <div class="challenge-item">Building an intuitive drag-and-drop itinerary interface</div>
+                            <div class="challenge-item">Real-time collaborative editing synchronization</div>
+                            <div class="challenge-item">Managing complex nested trip data structure</div>
+                            <div class="challenge-item">Resolving merge conflicts when multiple users edit the same section of the itinerary or packing list simultaneously</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 9 -->
+            <div class="project-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                <div class="project-header">
+                    <div class="project-icon">💪</div>
+                    <h3 class="project-title">Beast Mode</h3>
+                    <p class="project-subtitle">Social Fitness Tracker</p>
+                </div>
+                <div class="project-body">
+                    <div class="project-concept">
+                        <h4>Core Concept</h4>
+                        <p>Beast Mode weaponizes social accountability by making your workout journey visible and interactive, creating a positive community where achievements are celebrated and challenges fuel motivation.</p>
+                    </div>
+                    
+                    <button class="features-toggle">
+                        <span>View Core Features &amp; Challenges</span>
+                        <span class="toggle-icon">▼</span>
+                    </button>
+                    <div class="features-content">
+                        <div class="features-list">
+                            <div class="feature-item">
+                                <span class="feature-week">Week 1</span>
+                                User Authentication &amp; Fitness Profiles
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-week">Week 2</span>
+                                Workout Logging System
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-week">Week 2</span>
+                                Social Activity Feed
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-week">Week 3</span>
+                                Challenge System
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-week">Week 3</span>
+                                Progress Dashboard
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-week">Week 3</span>
+                                Pre &amp; Post Workout Photo Journal: A timeline feature for users to optionally document their physical transformation with photos, linked to their workout history.
+                            </div>
+                        </div>
+                        <div class="challenges">
+                            <h4>⚡ Must-Solve Challenge</h4>
+                            <div class="challenge-item">Creating an engaging social feed with fitness data</div>
+                            <div class="challenge-item">Building a competitive yet motivating challenge system</div>
+                            <div class="challenge-item">Visualizing fitness progress with charts and graphs</div>
+                            <div class="challenge-item">Sensitively handling user-generated photo data with robust privacy controls and optional blurring</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 10 -->
+            <div class="project-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                <div class="project-header">
+                    <div class="project-icon">🥾</div>
+                    <h3 class="project-title">BigFoot</h3>
+                    <p class="project-subtitle">Hiking &amp; Outdoor Adventure Tracker</p>
+                </div>
+                <div class="project-body">
+                    <div class="project-concept">
+                        <h4>Core Concept</h4>
+                        <p>BigFoot is the ultimate digital companion for hikers, acting as a journal, guidebook, and trophy case that validates efforts by tracking routes, connecting a passionate community, and rewarding exploration.</p>
+                    </div>
+                    
+                    <button class="features-toggle">
+                        <span>View Core Features &amp; Challenges</span>
+                        <span class="toggle-icon">▼</span>
+                    </button>
+                    <div class="features-content">
+                        <div class="features-list">
+                            <div class="feature-item">
+                                <span class="feature-week">Week 1</span>
+                                User Authentication &amp; Adventurer Profiles
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-week">Week 2</span>
+                                Trail Database &amp; Discovery
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-week">Week 2</span>
+                                GPS Hike Tracking
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-week">Week 3</span>
+                                Social Trail Feed &amp; Reviews
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-week">Week 3</span>
+                                Achievement &amp; Stats System
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-week">Week 3</span>
+                                Offline Maps &amp; Trail Data: Implement functionality to download trail maps and key data for offline use, crucial for remote hiking areas with poor connectivity.
+                            </div>
+                        </div>
+                        <div class="challenges">
+                            <h4>⚡ Must-Solve Challenge</h4>
+                            <div class="challenge-item">Implementing accurate GPS tracking with battery optimization</div>
+                            <div class="challenge-item">Managing offline functionality for remote trail areas</div>
+                            <div class="challenge-item">Building an engaging achievement system tied to real outdoor activity</div>
+                            <div class="challenge-item">Calculating and displaying accurate elevation gain/loss from potentially noisy GPS data</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 11 -->
+            <div class="project-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                <div class="project-header">
+                    <div class="project-icon">🧘</div>
+                    <h3 class="project-title">Mental Zen</h3>
+                    <p class="project-subtitle">Mental Wellness Journal</p>
+                </div>
+                <div class="project-body">
+                    <div class="project-concept">
+                        <h4>Core Concept</h4>
+                        <p>Mental Zen offers a private, secure harbor for your thoughts and emotions, providing gentle insights through structured journaling and mood tracking to help users understand their inner world and cultivate lasting mental wellness.</p>
+                    </div>
+                    
+                    <button class="features-toggle">
+                        <span>View Core Features &amp; Challenges</span>
+                        <span class="toggle-icon">▼</span>
+                    </button>
+                    <div class="features-content">
+                        <div class="features-list">
+                            <div class="feature-item">
+                                <span class="feature-week">Week 1</span>
+                                Secure Authentication &amp; Privacy
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-week">Week 2</span>
+                                Daily Mood Tracking
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-week">Week 2</span>
+                                Journal Entry System
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-week">Week 3</span>
+                                Insights &amp; Analytics
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-week">Week 3</span>
+                                Mindfulness Resources
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-week">Week 3</span>
+                                Customizable Wellness Reminders: Allow users to set personalized, gentle reminders for journaling, breathing exercises, or positive affirmations based on their goals and time of day.
+                            </div>
+                        </div>
+                        <div class="challenges">
+                            <h4>⚡ Must-Solve Challenge</h4>
+                            <div class="challenge-item">Implementing secure, private data storage</div>
+                            <div class="challenge-item">Creating an intuitive mood tracking interface</div>
+                            <div class="challenge-item">Building meaningful analytics from emotional data</div>
+                            <div class="challenge-item">Designing a non-intrusive reminder system that promotes wellness without causing stress or notification fatigue</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>🎄 Happy Holidays from the <b>MAD Team!! </b>🎅</p>
+        <p>Wishing you a productive and joyful holiday season filled with coding success!</p>
+        <div class="footer-icons">
+            <span class="footer-icon">❄️</span>
+            <span class="footer-icon">🎁</span>
+            <span class="footer-icon">🌟</span>
+            <span class="footer-icon">🦌</span>
+            <span class="footer-icon">⛄</span>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top visible" id="backToTop">↑</button>
+
+    <!-- Must Read Modal -->
+    <div id="mustReadModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>⚠️ Must Read: Critical Demo Guidelines</h2>
+                <span class="close-modal">×</span>
+            </div>
+            <div class="modal-body">
+                <div class="warning-banner">
+                    <strong>Important Notice:</strong> Grading standards will be more rigorous than Project 1 - All Members Must be involved - Yes!! we will critique separate contributions, so be ready!
+                </div>
+                
+                <div class="guidelines-section">
+                    <h3>Demo Requirements</h3>
+                    <p>A clear and thorough demonstration is <strong>critical for assessment</strong>. All team members must be prepared to:</p>
+                    
+                    <div class="requirement-item">
+                        <div class="req-icon">📖</div>
+                        <div class="req-text">
+                            <strong>Provide detailed code explanation:</strong> Walk through your codebase, explaining the role and functionality of each key file and how they integrate in your project folder structure (VS-Code).
+                        </div>
+                    </div>
+                    
+                    <div class="requirement-item">
+                        <div class="req-icon">🚀</div>
+                        <div class="req-text">
+                            <strong>Execute live, functional demo:</strong> Demonstrate the application running successfully. You must explicitly show Firebase integration in action.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grading-section">
+                    <h3>📊 Key Areas for Grading Impact</h3>
+                    <p>This demo directly impacts these categories, which will be graded <strong>strictly</strong>:</p>
+                    
+                    <div class="points-grid">
+                        <div class="point-item">
+                            <span class="point-value">20 pts</span>
+                            <span class="point-category">Code Explanation (Demo)</span>
+                        </div>
+                        <div class="point-item">
+                            <span class="point-value">10 pts</span>
+                            <span class="point-category">Team Collaboration Logs</span>
+                        </div>
+                        <div class="point-item">
+                            <span class="point-value">10 pts</span>
+                            <span class="point-category">Code Readability &amp; Comments</span>
+                        </div>
+                        <div class="point-item">
+                            <span class="point-value">15 pts</span>
+                            <span class="point-category">Milestone Achievement</span>
+                        </div>
+                        <div class="point-item">
+                            <span class="point-value">15 pts</span>
+                            <span class="point-category">Functionality &amp; Testing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="final-note">
+                    <p>🚨 <strong>Please ensure your team is fully prepared to meet these expectations.</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+</body></html>
