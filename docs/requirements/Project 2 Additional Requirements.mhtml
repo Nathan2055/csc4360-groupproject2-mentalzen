@@ -1,0 +1,347 @@
+From: <Saved by Blink>
+Snapshot-Content-Location: https://codd.cs.gsu.edu/~lhenry23/mobileappdev/Projects/Project2/Additional_Requirements.html
+Subject: Project 2 Additional Requirements
+Date: Sat, 22 Nov 2025 20:09:48 -0500
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----MultipartBoundary--Dkh2TQGNDQznWC5B5t5i46oknQU1VuGgOaIXuUt3xr----"
+
+
+------MultipartBoundary--Dkh2TQGNDQznWC5B5t5i46oknQU1VuGgOaIXuUt3xr----
+Content-Type: text/html
+Content-ID: <frame-E1935DB1657F38436CB5541CA9B805B8@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://codd.cs.gsu.edu/~lhenry23/mobileappdev/Projects/Project2/Additional_Requirements.html
+
+<!DOCTYPE html><html lang=3D"en"><head><meta http-equiv=3D"Content-Type" co=
+ntent=3D"text/html; charset=3DUTF-8"><link rel=3D"stylesheet" type=3D"text/=
+css" href=3D"cid:css-d564fbbf-f1f7-4a8e-9164-b2476895e53b@mhtml.blink" />
+   =20
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=
+=3D1.0">
+    <title>Project 2 Additional Requirements</title>
+   =20
+</head>
+<body>
+    <div class=3D"container">
+        <header>
+            <h1 class=3D"underline">Project 2 Additional Requirements</h1>
+        </header>
+          <div style=3D"text-align:left; margin-top: -4px;">
+            <span style=3D"display: inline-block;">
+                <a href=3D"https://codd.cs.gsu.edu/~lhenry23/mobileappdev/P=
+rojects/Project2/index.html" class=3D"christmas-link" aria-label=3D"Return =
+to Project Hub">Return to Project Hub</a>
+            </span>
+        </div>
+        <section class=3D"requirement-section">
+            <h2 class=3D"underline">You will create a PowerPoint Presentati=
+on</h2>
+            <ul>
+                <li>Create a PowerPoint presentation adhering to the requir=
+ements below.</li>
+                <li>Utilize Conference Call Recording Software:
+                    <ul>
+                        <li>Employ conference call recording software such =
+as Zoom, WebEx, or MS Teams for the presentation.</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+       =20
+        <section class=3D"requirement-section">
+            <h2>Video Hosting and Upload:</h2>
+            <ul>
+                <li>Upload your presentation video to either YouTube or Goo=
+gle Drive as per the specified requirements.</li>
+            </ul>
+           =20
+            <h3>Submission Process:</h3>
+            <ul>
+                <li>Copy the video link (from either YouTube or Google Driv=
+e) and upload it to the designated dropbox in iCollege.</li>
+            </ul>
+        </section>
+       =20
+        <section class=3D"requirement-section">
+            <h2>PowerPoint Slide Show Guidelines:</h2>
+            <div class=3D"highlight-box">
+                <h3>User:</h3>
+                <p>Clearly state the problem and outline general requiremen=
+ts including inputs and outputs.</p>
+               =20
+                <h3>Design:</h3>
+                <p>Provide an overview of the solution, highlighting key de=
+sign features, user interface, UML class diagrams, and pseudo code. Utilize=
+ Transforms, Transitions, and Animation for enhanced presentation.</p>
+               =20
+                <h3>Testing (if applicable):</h3>
+                <p>Explain the testing process, including the test plan, da=
+ta used, and bug tracking/reporting.</p>
+               =20
+                <h3>Group Team Name:</h3>
+                <p>Assign a team name related to Mobile Application Dev Pro=
+ject.</p>
+               =20
+                <h3>Presenter(s):</h3>
+                <p>It is mandatory for all team members to participate in t=
+he presentation. Options for presenting include: Allowing each team member =
+to present their individual work. All parties must actively engage in the p=
+resentation process.</p>
+               =20
+                <h3>Incorporate Code Snippets:</h3>
+                <p>Utilize PowerPoint to present, ensuring to insert code s=
+nippets within slides.</p>
+            </div>
+        </section>
+       =20
+        <section class=3D"requirement-section">
+            <h2>Video Hosting Guidelines:</h2>
+            <ul>
+                <li><strong>Title Video:</strong> Name it following the for=
+mat "Task Name_Team Name".</li>
+                <li>
+                    <div class=3D"duration-highlight">
+                        Duration: Aim for a video length of 20-25 minutes
+                    </div>
+                </li>
+                <li><strong>Participation:</strong> All team members must c=
+ontribute to the video.</li>
+                <li><strong>Hosting Options:</strong>=20
+                    <ul>
+                        <li>YouTube: Establish a YouTube channel with the g=
+roup name and upload your video</li>
+                        <li>Google Drive: Upload your video to a shared Goo=
+gle Drive folder with appropriate sharing permissions</li>
+                    </ul>
+                </li>
+                <li><strong>Recording Presentation Software:</strong> Choos=
+e from options such as Zoom, Microsoft Teams, WebEx, or Discord.</li>
+                <li><strong>Upload Process:</strong> Once prepared, upload =
+the video to your chosen platform for future reference and submissions.</li=
+>
+            </ul>
+        </section>
+       =20
+        <section class=3D"requirement-section">
+            <h2>Grading Rubric (100 Points Total)</h2>
+            <div class=3D"rubric-container">
+                <table class=3D"rubric-table">
+                    <thead>
+                        <tr>
+                            <th>Criterion</th>
+                            <th class=3D"points-column">Points</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class=3D"criterion-column">Version Control =
+Activity</td>
+                            <td class=3D"points-column">10</td>
+                            <td>Consistent commits showing steady progress =
+throughout the 25-day sprint</td>
+                        </tr>
+                        <tr>
+                            <td class=3D"criterion-column">Design Documenta=
+tion</td>
+                            <td class=3D"points-column">10</td>
+                            <td>Includes wireframes, UML diagrams, and desi=
+gn reasoning</td>
+                        </tr>
+                        <tr>
+                            <td class=3D"criterion-column">Code Explanation=
+ (Demo)</td>
+                            <td class=3D"points-column">20</td>
+                            <td>Team explains core logic and Firebase integ=
+ration during demo</td>
+                        </tr>
+                        <tr>
+                            <td class=3D"criterion-column">Team Collaborati=
+on Logs</td>
+                            <td class=3D"points-column">10</td>
+                            <td>Demonstrates shared responsibility and effe=
+ctive teamwork</td>
+                        </tr>
+                        <tr>
+                            <td class=3D"criterion-column">Code Readability=
+ &amp; Comments</td>
+                            <td class=3D"points-column">10</td>
+                            <td>Flutter/Dart code is clean, organized, and =
+well-documented</td>
+                        </tr>
+                        <tr>
+                            <td class=3D"criterion-column">Milestone Achiev=
+ement</td>
+                            <td class=3D"points-column">15</td>
+                            <td>All weekly milestones completed as required=
+ per 25-day timeline</td>
+                        </tr>
+                        <tr>
+                            <td class=3D"criterion-column">Functionality &a=
+mp; Testing</td>
+                            <td class=3D"points-column">15</td>
+                            <td>App runs smoothly with expected Firebase in=
+tegration results</td>
+                        </tr>
+                        <tr>
+                            <td class=3D"criterion-column">Presentation &am=
+p; Reflection</td>
+                            <td class=3D"points-column">10</td>
+                            <td>Clear final presentation and comprehensive =
+learning summary</td>
+                        </tr>
+                        <tr class=3D"total-row">
+                            <td class=3D"criterion-column">TOTAL</td>
+                            <td class=3D"points-column">100</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+       =20
+        <section class=3D"grading-criteria">
+            <h2>Grading Criteria:</h2>
+            <ul>
+                <li>Key aspects include effective application of Flutter &a=
+mp; Firebase concepts, aesthetic choices such as font and color, creativity=
+, navigation usability, and adherence to design principles.</li>
+                <li>Ensure compliance with all stated requirements for subm=
+ission to receive full credit, including the presentation description, team=
+ member details, wireframe UI, and the presentation link on YouTube or Goog=
+le Drive.</li>
+            </ul>
+           =20
+            <div class=3D"submission-reminder">
+                <p><span class=3D"mark">Submit the <strong>GitHub Repositor=
+y link</strong> and the presentation <strong>video link (YouTube or Google =
+Drive)</strong> to the designated dropbox for accurate grading and reportin=
+g. Simply submitting the file to iCollege will not suffice.</span></p>
+            </div>
+        </section>
+       =20
+        <div style=3D"text-align: center; margin-top: 30px;">
+            <span style=3D"display: inline-block;">
+                <a href=3D"https://codd.cs.gsu.edu/~lhenry23/mobileappdev/P=
+rojects/Project2/index.html" class=3D"christmas-link" aria-label=3D"Return =
+to Project Hub">Return to Project Hub</a>
+            </span>
+        </div>
+    </div>
+
+</body></html>
+------MultipartBoundary--Dkh2TQGNDQznWC5B5t5i46oknQU1VuGgOaIXuUt3xr----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: cid:css-d564fbbf-f1f7-4a8e-9164-b2476895e53b@mhtml.blink
+
+@charset "utf-8";
+
+* { margin: 0px; padding: 0px; box-sizing: border-box; font-family: "Segoe =
+UI", Tahoma, Geneva, Verdana, sans-serif; }
+
+body { background: rgb(26, 26, 46); color: rgb(238, 238, 238); line-height:=
+ 1.6; padding: 20px; }
+
+.container { max-width: 1000px; margin: 0px auto; background: rgba(30, 30, =
+46, 0.7); backdrop-filter: blur(10px); border-radius: 15px; box-shadow: rgb=
+a(0, 0, 0, 0.4) 0px 8px 32px; padding: 40px; border: 1px solid rgba(255, 25=
+5, 255, 0.1); }
+
+header { text-align: center; margin-bottom: 30px; border-bottom: 1px solid =
+rgba(255, 255, 255, 0.1); padding-bottom: 20px; }
+
+h1 { background: linear-gradient(135deg, rgb(102, 126, 234) 0%, rgb(118, 75=
+, 162) 100%) text; -webkit-text-fill-color: transparent; font-size: 28px; m=
+argin-bottom: 10px; }
+
+h2 { color: rgb(102, 126, 234); font-size: 22px; margin: 25px 0px 15px; pad=
+ding-bottom: 8px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+
+h3 { color: rgb(102, 126, 234); font-size: 18px; margin: 20px 0px 10px; }
+
+.underline { text-decoration: underline rgb(102, 126, 234); text-underline-=
+offset: 4px; }
+
+.mark { background-color: rgba(255, 193, 7, 0.2); padding: 2px 4px; border-=
+radius: 3px; color: rgb(255, 193, 7); }
+
+ul { margin-left: 20px; margin-bottom: 20px; }
+
+li { margin-bottom: 10px; color: rgb(204, 204, 204); }
+
+.highlight-box { background-color: rgba(255, 255, 255, 0.05); border-left: =
+4px solid rgb(102, 126, 234); padding: 15px; margin: 20px 0px; border-radiu=
+s: 0px 4px 4px 0px; }
+
+.requirement-section { margin-bottom: 30px; }
+
+.grading-criteria { background: rgba(102, 126, 234, 0.1); padding: 20px; bo=
+rder-radius: 6px; margin-top: 30px; border: 1px solid rgba(102, 126, 234, 0=
+.2); }
+
+.submission-reminder { background: rgba(255, 193, 7, 0.1); border: 1px soli=
+d rgba(255, 193, 7, 0.3); border-radius: 6px; padding: 15px; margin-top: 20=
+px; font-weight: 500; color: rgb(255, 193, 7); }
+
+.rubric-container { margin: 30px 0px; overflow-x: auto; }
+
+.rubric-table { width: 100%; border-collapse: collapse; margin: 20px 0px; b=
+ox-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px; background: rgba(255, 255, 255,=
+ 0.05); border-radius: 8px; overflow: hidden; }
+
+.rubric-table th { background: linear-gradient(135deg, rgb(102, 126, 234) 0=
+%, rgb(118, 75, 162) 100%); color: white; text-align: left; padding: 12px 1=
+5px; }
+
+.rubric-table td { padding: 12px 15px; border-bottom: 1px solid rgba(255, 2=
+55, 255, 0.1); color: rgb(204, 204, 204); }
+
+.rubric-table tr:nth-child(2n) { background-color: rgba(255, 255, 255, 0.03=
+); }
+
+.rubric-table tr:hover { background-color: rgba(102, 126, 234, 0.1); }
+
+.points-column { width: 80px; text-align: center; font-weight: bold; color:=
+ rgb(102, 126, 234); }
+
+.criterion-column { width: 200px; font-weight: 600; color: rgb(221, 221, 22=
+1); }
+
+.total-row { color: white; font-weight: bold; background: rgba(44, 62, 80, =
+0.8) !important; }
+
+.total-row td { border-bottom: none; }
+
+.christmas-link { display: inline-block; margin: 12px 0px 20px; padding: 10=
+px 16px; background: linear-gradient(135deg, rgb(0, 100, 0) 0%, rgb(178, 34=
+, 34) 100%); color: rgb(255, 255, 255); border-radius: 8px; font-weight: 70=
+0; text-decoration: none; box-shadow: rgba(0, 0, 0, 0.4) 0px 6px 18px; tran=
+sition: transform 0.15s, box-shadow 0.15s, background 0.15s; }
+
+.christmas-link:hover { transform: translateY(-3px); box-shadow: rgba(0, 0,=
+ 0, 0.5) 0px 10px 24px; background: linear-gradient(135deg, rgb(178, 34, 34=
+) 0%, rgb(0, 100, 0) 100%); }
+
+.duration-highlight { display: inline-block; background: linear-gradient(13=
+5deg, rgb(255, 107, 107) 0%, rgb(255, 165, 0) 100%); color: white; padding:=
+ 10px 20px; border-radius: 8px; font-weight: bold; margin: 15px 0px; box-sh=
+adow: rgba(255, 107, 107, 0.4) 0px 6px 20px; animation: 2s ease 0s infinite=
+ normal none running shake; text-align: center; }
+
+@keyframes shake {=20
+  0%, 100% { transform: translateX(0px); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+@media (max-width: 768px) {
+  .container { padding: 20px; }
+  h1 { font-size: 24px; }
+  h2 { font-size: 20px; }
+  .rubric-table { font-size: 14px; }
+  .rubric-table th, .rubric-table td { padding: 8px 10px; }
+}
+------MultipartBoundary--Dkh2TQGNDQznWC5B5t5i46oknQU1VuGgOaIXuUt3xr------

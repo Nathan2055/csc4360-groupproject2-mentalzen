@@ -1,0 +1,1786 @@
+From: <Saved by Blink>
+Snapshot-Content-Location: https://codd.cs.gsu.edu/~lhenry23/mobileappdev/Projects/Project2/index2.html
+Subject: Flutter & Firebase Projects - Final Group Project
+Date: Sat, 22 Nov 2025 20:08:51 -0500
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----MultipartBoundary--UG5z902iVTbDDPYXwSpN5S8XlziGV4ztWH2IYz52W1----"
+
+
+------MultipartBoundary--UG5z902iVTbDDPYXwSpN5S8XlziGV4ztWH2IYz52W1----
+Content-Type: text/html
+Content-ID: <frame-BE3A150109893DF0E0725BA385175833@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://codd.cs.gsu.edu/~lhenry23/mobileappdev/Projects/Project2/index2.html
+
+<!DOCTYPE html><html lang=3D"en"><head><meta http-equiv=3D"Content-Type" co=
+ntent=3D"text/html; charset=3DUTF-8">
+   =20
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=
+=3D1.0">
+    <title>Flutter &amp; Firebase Projects - Final Group Project</title>
+        <link rel=3D"stylesheet" href=3D"https://codd.cs.gsu.edu/~lhenry23/=
+mobileappdev/Projects/Project2/styles1.css">
+</head>
+<body>
+    <!-- Scroll Progress Bar -->
+    <div class=3D"scroll-progress" id=3D"scrollProgress" style=3D"width: 10=
+0%;"></div>
+
+    <!-- Sticky Navigation -->
+    <!-- <nav class=3D"sticky-nav">
+        <div class=3D"nav-container">
+            <div class=3D"nav-logo">
+                <span>=F0=9F=9A=80</span> Flutter & Firebase Projects
+            </div>
+            <div class=3D"nav-links" id=3D"navLinks">
+                <a href=3D"#hero" class=3D"nav-link">Home</a>
+                <a href=3D"#dates" class=3D"nav-link">Dates</a>
+                <a href=3D"#resources" class=3D"nav-link">Resources</a>
+                <a href=3D"#timeline" class=3D"nav-link">Timeline</a>
+                <a href=3D"#projects" class=3D"nav-link">Projects</a>
+            </div>-->
+            <button class=3D"mobile-menu-btn" id=3D"mobileMenuBtn">=E2=98=
+=B0</button>
+       =20
+   =20
+
+   <div class=3D"container">
+        <!-- Hero Section -->
+        <div class=3D"hero">
+            <h1>=F0=9F=9A=80 Flutter &amp; Firebase Projects</h1>
+            <p class=3D"hero-subtitle">Master Mobile App Development Throug=
+h 11 Comprehensive Projects</p>
+            <p style=3D"color: #aaa; max-width: 800px; margin: 0 auto; font=
+-size: 0.95rem;">
+                Embark on an exciting journey through comprehensive mobile =
+application projects designed to master=20
+                Flutter development with Firebase integration. Transform le=
+arning into building with our intensive=20
+                25-day sprint framework.
+            </p>
+            <div class=3D"tech-stack">
+                <div class=3D"tech-badge">=F0=9F=93=B1 Flutter</div>
+                <div class=3D"tech-badge">=F0=9F=94=A5 Firebase</div>
+                <div class=3D"tech-badge">=E2=9A=A1 Firestore</div>
+                <div class=3D"tech-badge">=F0=9F=94=90 Auth</div>
+                <div class=3D"tech-badge">=E2=98=81=EF=B8=8F Storage</div>
+                <div class=3D"tech-badge">=F0=9F=93=B2 Messaging</div>
+            </div>
+        </div>
+
+        <!-- Important Dates -->
+        <div class=3D"dates-banner">
+            <h2>=F0=9F=93=85 Important Dates</h2>
+            <div class=3D"dates-flex">
+                <div class=3D"date-item">
+                    <strong>November 22, 2025</strong>
+                    <div>Proposal Due @ 11:59 PM</div>
+                </div>
+                <div class=3D"date-item">
+                    <strong>December 14, 2025</strong>
+                    <div>Final Project Due</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Resources Section - Moved to be directly under Important Dates=
+ -->
+        <div class=3D"resources-section">
+            <h2>=F0=9F=93=9A Project Resources &amp; Guides</h2>
+           =20
+            <div class=3D"resources-grid">
+                <div class=3D"resource-card" style=3D"opacity: 1; transform=
+: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                    <h3>Project Requirements</h3>
+                    <ul>
+                        <li>Additional Requirements</li>
+                        <li>Grading Rubric</li>
+                        <li>Submission Guidelines</li>
+                        <li>Presentation Details</li>
+                    </ul>
+                    <a href=3D"https://codd.cs.gsu.edu/~lhenry23/mobileappd=
+ev/Projects/Project2/Additional_Requirements.html" class=3D"resource-button=
+" aria-label=3D"View Additional Requirements">View Requirements</a>
+                </div>
+                <div class=3D"resource-card" style=3D"opacity: 1; transform=
+: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                    <h3>Development Tools</h3>
+                    <ul>
+                        <li>GitHub Setup Guide</li>
+                        <li>Version Control</li>
+                        <li>Repository Setup</li>
+                        <li>Team Collaboration</li>
+                    </ul>
+                    <a href=3D"https://codd.cs.gsu.edu/~lhenry23/mobileappd=
+ev/Projects/Project2/Flutter_GitHub_Guide.html" class=3D"resource-button" a=
+ria-label=3D"View GitHub Guide">View GitHub Guide</a>
+                </div>
+                <div class=3D"resource-card" style=3D"opacity: 1; transform=
+: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                    <h3>Project Guidelines</h3>
+                    <ul>
+                        <li>Team Instructions</li>
+                        <li>AI Usage Policy</li>
+                        <li>Milestone Details</li>
+                        <li>Submission Process</li>
+                    </ul>
+                    <a href=3D"https://codd.cs.gsu.edu/~lhenry23/mobileappd=
+ev/Projects/Project2/Special_Project_Instructions.html" class=3D"resource-b=
+utton" aria-label=3D"View Project Instructions">View Instructions</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Transform Learning Section -->
+        <div class=3D"transform-section">
+            <h2>=F0=9F=9A=80 Transform Learning into Building</h2>
+            <p>This intensive program takes you beyond theory into practica=
+l implementation. Through our carefully structured 25-day sprint framework,=
+ you'll transform innovative concepts into fully functional mobile applicat=
+ions that solve real-world problems. Each project serves as a comprehensive=
+ learning laboratory where cutting-edge technology meets practical applicat=
+ion.</p>
+
+            <div class=3D"why-stands-out">
+                <h3>=F0=9F=8C=9F Why This Project Stands Out </h3>
+                <div class=3D"highlights-grid">
+                    <div class=3D"highlight-card" style=3D"opacity: 1; tran=
+sform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                        <h4>=E2=9A=A1 Accelerated Mastery</h4>
+                        <p>Our 25-day timeline creates focused intensity th=
+at mirrors professional development cycles, ensuring rapid skill acquisitio=
+n and practical expertise.</p>
+                    </div>
+                    <div class=3D"highlight-card" style=3D"opacity: 1; tran=
+sform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                        <h4>=F0=9F=9B=A0=EF=B8=8F Industry-Relevant Stack</=
+h4>
+                        <p>Master Flutter with Dart for beautiful, cross-pl=
+atform interfaces paired with Firebase's powerful backend services used by =
+companies worldwide.</p>
+                    </div>
+                    <div class=3D"highlight-card" style=3D"opacity: 1; tran=
+sform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                        <h4>=F0=9F=93=82 Portfolio-Focused Outcomes</h4>
+                        <p>Each completed project represents a significant,=
+ demonstrable achievement for your professional portfolio that impresses em=
+ployers and clients.</p>
+                    </div>
+                    <div class=3D"highlight-card" style=3D"opacity: 1; tran=
+sform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                        <h4>=F0=9F=93=88 Progressive Complexity</h4>
+                        <p>Projects build systematically from social applic=
+ations to advanced integrations with AR, GPS, and external APIs like Spotif=
+y.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class=3D"tech-section">
+                <h3>=F0=9F=92=BB Technology Stack</h3>
+                <div class=3D"tech-items">
+                    <div class=3D"tech-item">
+                        <div class=3D"tech-item-label">=F0=9F=93=B1 Fronten=
+d Framework</div>
+                        <div class=3D"tech-item-value">Flutter (Dart)</div>
+                    </div>
+                    <div class=3D"tech-item">
+                        <div class=3D"tech-item-label">=E2=98=81=EF=B8=8F B=
+ackend Services</div>
+                        <div class=3D"tech-item-value">Firebase (Firestore,=
+ Authentication, Cloud Messaging, Storage)</div>
+                    </div>
+                    <div class=3D"tech-item">
+                        <div class=3D"tech-item-label">=E2=8F=B1=EF=B8=8F D=
+evelopment Timeline</div>
+                        <div class=3D"tech-item-value">25 days per project<=
+/div>
+                    </div>
+                    <div class=3D"tech-item">
+                        <div class=3D"tech-item-label">=F0=9F=93=8A Level</=
+div>
+                        <div class=3D"tech-item-value">Designed for learner=
+s progressing beyond the basics</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timeline Section -->
+        <div class=3D"timeline-section">
+            <h2>=F0=9F=93=86 25-Day Development Timeline</h2>
+            <p>Universal framework applicable to all projects</p>
+            <div class=3D"timeline-grid">
+                <div class=3D"timeline-card" style=3D"opacity: 1; transform=
+: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                    <h3>Week 1: Foundation</h3>
+                    <ul>
+                        <li>Firebase setup &amp; auth</li>
+                        <li>Database schema</li>
+                        <li>Security rules</li>
+                        <li>UI/UX framework</li>
+                        <li>Navigation &amp; theme</li>
+                    </ul>
+                </div>
+                <div class=3D"timeline-card" style=3D"opacity: 1; transform=
+: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                    <h3>Week 2: Core Features</h3>
+                    <ul>
+                        <li>Primary features (2-3)</li>
+                        <li>Real-time sync</li>
+                        <li>Data management</li>
+                        <li>Secondary features</li>
+                        <li>User interactions</li>
+                    </ul>
+                </div>
+                <div class=3D"timeline-card" style=3D"opacity: 1; transform=
+: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                    <h3>Week 3: Enhancement</h3>
+                    <ul>
+                        <li>Additional feature</li>
+                        <li>Feature integration</li>
+                        <li>Animations &amp; polish</li>
+                        <li>Testing (unit/widget)</li>
+                        <li>Bug fixes</li>
+                    </ul>
+                </div>
+                <div class=3D"timeline-card" style=3D"opacity: 1; transform=
+: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                    <h3>Week 4: Deployment</h3>
+                    <ul>
+                        <li>Performance optimization</li>
+                        <li>Edge case handling</li>
+                        <li>Deployment prep</li>
+                        <li>Documentation</li>
+                        <li>Final demo</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Requirements Section -->
+        <div class=3D"requirements-section">
+            <h2>=F0=9F=93=8B Project Proposal Requirements</h2>
+           =20
+            <div class=3D"requirements-grid">
+                <div class=3D"requirement-card" style=3D"opacity: 1; transf=
+orm: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                    <h3>Team Information</h3>
+                    <ul>
+                        <li>Proposed Group Members</li>
+                        <li>Project Summary</li>
+                        <li>GitHub Repository Link</li>
+                        <li>Individual Signed Statement</li>
+                    </ul>
+                </div>
+                <div class=3D"requirement-card" style=3D"opacity: 1; transf=
+orm: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                    <h3>Wireframe &amp; Design</h3>
+                    <ul>
+                        <li>Visual UI representation</li>
+                        <li>Layouts - Screen names &amp; count</li>
+                        <li>Functionality - Navigation flows</li>
+                        <li>User Experience - Use cases</li>
+                        <li>Iterative design &amp; test cases</li>
+                    </ul>
+                </div>
+                <div class=3D"requirement-card" style=3D"opacity: 1; transf=
+orm: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                    <h3>Technical Details</h3>
+                    <ul>
+                        <li>Proposed APIs to integrate</li>
+                        <li>Technology stack justification</li>
+                        <li>Database schema outline</li>
+                        <li>Security considerations</li>
+                    </ul>
+                </div>
+            </div> <br>
+   <!--=20
+           <div style=3D"text-align: center;">
+                <span style=3D"display: inline-block;">
+                    <a href=3D"Sprint_box.html" class=3D"resource-button" a=
+ria-label=3D"Open Sprint time Box" style=3D"width: auto; padding: 12px 30px=
+;">Track your Sprint Box timeline here</a>
+                </span>
+            </div>-->
+        </div>
+
+        <!-- Christmas Festive Container -->
+        <div class=3D"festive-container">
+            <div class=3D"snowflakes" id=3D"snowflakes"><div class=3D"snowf=
+lake" style=3D"font-size: 12.035px; left: 11.1741%; animation-duration: 6.8=
+6489s; animation-delay: 0.163012s;">=E2=9D=84</div><div class=3D"snowflake"=
+ style=3D"font-size: 28.7853px; left: 38.7818%; animation-duration: 5.34243=
+s; animation-delay: 2.10948s;">=E2=9D=84</div><div class=3D"snowflake" styl=
+e=3D"font-size: 22.2065px; left: 34.7658%; animation-duration: 14.3458s; an=
+imation-delay: 1.8779s;">=E2=9D=84</div><div class=3D"snowflake" style=3D"f=
+ont-size: 19.9144px; left: 4.91557%; animation-duration: 8.89273s; animatio=
+n-delay: 0.396591s;">=E2=9D=84</div><div class=3D"snowflake" style=3D"font-=
+size: 22.8078px; left: 50.0145%; animation-duration: 13.4173s; animation-de=
+lay: 0.894745s;">=E2=9D=84</div><div class=3D"snowflake" style=3D"font-size=
+: 18.9577px; left: 58.2624%; animation-duration: 9.44523s; animation-delay:=
+ 2.87158s;">=E2=9D=84</div><div class=3D"snowflake" style=3D"font-size: 12.=
+9451px; left: 25.7799%; animation-duration: 5.60152s; animation-delay: 0.09=
+04151s;">=E2=9D=84</div><div class=3D"snowflake" style=3D"font-size: 21.369=
+6px; left: 42.5909%; animation-duration: 8.56212s; animation-delay: 2.86302=
+s;">=E2=9D=84</div><div class=3D"snowflake" style=3D"font-size: 28.4471px; =
+left: 84.7621%; animation-duration: 10.722s; animation-delay: 3.71316s;">=
+=E2=9D=84</div><div class=3D"snowflake" style=3D"font-size: 13.9651px; left=
+: 82.0797%; animation-duration: 11.0908s; animation-delay: 1.5123s;">=E2=9D=
+=84</div><div class=3D"snowflake" style=3D"font-size: 14.2405px; left: 25.7=
+896%; animation-duration: 10.9828s; animation-delay: 4.03196s;">=E2=9D=84</=
+div><div class=3D"snowflake" style=3D"font-size: 10.0273px; left: 79.2769%;=
+ animation-duration: 5.96885s; animation-delay: 4.27511s;">=E2=9D=84</div><=
+div class=3D"snowflake" style=3D"font-size: 13.2966px; left: 14.1103%; anim=
+ation-duration: 6.47393s; animation-delay: 4.93837s;">=E2=9D=84</div><div c=
+lass=3D"snowflake" style=3D"font-size: 10.1076px; left: 86.2275%; animation=
+-duration: 10.4081s; animation-delay: 3.74181s;">=E2=9D=84</div><div class=
+=3D"snowflake" style=3D"font-size: 25.7083px; left: 69.5425%; animation-dur=
+ation: 5.95777s; animation-delay: 3.08434s;">=E2=9D=84</div><div class=3D"s=
+nowflake" style=3D"font-size: 18.5064px; left: 43.2178%; animation-duration=
+: 9.46705s; animation-delay: 2.0014s;">=E2=9D=84</div><div class=3D"snowfla=
+ke" style=3D"font-size: 19.9492px; left: 31.0052%; animation-duration: 10.6=
+444s; animation-delay: 2.76544s;">=E2=9D=84</div><div class=3D"snowflake" s=
+tyle=3D"font-size: 16.4137px; left: 48.3395%; animation-duration: 13.0768s;=
+ animation-delay: 3.99491s;">=E2=9D=84</div><div class=3D"snowflake" style=
+=3D"font-size: 11.2451px; left: 97.741%; animation-duration: 10.5108s; anim=
+ation-delay: 4.23128s;">=E2=9D=84</div><div class=3D"snowflake" style=3D"fo=
+nt-size: 14.9321px; left: 98.7859%; animation-duration: 12.5856s; animation=
+-delay: 4.68364s;">=E2=9D=84</div><div class=3D"snowflake" style=3D"font-si=
+ze: 22.4824px; left: 20.0736%; animation-duration: 13.3153s; animation-dela=
+y: 2.15809s;">=E2=9D=84</div><div class=3D"snowflake" style=3D"font-size: 1=
+8.5007px; left: 85.7368%; animation-duration: 13.2296s; animation-delay: 3.=
+11637s;">=E2=9D=84</div><div class=3D"snowflake" style=3D"font-size: 22.009=
+4px; left: 67.4769%; animation-duration: 9.97296s; animation-delay: 3.86548=
+s;">=E2=9D=84</div><div class=3D"snowflake" style=3D"font-size: 12.1441px; =
+left: 23.8737%; animation-duration: 5.10743s; animation-delay: 3.14235s;">=
+=E2=9D=84</div><div class=3D"snowflake" style=3D"font-size: 13.9706px; left=
+: 77.391%; animation-duration: 10.8309s; animation-delay: 0.907498s;">=E2=
+=9D=84</div><div class=3D"snowflake" style=3D"font-size: 10.1224px; left: 6=
+5.9207%; animation-duration: 6.40373s; animation-delay: 1.26639s;">=E2=9D=
+=84</div><div class=3D"snowflake" style=3D"font-size: 16.0006px; left: 12.8=
+152%; animation-duration: 8.05917s; animation-delay: 1.72955s;">=E2=9D=84</=
+div><div class=3D"snowflake" style=3D"font-size: 16.143px; left: 58.2961%; =
+animation-duration: 10.8557s; animation-delay: 2.32267s;">=E2=9D=84</div><d=
+iv class=3D"snowflake" style=3D"font-size: 14.7039px; left: 59.5527%; anima=
+tion-duration: 11.678s; animation-delay: 0.831933s;">=E2=9D=84</div><div cl=
+ass=3D"snowflake" style=3D"font-size: 25.7704px; left: 63.5163%; animation-=
+duration: 12.3693s; animation-delay: 1.06476s;">=E2=9D=84</div></div>
+            <div class=3D"festive-content">
+                <h2 class=3D"festive-title">
+                    <span>=F0=9F=8E=84 Holiday Sprint Tracker =F0=9F=8E=85<=
+/span>
+                    <div class=3D"festive-icons">
+                        <span class=3D"festive-icon">=E2=9B=84</span>
+                        <span class=3D"festive-icon">=F0=9F=8E=81</span>
+                        <span class=3D"festive-icon">=F0=9F=8C=9F</span>
+                    </div>
+                </h2>
+                <p style=3D"color: white; margin-bottom: 20px; font-size: 1=
+.1rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.3);">
+                    Stay on track with your project timeline during the hol=
+iday season!
+                </p>
+                <div class=3D"festive-buttons">
+                    <a href=3D"https://codd.cs.gsu.edu/~lhenry23/mobileappd=
+ev/Projects/Project2/Sprint_box.html" class=3D"festive-link">
+                        <span>=F0=9F=8E=81</span>
+                        Track your Sprint Box timeline here
+                    </a>
+                    <button id=3D"festiveMustReadBtn" class=3D"festive-butt=
+on">
+                        <span>=E2=9A=A0=EF=B8=8F</span>
+                        MUST READ
+                        <span class=3D"button-pulse"></span>
+                    </button>
+                </div>
+           </div>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class=3D"projects-grid">
+            <!-- Project 1 -->
+            <div class=3D"project-card" style=3D"opacity: 1; transform: tra=
+nslateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                <div class=3D"project-header">
+                    <div class=3D"project-icon">=F0=9F=8E=B5</div>
+                    <h3 class=3D"project-title">Vibzcheck</h3>
+                    <p class=3D"project-subtitle">Collaborative Music App</=
+p>
+                </div>
+                <div class=3D"project-body">
+                    <div class=3D"project-concept">
+                        <h4>Core Concept</h4>
+                        <p>Move beyond solitary playlists. Vibzcheck transf=
+orms music into a shared, dynamic language for friends and communities. It'=
+s the digital equivalent of passing around the aux cable at a party, but su=
+percharged: everyone can add to the queue, vote on the next track, and chat=
+ in real-time, ensuring the music perfectly mirrors the collective vibe of =
+any gathering.</p>
+                    </div>
+                   =20
+                    <button class=3D"features-toggle">
+                        <span>View Core Features &amp; Challenges</span>
+                        <span class=3D"toggle-icon">=E2=96=BC</span>
+                    </button>
+                    <div class=3D"features-content">
+                        <div class=3D"features-list">
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 1</span>
+                                User Authentication &amp; Profiles
+                            </div>
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 2</span>
+                                Collaborative Playlist System
+                            </div>
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 2</span>
+                                Democratic Voting System
+                            </div>
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 2</span>
+                                Spotify API Integration
+                            </div>
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 3</span>
+                                Playlist Chat Rooms
+                            </div>
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 3</span>
+                                Music Genre &amp; Mood Tagging: Automatical=
+ly tag added songs with genres and moods using the Spotify API, allowing us=
+ers to filter and sort playlists by vibe.
+                            </div>
+                        </div>
+                        <div class=3D"challenges">
+                            <h4>=E2=9A=A1 Must-Solve Challenge</h4>
+                            <div class=3D"challenge-item">Real-time vote sy=
+nchronization across multiple users</div>
+                            <div class=3D"challenge-item">Integrating exter=
+nal Spotify API with Firebase data</div>
+                            <div class=3D"challenge-item">Managing complex =
+playlist state with voting logic</div>
+                            <div class=3D"challenge-item">Caching and offli=
+ne playback of 30-second previews for a seamless experience</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class=3D"project-card" style=3D"opacity: 1; transform: tra=
+nslateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                <div class=3D"project-header">
+                    <div class=3D"project-icon">=F0=9F=8E=93</div>
+                    <h3 class=3D"project-title">QuadConnect</h3>
+                    <p class=3D"project-subtitle">Student Social Network</p=
+>
+                </div>
+                <div class=3D"project-body">
+                    <div class=3D"project-concept">
+                        <h4>Core Concept</h4>
+                        <p>Campus life is a world unto itself, and QuadConn=
+ect is its digital heartbeat. This platform closes the gap between classmat=
+es, clubs, and courses, creating a hyper-relevant social layer for academic=
+ life where students discover study partners, rally for events, and build l=
+asting connections.</p>
+                    </div>
+                   =20
+                    <button class=3D"features-toggle">
+                        <span>View Core Features &amp; Challenges</span>
+                        <span class=3D"toggle-icon">=E2=96=BC</span>
+                    </button>
+                    <div class=3D"features-content">
+                        <div class=3D"features-list">
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 1</span>
+                                Authentication &amp; Student Profiles
+                            </div>
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 2</span>
+                                Dynamic News Feed
+                            </div>
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 2</span>
+                                Social Engagement System
+                            </div>
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 3</span>
+                                Direct Messaging
+                            </div>
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 3</span>
+                                Push Notifications
+                            </div>
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 3</span>
+                                Campus Events &amp; Club Hub: A dedicated s=
+ection for discovering, promoting, and RSVPing to campus events and club me=
+etings, integrated with the main feed.
+                            </div>
+                        </div>
+                        <div class=3D"challenges">
+                            <h4>=E2=9A=A1 Must-Solve Challenge</h4>
+                            <div class=3D"challenge-item">Building an effic=
+ient real-time feed with image loading</div>
+                            <div class=3D"challenge-item">Managing notifica=
+tion state across app and system</div>
+                            <div class=3D"challenge-item">Implementing thre=
+aded comments with proper nesting</div>
+                            <div class=3D"challenge-item">Handling data pag=
+ination for large feeds and user lists to ensure app performance</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class=3D"project-card" style=3D"opacity: 1; transform: tra=
+nslateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                <div class=3D"project-header">
+                    <div class=3D"project-icon">=F0=9F=8D=94</div>
+                    <h3 class=3D"project-title">The Food Runner</h3>
+                    <p class=3D"project-subtitle">Food Delivery Platform</p=
+>
+                </div>
+                <div class=3D"project-body">
+                    <div class=3D"project-concept">
+                        <h4>Core Concept</h4>
+                        <p>The Food Runner is a synchronized ecosystem that=
+ orchestrates the dance between a customer's craving, a restaurant's kitche=
+n, and a driver's route, creating a seamless, transparent flow of informati=
+on and goods.</p>
+                    </div>
+                   =20
+                    <button class=3D"features-toggle">
+                        <span>View Core Features &amp; Challenges</span>
+                        <span class=3D"toggle-icon">=E2=96=BC</span>
+                    </button>
+                    <div class=3D"features-content">
+                        <div class=3D"features-list">
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 1</span>
+                                Multi-Role Authentication
+                            </div>
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 2</span>
+                                Restaurant Discovery &amp; Menus
+                            </div>
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 2</span>
+                                Order Placement &amp; Tracking
+                            </div>
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 3</span>
+                                Driver Order Management
+                            </div>
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 3</span>
+                                Order History &amp; Reviews
+                            </div>
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 3</span>
+                                Live Driver GPS Tracking: Integrate a map v=
+iew for customers to see the real-time location of their delivery driver on=
+ the way to their door.
+                            </div>
+                        </div>
+                        <div class=3D"challenges">
+                            <h4>=E2=9A=A1 Must-Solve Challenge</h4>
+                            <div class=3D"challenge-item">Managing three di=
+stinct user experiences in one app</div>
+                            <div class=3D"challenge-item">Real-time order s=
+tatus synchronization across all parties</div>
+                            <div class=3D"challenge-item">Building efficien=
+t role-based data access patterns</div>
+                            <div class=3D"challenge-item">Optimizing the dr=
+iver assignment logic based on proximity and current order load</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class=3D"project-card" style=3D"opacity: 1; transform: tra=
+nslateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                <div class=3D"project-header">
+                    <div class=3D"project-icon">=F0=9F=8F=A0</div>
+                    <h3 class=3D"project-title">PropertyPulse</h3>
+                    <p class=3D"project-subtitle">Real Estate Marketplace</=
+p>
+                </div>
+                <div class=3D"project-body">
+                    <div class=3D"project-concept">
+                        <h4>Core Concept</h4>
+                        <p>PropertyPulse moves beyond static listings to cr=
+eate an interactive exploration experience, empowering users to make one of=
+ life's biggest decisions with confidence and clarity by curating shortlist=
+s and communicating directly with sellers.</p>
+                    </div>
+                   =20
+                    <button class=3D"features-toggle">
+                        <span>View Core Features &amp; Challenges</span>
+                        <span class=3D"toggle-icon">=E2=96=BC</span>
+                    </button>
+                    <div class=3D"features-content">
+                        <div class=3D"features-list">
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 1</span>
+                                User Authentication &amp; Profiles
+                            </div>
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 2</span>
+                                Property Listing Management
+                            </div>
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 2</span>
+                                Advanced Property Search
+                            </div>
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 3</span>
+                                Favorites &amp; Comparison
+                            </div>
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 3</span>
+                                In-App Messaging
+                            </div>
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 3</span>
+                                Virtual Tour Scheduling: Allow potential bu=
+yers to schedule live virtual tours or in-person viewings directly through =
+the app, syncing with the seller's calendar.
+                            </div>
+                        </div>
+                        <div class=3D"challenges">
+                            <h4>=E2=9A=A1 Must-Solve Challenge</h4>
+                            <div class=3D"challenge-item">Implementing comp=
+lex search filters with Firestore queries</div>
+                            <div class=3D"challenge-item">Managing large im=
+age galleries efficiently</div>
+                            <div class=3D"challenge-item">Building an intui=
+tive property comparison interface</div>
+                            <div class=3D"challenge-item">Implementing a ro=
+bust calendar synchronization system to avoid double-booking</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 5 -->
+            <div class=3D"project-card" style=3D"opacity: 1; transform: tra=
+nslateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                <div class=3D"project-header">
+                    <div class=3D"project-icon">=F0=9F=97=BA=EF=B8=8F</div>
+                    <h3 class=3D"project-title">ARQuest</h3>
+                    <p class=3D"project-subtitle">AR Scavenger Hunt</p>
+                </div>
+                <div class=3D"project-body">
+                    <div class=3D"project-concept">
+                        <h4>Core Concept</h4>
+                        <p>ARQuest turns the entire world into a playground=
+ for imagination, overlaying a layer of magic and mystery onto familiar loc=
+ations. Users follow digital clues to discover hidden virtual treasures, tr=
+ansforming a simple walk into an epic adventure.</p>
+                    </div>
+                   =20
+                    <button class=3D"features-toggle">
+                        <span>View Core Features &amp; Challenges</span>
+                        <span class=3D"toggle-icon">=E2=96=BC</span>
+                    </button>
+                    <div class=3D"features-content">
+                        <div class=3D"features-list">
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 1</span>
+                                User Authentication &amp; Profiles
+                            </div>
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 2</span>
+                                Hunt Creation System
+                            </div>
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 2</span>
+                                GPS Location Integration
+                            </div>
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 3</span>
+                                AR Discovery Experience
+                            </div>
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 3</span>
+                                Leaderboards &amp; Progress
+                            </div>
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 3</span>
+                                AR Photo Mode with Stickers: Allow users to=
+ take photos within the AR view, automatically adding fun filters and virtu=
+al object stickers related to the treasure they found.
+                            </div>
+                        </div>
+                        <div class=3D"challenges">
+                            <h4>=E2=9A=A1 Must-Solve Challenge</h4>
+                            <div class=3D"challenge-item">Integrating AR ca=
+mera with GPS coordinates</div>
+                            <div class=3D"challenge-item">Managing location=
+ permissions and accuracy</div>
+                            <div class=3D"challenge-item">Creating an engag=
+ing AR discovery experience</div>
+                            <div class=3D"challenge-item">Handling AR scene=
+ persistence and object stability across different device models and lighti=
+ng conditions</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 6 -->
+            <div class=3D"project-card" style=3D"opacity: 1; transform: tra=
+nslateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                <div class=3D"project-header">
+                    <div class=3D"project-icon">=F0=9F=93=9A</div>
+                    <h3 class=3D"project-title">FocusNFlow</h3>
+                    <p class=3D"project-subtitle">Campus Study Organizer</p=
+>
+                </div>
+                <div class=3D"project-body">
+                    <div class=3D"project-concept">
+                        <h4>Core Concept</h4>
+                        <p>FocusNFlow solves the universal student struggle=
+ with data-driven efficiency, providing a live map of campus resource avail=
+ability and a direct line to form study groups, replacing frantic chats wit=
+h organized, productive collaboration.</p>
+                    </div>
+                   =20
+                    <button class=3D"features-toggle">
+                        <span>View Core Features &amp; Challenges</span>
+                        <span class=3D"toggle-icon">=E2=96=BC</span>
+                    </button>
+                    <div class=3D"features-content">
+                        <div class=3D"features-list">
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 1</span>
+                                Campus Authentication
+                            </div>
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 2</span>
+                                Study Room Finder
+                            </div>
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 2</span>
+                                Study Group Formation
+                            </div>
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 3</span>
+                                Group Chat System
+                            </div>
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 3</span>
+                                Study Session Scheduling
+                            </div>
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 3</span>
+                                Shared Study Timer &amp; Goals: Integrate a=
+ collaborative Pomodoro timer and session goal-setting feature within study=
+ groups to maximize focused work time.
+                            </div>
+                        </div>
+                        <div class=3D"challenges">
+                            <h4>=E2=9A=A1 Must-Solve Challenge</h4>
+                            <div class=3D"challenge-item">Building a real-t=
+ime occupancy tracking system</div>
+                            <div class=3D"challenge-item">Managing course-c=
+entric data organization</div>
+                            <div class=3D"challenge-item">Coordinating grou=
+p schedules efficiently</div>
+                            <div class=3D"challenge-item">Synchronizing the=
+ state of a shared timer across all group members in real-time</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 7 -->
+            <div class=3D"project-card" style=3D"opacity: 1; transform: tra=
+nslateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                <div class=3D"project-header">
+                    <div class=3D"project-icon">=E2=9A=94=EF=B8=8F</div>
+                    <h3 class=3D"project-title">StepQuest</h3>
+                    <p class=3D"project-subtitle">Fitness RPG Game</p>
+                </div>
+                <div class=3D"project-body">
+                    <div class=3D"project-concept">
+                        <h4>Core Concept</h4>
+                        <p>StepQuest re-frames exercise from a chore into a=
+n epic narrative, where your daily steps power a heroic journey across fant=
+astical lands, fuel battles, and earn legendary loot, making fitness addict=
+ive and rewarding.</p>
+                    </div>
+                   =20
+                    <button class=3D"features-toggle">
+                        <span>View Core Features &amp; Challenges</span>
+                        <span class=3D"toggle-icon">=E2=96=BC</span>
+                    </button>
+                    <div class=3D"features-content">
+                        <div class=3D"features-list">
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 1</span>
+                                Character Creation &amp; Profiles
+                            </div>
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 2</span>
+                                Step Tracking Integration
+                            </div>
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 2</span>
+                                Battle &amp; Encounter System
+                            </div>
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 3</span>
+                                Character Progression
+                            </div>
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 3</span>
+                                Daily Quest System
+                            </div>
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 3</span>
+                                Guilds &amp; Cooperative Quests: Allow play=
+ers to form "Guilds" and work together on weekly cooperative step goals to =
+earn exclusive shared rewards.
+                            </div>
+                        </div>
+                        <div class=3D"challenges">
+                            <h4>=E2=9A=A1 Must-Solve Challenge</h4>
+                            <div class=3D"challenge-item">Integrating devic=
+e pedometer with game logic</div>
+                            <div class=3D"challenge-item">Balancing game me=
+chanics tied to real fitness activity</div>
+                            <div class=3D"challenge-item">Managing persiste=
+nt character state in Firebase</div>
+                            <div class=3D"challenge-item">Designing and imp=
+lementing a fair and engaging guild-based leaderboard system</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 8 -->
+            <div class=3D"project-card" style=3D"opacity: 1; transform: tra=
+nslateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                <div class=3D"project-header">
+                    <div class=3D"project-icon">=E2=9C=88=EF=B8=8F</div>
+                    <h3 class=3D"project-title">TropicaGuide</h3>
+                    <p class=3D"project-subtitle">Travel Planner</p>
+                </div>
+                <div class=3D"project-body">
+                    <div class=3D"project-concept">
+                        <h4>Core Concept</h4>
+                        <p>TropicaGuide transforms stressful trip planning =
+into a fun, collaborative, and gamified part of the adventure, acting as a =
+digital travel buddy that helps groups build dream itineraries together.</p=
+>
+                    </div>
+                   =20
+                    <button class=3D"features-toggle">
+                        <span>View Core Features &amp; Challenges</span>
+                        <span class=3D"toggle-icon">=E2=96=BC</span>
+                    </button>
+                    <div class=3D"features-content">
+                        <div class=3D"features-list">
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 1</span>
+                                Traveler Authentication &amp; Profiles
+                            </div>
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 2</span>
+                                Itinerary Creation
+                            </div>
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 2</span>
+                                Activity Database &amp; Search
+                            </div>
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 3</span>
+                                Collaborative Trip Planning
+                            </div>
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 3</span>
+                                Trip Checklist &amp; Toolkit
+                            </div>
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 3</span>
+                                Real-Time Collaborative Packing List: A sha=
+red packing list for travel groups where members can check off items, preve=
+nting duplicates and ensuring nothing is forgotten.
+                            </div>
+                        </div>
+                        <div class=3D"challenges">
+                            <h4>=E2=9A=A1 Must-Solve Challenge</h4>
+                            <div class=3D"challenge-item">Building an intui=
+tive drag-and-drop itinerary interface</div>
+                            <div class=3D"challenge-item">Real-time collabo=
+rative editing synchronization</div>
+                            <div class=3D"challenge-item">Managing complex =
+nested trip data structure</div>
+                            <div class=3D"challenge-item">Resolving merge c=
+onflicts when multiple users edit the same section of the itinerary or pack=
+ing list simultaneously</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 9 -->
+            <div class=3D"project-card" style=3D"opacity: 1; transform: tra=
+nslateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                <div class=3D"project-header">
+                    <div class=3D"project-icon">=F0=9F=92=AA</div>
+                    <h3 class=3D"project-title">Beast Mode</h3>
+                    <p class=3D"project-subtitle">Social Fitness Tracker</p=
+>
+                </div>
+                <div class=3D"project-body">
+                    <div class=3D"project-concept">
+                        <h4>Core Concept</h4>
+                        <p>Beast Mode weaponizes social accountability by m=
+aking your workout journey visible and interactive, creating a positive com=
+munity where achievements are celebrated and challenges fuel motivation.</p=
+>
+                    </div>
+                   =20
+                    <button class=3D"features-toggle">
+                        <span>View Core Features &amp; Challenges</span>
+                        <span class=3D"toggle-icon">=E2=96=BC</span>
+                    </button>
+                    <div class=3D"features-content">
+                        <div class=3D"features-list">
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 1</span>
+                                User Authentication &amp; Fitness Profiles
+                            </div>
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 2</span>
+                                Workout Logging System
+                            </div>
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 2</span>
+                                Social Activity Feed
+                            </div>
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 3</span>
+                                Challenge System
+                            </div>
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 3</span>
+                                Progress Dashboard
+                            </div>
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 3</span>
+                                Pre &amp; Post Workout Photo Journal: A tim=
+eline feature for users to optionally document their physical transformatio=
+n with photos, linked to their workout history.
+                            </div>
+                        </div>
+                        <div class=3D"challenges">
+                            <h4>=E2=9A=A1 Must-Solve Challenge</h4>
+                            <div class=3D"challenge-item">Creating an engag=
+ing social feed with fitness data</div>
+                            <div class=3D"challenge-item">Building a compet=
+itive yet motivating challenge system</div>
+                            <div class=3D"challenge-item">Visualizing fitne=
+ss progress with charts and graphs</div>
+                            <div class=3D"challenge-item">Sensitively handl=
+ing user-generated photo data with robust privacy controls and optional blu=
+rring</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 10 -->
+            <div class=3D"project-card" style=3D"opacity: 1; transform: tra=
+nslateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                <div class=3D"project-header">
+                    <div class=3D"project-icon">=F0=9F=A5=BE</div>
+                    <h3 class=3D"project-title">BigFoot</h3>
+                    <p class=3D"project-subtitle">Hiking &amp; Outdoor Adve=
+nture Tracker</p>
+                </div>
+                <div class=3D"project-body">
+                    <div class=3D"project-concept">
+                        <h4>Core Concept</h4>
+                        <p>BigFoot is the ultimate digital companion for hi=
+kers, acting as a journal, guidebook, and trophy case that validates effort=
+s by tracking routes, connecting a passionate community, and rewarding expl=
+oration.</p>
+                    </div>
+                   =20
+                    <button class=3D"features-toggle">
+                        <span>View Core Features &amp; Challenges</span>
+                        <span class=3D"toggle-icon">=E2=96=BC</span>
+                    </button>
+                    <div class=3D"features-content">
+                        <div class=3D"features-list">
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 1</span>
+                                User Authentication &amp; Adventurer Profil=
+es
+                            </div>
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 2</span>
+                                Trail Database &amp; Discovery
+                            </div>
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 2</span>
+                                GPS Hike Tracking
+                            </div>
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 3</span>
+                                Social Trail Feed &amp; Reviews
+                            </div>
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 3</span>
+                                Achievement &amp; Stats System
+                            </div>
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 3</span>
+                                Offline Maps &amp; Trail Data: Implement fu=
+nctionality to download trail maps and key data for offline use, crucial fo=
+r remote hiking areas with poor connectivity.
+                            </div>
+                        </div>
+                        <div class=3D"challenges">
+                            <h4>=E2=9A=A1 Must-Solve Challenge</h4>
+                            <div class=3D"challenge-item">Implementing accu=
+rate GPS tracking with battery optimization</div>
+                            <div class=3D"challenge-item">Managing offline =
+functionality for remote trail areas</div>
+                            <div class=3D"challenge-item">Building an engag=
+ing achievement system tied to real outdoor activity</div>
+                            <div class=3D"challenge-item">Calculating and d=
+isplaying accurate elevation gain/loss from potentially noisy GPS data</div=
+>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 11 -->
+            <div class=3D"project-card" style=3D"opacity: 1; transform: tra=
+nslateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                <div class=3D"project-header">
+                    <div class=3D"project-icon">=F0=9F=A7=98</div>
+                    <h3 class=3D"project-title">Mental Zen</h3>
+                    <p class=3D"project-subtitle">Mental Wellness Journal</=
+p>
+                </div>
+                <div class=3D"project-body">
+                    <div class=3D"project-concept">
+                        <h4>Core Concept</h4>
+                        <p>Mental Zen offers a private, secure harbor for y=
+our thoughts and emotions, providing gentle insights through structured jou=
+rnaling and mood tracking to help users understand their inner world and cu=
+ltivate lasting mental wellness.</p>
+                    </div>
+                   =20
+                    <button class=3D"features-toggle">
+                        <span>View Core Features &amp; Challenges</span>
+                        <span class=3D"toggle-icon">=E2=96=BC</span>
+                    </button>
+                    <div class=3D"features-content">
+                        <div class=3D"features-list">
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 1</span>
+                                Secure Authentication &amp; Privacy
+                            </div>
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 2</span>
+                                Daily Mood Tracking
+                            </div>
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 2</span>
+                                Journal Entry System
+                            </div>
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 3</span>
+                                Insights &amp; Analytics
+                            </div>
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 3</span>
+                                Mindfulness Resources
+                            </div>
+                            <div class=3D"feature-item">
+                                <span class=3D"feature-week">Week 3</span>
+                                Customizable Wellness Reminders: Allow user=
+s to set personalized, gentle reminders for journaling, breathing exercises=
+, or positive affirmations based on their goals and time of day.
+                            </div>
+                        </div>
+                        <div class=3D"challenges">
+                            <h4>=E2=9A=A1 Must-Solve Challenge</h4>
+                            <div class=3D"challenge-item">Implementing secu=
+re, private data storage</div>
+                            <div class=3D"challenge-item">Creating an intui=
+tive mood tracking interface</div>
+                            <div class=3D"challenge-item">Building meaningf=
+ul analytics from emotional data</div>
+                            <div class=3D"challenge-item">Designing a non-i=
+ntrusive reminder system that promotes wellness without causing stress or n=
+otification fatigue</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class=3D"footer">
+        <p>=F0=9F=8E=84 Happy Holidays from the <b>MAD Team!! </b>=F0=9F=8E=
+=85</p>
+        <p>Wishing you a productive and joyful holiday season filled with c=
+oding success!</p>
+        <div class=3D"footer-icons">
+            <span class=3D"footer-icon">=E2=9D=84=EF=B8=8F</span>
+            <span class=3D"footer-icon">=F0=9F=8E=81</span>
+            <span class=3D"footer-icon">=F0=9F=8C=9F</span>
+            <span class=3D"footer-icon">=F0=9F=A6=8C</span>
+            <span class=3D"footer-icon">=E2=9B=84</span>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class=3D"back-to-top visible" id=3D"backToTop">=E2=86=91</butto=
+n>
+
+    <!-- Must Read Modal -->
+    <div id=3D"mustReadModal" class=3D"modal">
+        <div class=3D"modal-content">
+            <div class=3D"modal-header">
+                <h2>=E2=9A=A0=EF=B8=8F Must Read: Critical Demo Guidelines<=
+/h2>
+                <span class=3D"close-modal">=C3=97</span>
+            </div>
+            <div class=3D"modal-body">
+                <div class=3D"warning-banner">
+                    <strong>Important Notice:</strong> Grading standards wi=
+ll be more rigorous than Project 1 - All Members Must be involved - Yes!! w=
+e will critique separate contributions, so be ready!
+                </div>
+               =20
+                <div class=3D"guidelines-section">
+                    <h3>Demo Requirements</h3>
+                    <p>A clear and thorough demonstration is <strong>critic=
+al for assessment</strong>. All team members must be prepared to:</p>
+                   =20
+                    <div class=3D"requirement-item">
+                        <div class=3D"req-icon">=F0=9F=93=96</div>
+                        <div class=3D"req-text">
+                            <strong>Provide detailed code explanation:</str=
+ong> Walk through your codebase, explaining the role and functionality of e=
+ach key file and how they integrate in your project folder structure (VS-Co=
+de).
+                        </div>
+                    </div>
+                   =20
+                    <div class=3D"requirement-item">
+                        <div class=3D"req-icon">=F0=9F=9A=80</div>
+                        <div class=3D"req-text">
+                            <strong>Execute live, functional demo:</strong>=
+ Demonstrate the application running successfully. You must explicitly show=
+ Firebase integration in action.
+                        </div>
+                    </div>
+                </div>
+
+                <div class=3D"grading-section">
+                    <h3>=F0=9F=93=8A Key Areas for Grading Impact</h3>
+                    <p>This demo directly impacts these categories, which w=
+ill be graded <strong>strictly</strong>:</p>
+                   =20
+                    <div class=3D"points-grid">
+                        <div class=3D"point-item">
+                            <span class=3D"point-value">20 pts</span>
+                            <span class=3D"point-category">Code Explanation=
+ (Demo)</span>
+                        </div>
+                        <div class=3D"point-item">
+                            <span class=3D"point-value">10 pts</span>
+                            <span class=3D"point-category">Team Collaborati=
+on Logs</span>
+                        </div>
+                        <div class=3D"point-item">
+                            <span class=3D"point-value">10 pts</span>
+                            <span class=3D"point-category">Code Readability=
+ &amp; Comments</span>
+                        </div>
+                        <div class=3D"point-item">
+                            <span class=3D"point-value">15 pts</span>
+                            <span class=3D"point-category">Milestone Achiev=
+ement</span>
+                        </div>
+                        <div class=3D"point-item">
+                            <span class=3D"point-value">15 pts</span>
+                            <span class=3D"point-category">Functionality &a=
+mp; Testing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class=3D"final-note">
+                    <p>=F0=9F=9A=A8 <strong>Please ensure your team is full=
+y prepared to meet these expectations.</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   =20
+
+</body></html>
+------MultipartBoundary--UG5z902iVTbDDPYXwSpN5S8XlziGV4ztWH2IYz52W1----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://codd.cs.gsu.edu/~lhenry23/mobileappdev/Projects/Project2/styles1.css
+
+@charset "utf-8";
+
+* { margin: 0px; padding: 0px; box-sizing: border-box; }
+
+:root { --primary-color: #667eea; --secondary-color: #764ba2; --accent-colo=
+r: #ff6b6b; --dark-bg: #1a1a2e; --card-bg: rgba(30, 30, 46, 0.7); --text-li=
+ght: #eee; --text-muted: #aaa; --christmas-red: #b22222; --christmas-green:=
+ #006400; --christmas-gold: #ffd700; --christmas-silver: #c0c0c0; --masters=
+-color: #ff9800; --masters-bg: rgba(255, 152, 0, 0.1); }
+
+body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; backgr=
+ound: var(--dark-bg); color: var(--text-light); line-height: 1.6; overflow-=
+x: hidden; }
+
+.container { max-width: 1400px; margin: 0px auto; padding: 20px; }
+
+.sticky-nav { position: sticky; top: 0px; z-index: 1000; background: rgba(2=
+6, 26, 46, 0.95); backdrop-filter: blur(10px); padding: 15px 0px; box-shado=
+w: rgba(0, 0, 0, 0.3) 0px 4px 20px; transition: 0.3s; }
+
+.nav-container { max-width: 1400px; margin: 0px auto; padding: 0px 20px; di=
+splay: flex; justify-content: space-between; align-items: center; }
+
+.nav-logo { font-size: 1.5rem; font-weight: 700; background-image: ; backgr=
+ound-position-x: ; background-position-y: ; background-size: ; background-r=
+epeat: ; background-attachment: ; background-origin: ; background-color: ; =
+background-clip: text; -webkit-text-fill-color: transparent; display: flex;=
+ align-items: center; gap: 10px; }
+
+.nav-links { display: flex; gap: 25px; }
+
+.nav-link { color: var(--text-light); text-decoration: none; font-weight: 5=
+00; padding: 8px 15px; border-radius: 8px; transition: 0.3s; }
+
+.nav-link:hover { background: rgba(102, 126, 234, 0.1); color: var(--primar=
+y-color); }
+
+.mobile-menu-btn { display: none; background: none; border: none; color: va=
+r(--text-light); font-size: 1.5rem; cursor: pointer; }
+
+.hero { background: var(--card-bg); backdrop-filter: blur(10px); border-rad=
+ius: 15px; padding: 40px 30px; margin-bottom: 30px; box-shadow: rgba(0, 0, =
+0, 0.4) 0px 8px 32px; border: 1px solid rgba(255, 255, 255, 0.1); text-alig=
+n: center; position: relative; overflow: hidden; }
+
+.hero::before { content: ""; position: absolute; top: -50%; left: -50%; wid=
+th: 200%; height: 200%; background: radial-gradient(circle, rgba(102, 126, =
+234, 0.1) 0%, rgba(118, 75, 162, 0.05) 70%, transparent 100%); z-index: -1;=
+ }
+
+.hero h1 { font-size: 2.5rem; background-image: ; background-position-x: ; =
+background-position-y: ; background-size: ; background-repeat: ; background=
+-attachment: ; background-origin: ; background-color: ; background-clip: te=
+xt; -webkit-text-fill-color: transparent; margin-bottom: 15px; }
+
+.hero-subtitle { font-size: 1.2rem; color: var(--text-muted); margin-bottom=
+: 20px; }
+
+.tech-stack { display: flex; justify-content: center; gap: 15px; flex-wrap:=
+ wrap; margin-top: 25px; }
+
+.tech-badge { background: linear-gradient(135deg, var(--primary-color) 0%, =
+var(--secondary-color) 100%); color: white; padding: 10px 20px; border-radi=
+us: 25px; font-weight: 600; font-size: 0.9rem; transition: transform 0.3s; =
+}
+
+.tech-badge:hover { transform: translateY(-3px); }
+
+.dates-banner { background: linear-gradient(135deg, rgb(240, 147, 251) 0%, =
+rgb(245, 87, 108) 100%); color: white; padding: 25px; border-radius: 15px; =
+text-align: center; margin-bottom: 20px; box-shadow: rgba(0, 0, 0, 0.4) 0px=
+ 8px 32px; position: relative; overflow: hidden; }
+
+.dates-banner::before { content: ""; position: absolute; inset: 0px; backgr=
+ound: url("data:image/svg+xml,<svg xmlns=3D\"http://www.w3.org/2000/svg\" v=
+iewBox=3D\"0 0 100 100\" preserveAspectRatio=3D\"none\"><path d=3D\"M0,0 L1=
+00,0 L100,100 Z\" fill=3D\"rgba(255,255,255,0.1)\"/></svg>") 0% 0% / cover;=
+ z-index: 0; }
+
+.dates-banner h2 { margin-bottom: 15px; font-size: 1.6rem; position: relati=
+ve; z-index: 1; }
+
+.dates-flex { display: flex; justify-content: center; gap: 30px; flex-wrap:=
+ wrap; position: relative; z-index: 1; }
+
+.date-item { background: rgba(255, 255, 255, 0.2); padding: 15px 25px; bord=
+er-radius: 12px; backdrop-filter: blur(10px); transition: transform 0.3s; }
+
+.date-item:hover { transform: scale(1.05); }
+
+.date-item strong { display: block; font-size: 1.3rem; margin-bottom: 5px; =
+}
+
+.resources-section { background: var(--card-bg); backdrop-filter: blur(10px=
+); border-radius: 15px; padding: 25px; margin-bottom: 20px; box-shadow: rgb=
+a(0, 0, 0, 0.4) 0px 8px 32px; border: 1px solid rgba(255, 255, 255, 0.1); }
+
+.resources-section h2 { color: var(--primary-color); margin-bottom: 15px; t=
+ext-align: center; font-size: 1.6rem; }
+
+.resources-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap=
+: 15px; }
+
+.resource-card { background: rgba(255, 255, 255, 0.05); padding: 15px; bord=
+er-radius: 12px; border-top: 3px solid var(--accent-color); transition: tra=
+nsform 0.3s, box-shadow 0.3s; display: flex; flex-direction: column; height=
+: 100%; }
+
+.resource-card:hover { transform: translateY(-5px); box-shadow: rgba(0, 0, =
+0, 0.2) 0px 10px 20px; }
+
+.resource-card h3 { color: var(--accent-color); margin-bottom: 10px; font-s=
+ize: 1.1rem; }
+
+.resource-card ul { list-style: none; padding-left: 0px; flex-grow: 1; }
+
+.resource-card li { padding: 4px 0px; color: rgb(204, 204, 204); font-size:=
+ 0.85rem; }
+
+.resource-card li::before { content: "=E2=86=92 "; color: var(--accent-colo=
+r); font-weight: bold; }
+
+.resource-button { display: inline-block; background: linear-gradient(135de=
+g, var(--primary-color) 0%, var(--secondary-color) 100%); color: white; pad=
+ding: 12px 25px; border-radius: 25px; text-decoration: none; font-weight: 6=
+00; text-align: center; transition: 0.3s; border: none; cursor: pointer; ma=
+rgin-top: 15px; box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 15px; width: 100%; }
+
+.resource-button:hover { transform: translateY(-3px); box-shadow: rgba(0, 0=
+, 0, 0.3) 0px 6px 20px; background: linear-gradient(135deg, var(--secondary=
+-color) 0%, var(--primary-color) 100%); }
+
+.transform-section { background: var(--card-bg); backdrop-filter: blur(10px=
+); border-radius: 15px; padding: 35px; margin-bottom: 30px; box-shadow: rgb=
+a(0, 0, 0, 0.4) 0px 8px 32px; border: 1px solid rgba(255, 255, 255, 0.1); }
+
+.transform-section h2 { color: var(--primary-color); margin-bottom: 20px; f=
+ont-size: 1.8rem; display: flex; align-items: center; gap: 10px; }
+
+.transform-section > p { color: rgb(204, 204, 204); margin-bottom: 25px; li=
+ne-height: 1.8; font-size: 0.95rem; }
+
+.why-stands-out { margin-bottom: 30px; }
+
+.why-stands-out h3 { color: var(--primary-color); margin-bottom: 15px; font=
+-size: 1.3rem; }
+
+.highlights-grid { display: grid; grid-template-columns: repeat(auto-fit, m=
+inmax(280px, 1fr)); gap: 20px; margin-bottom: 30px; }
+
+.highlight-card { background: rgba(255, 255, 255, 0.05); padding: 20px; bor=
+der-radius: 12px; border-left: 4px solid var(--primary-color); transition: =
+transform 0.3s, box-shadow 0.3s; }
+
+.highlight-card:hover { transform: translateY(-3px); box-shadow: rgba(102, =
+126, 234, 0.2) 0px 8px 20px; }
+
+.highlight-card h4 { color: var(--primary-color); margin-bottom: 8px; font-=
+size: 1.1rem; }
+
+.highlight-card p { color: rgb(204, 204, 204); font-size: 0.9rem; line-heig=
+ht: 1.6; }
+
+.tech-section { background: linear-gradient(135deg, rgba(102, 126, 234, 0.1=
+) 0%, rgba(118, 75, 162, 0.1) 100%); padding: 25px; border-radius: 12px; bo=
+rder: 1px solid rgba(102, 126, 234, 0.2); }
+
+.tech-section h3 { color: var(--primary-color); margin-bottom: 20px; font-s=
+ize: 1.2rem; }
+
+.tech-items { display: grid; grid-template-columns: repeat(auto-fit, minmax=
+(220px, 1fr)); gap: 15px; }
+
+.tech-item { background: rgba(102, 126, 234, 0.1); padding: 15px; border-ra=
+dius: 10px; border-left: 3px solid var(--primary-color); transition: 0.3s; =
+}
+
+.tech-item:hover { background: rgba(102, 126, 234, 0.15); transform: transl=
+ateX(5px); }
+
+.tech-item-label { color: var(--primary-color); font-weight: 600; margin-bo=
+ttom: 5px; font-size: 0.95rem; }
+
+.tech-item-value { color: rgb(221, 221, 221); font-size: 0.9rem; }
+
+.timeline-section { background: var(--card-bg); backdrop-filter: blur(10px)=
+; border-radius: 15px; padding: 30px; margin-bottom: 30px; box-shadow: rgba=
+(0, 0, 0, 0.4) 0px 8px 32px; border: 1px solid rgba(255, 255, 255, 0.1); }
+
+.timeline-section h2 { text-align: center; font-size: 1.8rem; margin-bottom=
+: 10px; color: var(--primary-color); }
+
+.timeline-section > p { text-align: center; color: rgb(170, 170, 170); marg=
+in-bottom: 20px; }
+
+.timeline-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap:=
+ 15px; }
+
+.timeline-card { background: rgba(255, 255, 255, 0.05); padding: 20px; bord=
+er-radius: 12px; border-left: 4px solid var(--primary-color); transition: t=
+ransform 0.3s; }
+
+.timeline-card:hover { transform: translateY(-5px); }
+
+.timeline-card h3 { color: var(--primary-color); margin-bottom: 10px; font-=
+size: 1rem; }
+
+.timeline-card ul { list-style: none; padding-left: 0px; }
+
+.timeline-card li { padding: 4px 0px; color: rgb(204, 204, 204); font-size:=
+ 0.85rem; }
+
+.timeline-card li::before { content: "=E2=9C=93 "; color: var(--primary-col=
+or); font-weight: bold; }
+
+.requirements-section { background: var(--card-bg); backdrop-filter: blur(1=
+0px); border-radius: 15px; padding: 30px; margin-bottom: 30px; box-shadow: =
+rgba(0, 0, 0, 0.4) 0px 8px 32px; border: 1px solid rgba(255, 255, 255, 0.1)=
+; }
+
+.requirements-section h2 { color: var(--primary-color); margin-bottom: 20px=
+; text-align: center; }
+
+.requirements-grid { display: grid; grid-template-columns: repeat(3, 1fr); =
+gap: 20px; }
+
+.requirement-card { background: rgba(255, 255, 255, 0.05); padding: 20px; b=
+order-radius: 12px; border-top: 3px solid var(--accent-color); transition: =
+transform 0.3s; }
+
+.requirement-card:hover { transform: translateY(-5px); }
+
+.requirement-card h3 { color: var(--accent-color); margin-bottom: 12px; fon=
+t-size: 1.1rem; }
+
+.requirement-card ul { list-style: none; padding-left: 0px; }
+
+.requirement-card li { padding: 6px 0px; color: rgb(204, 204, 204); font-si=
+ze: 0.9rem; }
+
+.requirement-card li::before { content: "=E2=86=92 "; color: var(--accent-c=
+olor); font-weight: bold; }
+
+.festive-container { background: linear-gradient(135deg, var(--christmas-gr=
+een) 0%, var(--christmas-red) 100%); border-radius: 15px; padding: 30px; ma=
+rgin: 30px 0px; text-align: center; box-shadow: rgba(0, 0, 0, 0.4) 0px 10px=
+ 30px; position: relative; overflow: hidden; border: 2px solid var(--christ=
+mas-gold); }
+
+.festive-container::before { content: ""; position: absolute; inset: 0px; b=
+ackground: url("data:image/svg+xml,<svg xmlns=3D\"http://www.w3.org/2000/sv=
+g\" width=3D\"100\" height=3D\"100\" viewBox=3D\"0 0 100 100\"><path d=3D\"=
+M50,5 L60,40 L95,40 L65,60 L75,95 L50,75 L25,95 L35,60 L5,40 L40,40 Z\" fil=
+l=3D\"rgba(255,215,0,0.2)\"/></svg>") 0% 0% / 80px; opacity: 0.3; z-index: =
+0; }
+
+.festive-content { position: relative; z-index: 1; }
+
+.festive-title { font-size: 1.8rem; color: white; margin-bottom: 20px; text=
+-shadow: rgba(0, 0, 0, 0.3) 2px 2px 4px; display: flex; align-items: center=
+; justify-content: center; gap: 15px; }
+
+.festive-icons { display: flex; gap: 10px; }
+
+.festive-icon { font-size: 1.5rem; animation: 2s ease 0s infinite normal no=
+ne running bounce; }
+
+@keyframes bounce {=20
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.festive-buttons { display: flex; justify-content: center; gap: 20px; flex-=
+wrap: wrap; margin-top: 20px; }
+
+.festive-link { display: inline-flex; align-items: center; gap: 10px; backg=
+round: linear-gradient(135deg, var(--christmas-gold) 0%, #ffec8b 100%); col=
+or: rgb(139, 69, 19); padding: 15px 25px; border-radius: 50px; font-weight:=
+ 700; text-decoration: none; box-shadow: rgba(0, 0, 0, 0.3) 0px 6px 15px; t=
+ransition: 0.3s; border: 2px solid white; }
+
+.festive-link:hover { transform: translateY(-5px) scale(1.05); box-shadow: =
+rgba(0, 0, 0, 0.4) 0px 10px 20px; background: linear-gradient(135deg, #ffec=
+8b 0%, var(--christmas-gold) 100%); }
+
+.festive-button { background: linear-gradient(135deg, #ff6b6b 0%, var(--chr=
+istmas-red) 100%); color: white; padding: 15px 25px; border-radius: 50px; f=
+ont-weight: 800; font-size: 1rem; cursor: pointer; box-shadow: rgba(0, 0, 0=
+, 0.3) 0px 6px 15px; display: inline-flex; align-items: center; gap: 10px; =
+transition: 0.3s; border: 2px solid white; position: relative; }
+
+.festive-button:hover { transform: translateY(-5px) scale(1.05); box-shadow=
+: rgba(0, 0, 0, 0.4) 0px 10px 20px; background: linear-gradient(135deg, var=
+(--christmas-red) 0%, #ff6b6b 100%); }
+
+.button-pulse { position: absolute; top: -5px; right: -5px; width: 15px; he=
+ight: 15px; background: var(--christmas-gold); border-radius: 50%; animatio=
+n: 2s ease 0s infinite normal none running pulse; }
+
+.snowflakes { position: absolute; top: 0px; left: 0px; width: 100%; height:=
+ 100%; pointer-events: none; z-index: 0; }
+
+.snowflake { position: absolute; top: -10px; color: white; font-size: 1rem;=
+ animation: auto linear 0s infinite normal none running fall; }
+
+@keyframes fall {=20
+  100% { transform: translateY(100vh); }
+}
+
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fit, min=
+max(380px, 1fr)); gap: 25px; margin-top: 30px; }
+
+.project-card { background: var(--card-bg); backdrop-filter: blur(10px); bo=
+rder-radius: 15px; overflow: hidden; box-shadow: rgba(0, 0, 0, 0.4) 0px 8px=
+ 32px; border: 1px solid rgba(255, 255, 255, 0.1); transition: transform 0.=
+3s, box-shadow 0.3s; }
+
+.project-card:hover { transform: translateY(-5px); box-shadow: rgba(102, 12=
+6, 234, 0.3) 0px 12px 40px; }
+
+.project-header { padding: 25px; background: linear-gradient(135deg, var(--=
+primary-color) 0%, var(--secondary-color) 100%); color: white; position: re=
+lative; overflow: hidden; }
+
+.project-header::before { content: ""; position: absolute; top: -10px; righ=
+t: -10px; width: 80px; height: 80px; background: rgba(255, 255, 255, 0.1); =
+border-radius: 50%; }
+
+.project-icon { font-size: 2.5rem; margin-bottom: 8px; }
+
+.project-title { font-size: 1.6rem; margin-bottom: 5px; }
+
+.project-subtitle { opacity: 0.9; font-size: 0.95rem; }
+
+.project-body { padding: 25px; }
+
+.project-concept { background: rgba(255, 255, 255, 0.05); padding: 15px; bo=
+rder-radius: 10px; margin-bottom: 15px; border-left: 3px solid var(--primar=
+y-color); min-height: 120px; display: flex; flex-direction: column; }
+
+.project-concept h4 { color: var(--primary-color); margin-bottom: 8px; font=
+-size: 0.95rem; }
+
+.project-concept p { color: rgb(204, 204, 204); font-size: 0.85rem; line-he=
+ight: 1.5; }
+
+.masters-feature { background: var(--masters-bg); border: 2px solid var(--m=
+asters-color); border-radius: 10px; padding: 15px; margin: 15px 0px; positi=
+on: relative; box-shadow: rgba(255, 152, 0, 0.2) 0px 4px 12px; }
+
+.masters-feature-header { display: flex; align-items: center; gap: 10px; ma=
+rgin-bottom: 10px; color: var(--masters-color); font-weight: 700; font-size=
+: 1rem; }
+
+.masters-feature-header::before { content: "=F0=9F=8E=93"; font-size: 1.2re=
+m; }
+
+.masters-feature-content { color: rgb(221, 221, 221); font-size: 0.9rem; li=
+ne-height: 1.5; }
+
+.features-toggle { background: var(--primary-color); color: white; border: =
+none; padding: 12px 20px; border-radius: 8px; cursor: pointer; width: 100%;=
+ font-size: 0.95rem; font-weight: 600; display: flex; align-items: center; =
+justify-content: space-between; transition: background 0.3s; margin-bottom:=
+ 10px; }
+
+.features-toggle:hover { background: rgb(85, 104, 211); }
+
+.features-toggle.active { border-radius: 8px 8px 0px 0px; }
+
+.toggle-icon { transition: transform 0.3s; }
+
+.toggle-icon.rotated { transform: rotate(180deg); }
+
+.features-content { max-height: 0px; overflow: hidden; transition: max-heig=
+ht 0.4s; }
+
+.features-content.expanded { max-height: 1000px; }
+
+.features-list { padding: 15px; background: rgba(255, 255, 255, 0.03); bord=
+er-radius: 0px; margin-bottom: 15px; }
+
+.feature-item { background: rgba(102, 126, 234, 0.1); padding: 10px 12px; m=
+argin: 6px 0px; border-radius: 6px; border-left: 3px solid var(--primary-co=
+lor); font-size: 0.85rem; color: rgb(221, 221, 221); transition: transform =
+0.2s; }
+
+.feature-item:hover { transform: translateX(5px); }
+
+.feature-week { display: inline-block; background: var(--primary-color); co=
+lor: white; padding: 2px 8px; border-radius: 10px; font-size: 0.7rem; font-=
+weight: 600; margin-right: 8px; }
+
+.challenges { background: rgba(255, 193, 7, 0.1); padding: 15px; border-rad=
+ius: 10px; border-left: 3px solid rgb(255, 193, 7); }
+
+.challenges h4 { color: rgb(255, 193, 7); margin-bottom: 12px; font-size: 0=
+.95rem; display: flex; align-items: center; gap: 8px; }
+
+.challenge-item { padding: 8px 0px; color: rgb(221, 221, 221); font-size: 0=
+.85rem; line-height: 1.5; border-bottom: 1px solid rgba(255, 193, 7, 0.2); =
+margin-bottom: 8px; transition: padding-left 0.2s; }
+
+.challenge-item:hover { padding-left: 5px; }
+
+.challenge-item:last-child { border-bottom: none; margin-bottom: 0px; paddi=
+ng-bottom: 0px; }
+
+.challenge-item::before { content: "=E2=9A=A1 "; font-weight: bold; color: =
+rgb(255, 193, 7); }
+
+.modal { display: none; position: fixed; z-index: 1001; left: 0px; top: 0px=
+; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); backdrop=
+-filter: blur(5px); }
+
+.modal-content { background: var(--dark-bg); margin: 5% auto; padding: 0px;=
+ border-radius: 20px; width: 90%; max-width: 700px; box-shadow: rgba(0, 0, =
+0, 0.5) 0px 20px 60px; border: 2px solid rgba(255, 107, 107, 0.3); animatio=
+n: 0.3s ease-out 0s 1 normal none running modalSlideIn; }
+
+@keyframes modalSlideIn {=20
+  0% { opacity: 0; transform: translateY(-50px) scale(0.9); }
+  100% { opacity: 1; transform: translateY(0px) scale(1); }
+}
+
+.modal-header { background: linear-gradient(135deg, var(--accent-color) 0%,=
+ #ee5a24 100%); padding: 25px 30px; border-radius: 18px 18px 0px 0px; displ=
+ay: flex; justify-content: space-between; align-items: center; }
+
+.modal-header h2 { color: white; margin: 0px; font-size: 1.5rem; }
+
+.close-modal { color: white; font-size: 2rem; font-weight: bold; cursor: po=
+inter; transition: transform 0.2s; }
+
+.close-modal:hover { transform: scale(1.2); }
+
+.modal-body { padding: 30px; max-height: 70vh; overflow-y: auto; }
+
+.warning-banner { background: linear-gradient(135deg, rgba(255, 107, 107, 0=
+.2) 0%, rgba(238, 90, 36, 0.2) 100%); border: 2px solid var(--accent-color)=
+; border-radius: 12px; padding: 15px 20px; margin-bottom: 25px; text-align:=
+ center; font-weight: 600; color: var(--accent-color); }
+
+.guidelines-section, .grading-section { margin-bottom: 30px; }
+
+.guidelines-section h3, .grading-section h3 { color: var(--primary-color); =
+margin-bottom: 15px; font-size: 1.3rem; }
+
+.requirement-item { display: flex; align-items: flex-start; gap: 15px; marg=
+in-bottom: 20px; padding: 15px; background: rgba(255, 255, 255, 0.05); bord=
+er-radius: 10px; border-left: 4px solid var(--primary-color); }
+
+.req-icon { font-size: 1.5rem; flex-shrink: 0; }
+
+.req-text { color: rgb(221, 221, 221); line-height: 1.5; }
+
+.points-grid { display: grid; grid-template-columns: repeat(auto-fit, minma=
+x(200px, 1fr)); gap: 15px; margin-top: 15px; }
+
+.point-item { background: rgba(102, 126, 234, 0.1); padding: 15px; border-r=
+adius: 10px; border-left: 4px solid var(--primary-color); display: flex; fl=
+ex-direction: column; align-items: center; text-align: center; transition: =
+transform 0.3s; }
+
+.point-item:hover { transform: translateY(-5px); }
+
+.point-value { font-size: 1.3rem; font-weight: 800; color: var(--primary-co=
+lor); margin-bottom: 5px; }
+
+.point-category { color: rgb(204, 204, 204); font-size: 0.9rem; line-height=
+: 1.3; }
+
+.final-note { background: rgba(255, 193, 7, 0.1); border: 2px solid rgb(255=
+, 193, 7); border-radius: 12px; padding: 20px; text-align: center; margin-t=
+op: 25px; }
+
+.final-note p { color: rgb(255, 193, 7); margin: 0px; font-weight: 600; fon=
+t-size: 1.1rem; }
+
+.footer { background: var(--card-bg); backdrop-filter: blur(10px); border-r=
+adius: 15px; padding: 30px; margin-top: 30px; text-align: center; box-shado=
+w: rgba(0, 0, 0, 0.4) 0px 8px 32px; border: 1px solid rgba(255, 255, 255, 0=
+.1); }
+
+.footer p { margin-bottom: 15px; color: var(--text-muted); }
+
+.footer-icons { display: flex; justify-content: center; gap: 20px; margin-t=
+op: 15px; }
+
+.footer-icon { font-size: 1.5rem; transition: transform 0.3s; }
+
+.footer-icon:hover { transform: translateY(-5px); }
+
+.back-to-top { position: fixed; bottom: 30px; right: 30px; width: 50px; hei=
+ght: 50px; background: linear-gradient(135deg, var(--primary-color) 0%, var=
+(--secondary-color) 100%); color: white; border: none; border-radius: 50%; =
+font-size: 1.2rem; cursor: pointer; box-shadow: rgba(0, 0, 0, 0.3) 0px 4px =
+15px; display: flex; align-items: center; justify-content: center; transiti=
+on: 0.3s; z-index: 999; opacity: 0; visibility: hidden; }
+
+.back-to-top.visible { opacity: 1; visibility: visible; }
+
+.back-to-top:hover { transform: translateY(-5px); box-shadow: rgba(0, 0, 0,=
+ 0.4) 0px 8px 20px; }
+
+.scroll-progress { position: fixed; top: 0px; left: 0px; width: 0%; height:=
+ 4px; background: linear-gradient(135deg, var(--primary-color) 0%, var(--se=
+condary-color) 100%); z-index: 1001; transition: width 0.2s; }
+
+@media (max-width: 1024px) {
+  .timeline-grid { grid-template-columns: repeat(2, 1fr); }
+  .requirements-grid { grid-template-columns: 1fr; }
+  .highlights-grid { grid-template-columns: repeat(2, 1fr); }
+  .resources-grid { grid-template-columns: 1fr; }
+  .nav-links { display: none; position: absolute; top: 100%; left: 0px; rig=
+ht: 0px; background: rgba(26, 26, 46, 0.95); backdrop-filter: blur(10px); f=
+lex-direction: column; padding: 20px; box-shadow: rgba(0, 0, 0, 0.3) 0px 10=
+px 20px; }
+  .nav-links.active { display: flex; }
+  .mobile-menu-btn { display: block; }
+  .festive-buttons { flex-direction: column; align-items: center; }
+}
+
+@media (max-width: 768px) {
+  .hero h1 { font-size: 2rem; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .timeline-grid { grid-template-columns: 1fr; }
+  .highlights-grid { grid-template-columns: 1fr; }
+  .tech-items { grid-template-columns: 1fr; }
+  .requirements-grid { grid-template-columns: 1fr; }
+  .resources-grid { grid-template-columns: 1fr; }
+  .modal-content { margin: 10% auto; width: 95%; }
+  .modal-header { padding: 20px; }
+  .modal-header h2 { font-size: 1.3rem; }
+  .modal-body { padding: 20px; }
+  .points-grid { grid-template-columns: 1fr; }
+  .back-to-top { bottom: 20px; right: 20px; width: 45px; height: 45px; }
+  .festive-title { font-size: 1.5rem; flex-direction: column; gap: 10px; }
+}
+------MultipartBoundary--UG5z902iVTbDDPYXwSpN5S8XlziGV4ztWH2IYz52W1------
