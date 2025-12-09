@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Firebase Chat App',
+      title: 'Mental Zen',
       home: WelcomeScreen(authService, dbHelper),
     );
   }

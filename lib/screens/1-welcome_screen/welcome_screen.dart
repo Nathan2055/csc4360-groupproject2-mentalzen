@@ -19,7 +19,7 @@ class WelcomeScreen extends StatefulWidget {
 }
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
-  AppBar authScreenAppBar = AppBar(title: const Text('Firebase Chat App'));
+  AppBar authScreenAppBar = AppBar(title: const Text('Mental Zen'));
 
   // TextStyle for titles
   TextStyle titleTextStyle = const TextStyle(
@@ -92,7 +92,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           child: Column(
             spacing: 24.0,
             children: [
-              Text('Firebase Chat App', style: titleTextStyle),
+              Text('Mental Zen', style: titleTextStyle),
               ElevatedButton(
                 onPressed: () {
                   setState(() {

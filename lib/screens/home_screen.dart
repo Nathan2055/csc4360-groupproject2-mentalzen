@@ -33,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
   void _buildHomeScreenAppBar() {
     setState(() {
       _homeScreenAppBar = AppBar(
-        title: const Text('Firebase Chat App'),
+        title: const Text('Mental Zen'),
         actions: <Widget>[
           IconButton(
             icon: const Icon(Icons.home),
