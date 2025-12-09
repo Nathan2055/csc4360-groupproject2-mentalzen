@@ -140,4 +140,71 @@ class AuthService {
     }
     return '';
   }
+
+  // START new user info functions
+  void getUserInfo() {
+    /*
+    if (FirebaseAuth.instance.currentUser != null) {
+      print(FirebaseAuth.instance.currentUser?.uid);
+    }
+    */
+    /*
+    if (_auth.currentUser != null) {
+      print(_auth.currentUser?.uid);
+      print(_auth.currentUser?.displayName);
+      print(_auth.currentUser?.email);
+      print(_auth.currentUser?.emailVerified);
+      print(_auth.currentUser?.isAnonymous);
+      print(_auth.currentUser?.metadata);
+      print(_auth.currentUser?.multiFactor);
+      print(_auth.currentUser?.phoneNumber);
+      print(_auth.currentUser?.photoURL);
+      print(_auth.currentUser?.providerData);
+      print(_auth.currentUser?.refreshToken);
+      print(_auth.currentUser?.tenantId);
+      print(_auth.currentUser?.uid);
+      print(_auth.currentUser?.hashCode);
+      print(_auth.currentUser?.runtimeType);
+    }
+    */
+    if (_auth.currentUser != null) {
+      print('User info:');
+      print(_auth.currentUser?.toString());
+      print('');
+      print('UID:');
+      print(_auth.currentUser?.uid);
+      print('Display name:');
+      print(_auth.currentUser?.displayName);
+      print('Email:');
+      print(_auth.currentUser?.email);
+      print('Email verified:');
+      print(_auth.currentUser?.emailVerified.toString());
+      print('Is user anonymous?:');
+      print(_auth.currentUser?.isAnonymous.toString());
+      print('User metadata:');
+      print(_auth.currentUser?.metadata.toString());
+      print('User creation time:');
+      print(_auth.currentUser?.metadata.creationTime.toString());
+      print('User last sign in time:');
+      print(_auth.currentUser?.metadata.lastSignInTime.toString());
+      print('User multifactor:');
+      print(_auth.currentUser?.multiFactor.toString());
+      print('User phone number:');
+      print(_auth.currentUser?.phoneNumber);
+      print('User photo URL:');
+      print(_auth.currentUser?.photoURL);
+      print('Provider data:');
+      print(_auth.currentUser?.providerData.toString());
+      print('Refresh token:');
+      print(_auth.currentUser?.refreshToken);
+      print('Tenant ID:');
+      print(_auth.currentUser?.tenantId);
+      print('UID:');
+      print(_auth.currentUser?.uid);
+      print('Hash code:');
+      print(_auth.currentUser?.hashCode.toString());
+      print('Runtime type:');
+      print(_auth.currentUser?.runtimeType.toString());
+    }
+  }
 }
