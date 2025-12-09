@@ -143,30 +143,6 @@ class AuthService {
 
   // START new user info functions
   void getUserInfo() {
-    /*
-    if (FirebaseAuth.instance.currentUser != null) {
-      print(FirebaseAuth.instance.currentUser?.uid);
-    }
-    */
-    /*
-    if (_auth.currentUser != null) {
-      print(_auth.currentUser?.uid);
-      print(_auth.currentUser?.displayName);
-      print(_auth.currentUser?.email);
-      print(_auth.currentUser?.emailVerified);
-      print(_auth.currentUser?.isAnonymous);
-      print(_auth.currentUser?.metadata);
-      print(_auth.currentUser?.multiFactor);
-      print(_auth.currentUser?.phoneNumber);
-      print(_auth.currentUser?.photoURL);
-      print(_auth.currentUser?.providerData);
-      print(_auth.currentUser?.refreshToken);
-      print(_auth.currentUser?.tenantId);
-      print(_auth.currentUser?.uid);
-      print(_auth.currentUser?.hashCode);
-      print(_auth.currentUser?.runtimeType);
-    }
-    */
     if (_auth.currentUser != null) {
       print('User info:');
       print(_auth.currentUser?.toString());

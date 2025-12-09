@@ -48,6 +48,16 @@ class _HomeScreenState extends State<HomeScreen> {
 
           IconButton(
             icon: const Icon(Icons.person),
+            tooltip: 'User Info Test',
+            onPressed: () {
+              setState(() {
+                widget.authService.getUserInfo();
+              });
+            },
+          ),
+
+          IconButton(
+            icon: const Icon(Icons.person),
             tooltip: 'Profile',
             onPressed: () {
               setState(() {
