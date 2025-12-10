@@ -10,6 +10,9 @@ class AuthService {
 
   AuthService(this.userDatabase);
 
+  UserCredential? currentUserCredential;
+  User? currentUser;
+
   // Creates an account and an associated profile and then logs in
   void createAccount(
     String emailAddress,
@@ -27,10 +30,31 @@ class AuthService {
         role: 'user',
         registeredOn: DateTime.now(),
       );
-      _auth.createUserWithEmailAndPassword(
-        email: emailAddress,
-        password: password,
-      );
+      /*
+      Future<UserCredential> awaitingCredential = _auth
+          .createUserWithEmailAndPassword(
+            email: emailAddress,
+            password: password,
+          );
+      awaitingCredential.then((value) {
+      
+      });
+      */
+      /*
+      UserCredential awaitingCredential = await _auth
+          .createUserWithEmailAndPassword(
+            email: emailAddress,
+            password: password,
+          );
+      */
+      Future<UserCredential> awaitingCredential = _auth
+          .createUserWithEmailAndPassword(
+            email: emailAddress,
+            password: password,
+          );
+      awaitingCredential.then((value) {
+        loadUserDetails(value);
+      });
       userDatabase.addUserEntry(newUser);
     } on FirebaseAuthException catch (e) {
       // TODO: pass exceptions up to a snackbar
@@ -44,10 +68,28 @@ class AuthService {
     }
   }
 
+  void loadUserDetails(UserCredential cred) {
+    currentUserCredential = cred;
+    currentUser = cred.user;
+  }
+
+  void clearUserDetails() {
+    currentUserCredential = null;
+    currentUser = null;
+  }
+
   // Log in to the app with an email address and password
   void login(String emailAddress, String password) {
     try {
+      /*
       _auth.signInWithEmailAndPassword(email: emailAddress, password: password);
+      */
+
+      Future<UserCredential> awaitingCredential = _auth
+          .signInWithEmailAndPassword(email: emailAddress, password: password);
+      awaitingCredential.then((value) {
+        loadUserDetails(value);
+      });
     } on FirebaseAuthException catch (e) {
       // TODO: pass exceptions up to a snackbar
       if (e.code == 'user-not-found') {
@@ -118,7 +160,10 @@ class AuthService {
   // Log out of the app
   void logout() {
     try {
-      _auth.signOut();
+      Future<void> awaitingLogout = _auth.signOut();
+      awaitingLogout.then((value) {
+        clearUserDetails();
+      });
     } catch (e) {
       debugPrint(e.toString());
     }
