@@ -38,7 +38,7 @@ await _firestore.collection('users').doc(userId).update({
 debugPrint('FCM token registered for user: $userId');
 
   // Listen for token refresh
-  _FirebaseMessaging.ontokenrefreshed.listen((event) async {
+  _firebaseMessaging.ontokenrefreshed.listen((event) async {
     await _firestore.collection('users').doc(userId).update({
       'fcmToken': event.token,
       "fcmTokenLastUpdated": DateTime.now(),
