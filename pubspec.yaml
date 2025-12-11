@@ -45,6 +45,8 @@ dependencies:
   flutter_chat_ui: ^2.11.0
   flutter_chat_core: ^2.9.0
   firebase_messaging: ^15.0.0
+  firebase_core: ^4.2.1
+  flutter_local_notifications: ^19.0.0
   awsome_notifications: ^0.8.2
   
 
