@@ -25,18 +25,19 @@ class FcmService {
     // Get the token for the device
     final token = await _firebaseMessaging.getToken();
 
-    if (token == null) {
-        debugPrint('Failed to get FCM token');
-        return;
-    }
-    if(token != null){
-        
-        await _firestore.collection('users').doc(userId).update({
-    'fcmToken': token,
-    "fcmTokenLastUpdated": DateTime.now(),
-    }, SetOptions(merge: true));
-    }
-  }
+   if (token == null) {
+  debugPrint('Failed to get FCM token');
+  return;
+}
+// Update the token in the database
+await _firestore.collection('users').doc(userId).update({
+  'fcmToken': token,
+  'fcmTokenLastUpdated': DateTime.now(),
+}, SetOptions(merge: true));
+
+debugPrint('FCM token registered for user: $userId');
+
+  // Listen for token refresh
   _FirebaseMessaging.ontokenrefreshed.listen((event) async {
     await _firestore.collection('users').doc(userId).update({
       'fcmToken': event.token,
@@ -44,7 +45,4 @@ class FcmService {
     }, SetOptions(merge: true));
   });
 
-  Future<void> initialize() async {
-    await _firebaseMessaging.requestPermission();
-  }
 }
