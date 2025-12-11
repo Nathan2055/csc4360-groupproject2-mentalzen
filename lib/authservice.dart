@@ -37,6 +37,7 @@ class AuthService {
           );
       loadUserDetails(awaitingCredential);
       userDatabase.addUserEntry(newUser);
+      await login(emailAddress, password);
     } on FirebaseAuthException catch (e) {
       // TODO: pass exceptions up to a snackbar
       if (e.code == 'weak-password') {
