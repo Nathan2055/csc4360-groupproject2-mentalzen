@@ -14,13 +14,13 @@ class AuthService {
   User? currentUser;
 
   // Creates an account and an associated profile and then logs in
-  void createAccount(
+  Future<void> createAccount(
     String emailAddress,
     String password,
     String username,
     String firstName,
     String lastName,
-  ) {
+  ) async {
     try {
       UserEntry newUser = UserEntry(
         email: emailAddress,
@@ -30,6 +30,7 @@ class AuthService {
         role: 'user',
         registeredOn: DateTime.now(),
       );
+
       /*
       Future<UserCredential> awaitingCredential = _auth
           .createUserWithEmailAndPassword(
@@ -40,6 +41,7 @@ class AuthService {
       
       });
       */
+
       /*
       UserCredential awaitingCredential = await _auth
           .createUserWithEmailAndPassword(
@@ -47,6 +49,8 @@ class AuthService {
             password: password,
           );
       */
+
+      /*
       Future<UserCredential> awaitingCredential = _auth
           .createUserWithEmailAndPassword(
             email: emailAddress,
@@ -55,6 +59,16 @@ class AuthService {
       awaitingCredential.then((value) {
         loadUserDetails(value);
       });
+      */
+
+      UserCredential awaitingCredential = await _auth
+          .createUserWithEmailAndPassword(
+            email: emailAddress,
+            password: password,
+          );
+
+      loadUserDetails(awaitingCredential);
+
       userDatabase.addUserEntry(newUser);
     } on FirebaseAuthException catch (e) {
       // TODO: pass exceptions up to a snackbar
@@ -79,17 +93,24 @@ class AuthService {
   }
 
   // Log in to the app with an email address and password
-  void login(String emailAddress, String password) {
+  Future<void> login(String emailAddress, String password) async {
     try {
       /*
       _auth.signInWithEmailAndPassword(email: emailAddress, password: password);
       */
 
+      /*
       Future<UserCredential> awaitingCredential = _auth
           .signInWithEmailAndPassword(email: emailAddress, password: password);
       awaitingCredential.then((value) {
         loadUserDetails(value);
       });
+      */
+
+      UserCredential awaitingCredential = await _auth
+          .signInWithEmailAndPassword(email: emailAddress, password: password);
+
+      loadUserDetails(awaitingCredential);
     } on FirebaseAuthException catch (e) {
       // TODO: pass exceptions up to a snackbar
       if (e.code == 'user-not-found') {
