@@ -4,6 +4,12 @@ import 'package:mentalzen/firebase_options.dart';
 import 'package:mentalzen/authservice.dart';
 import 'package:mentalzen/screens/1-welcome_screen/welcome_screen.dart';
 import 'package:mentalzen/models/firestore_helper.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
+
+Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+  await Firebase.initializeApp();
+  debugPrint("Background message: ${message.messageId}");
+}
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -11,6 +17,7 @@ void main() async {
 
   final FirestoreHelper dbHelper = FirestoreHelper();
   final AuthService authService = AuthService(dbHelper);
+  FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
 
   runApp(MyApp(authService, dbHelper));
 }
