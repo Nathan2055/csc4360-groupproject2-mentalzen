@@ -1,19 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:mentalzen/models/firestore_helper.dart';
-import 'package:mentalzen/models/user_entry.dart';
 
 // AuthService handles all functions associated with user authentication
+// and user profile management
 class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
-  final FirestoreHelper userDatabase;
 
-  AuthService(this.userDatabase);
-
+  // Class-based storage for user information
   UserCredential? currentUserCredential;
   User? currentUser;
 
+  // Load user details from a UserCredential into the class storage as a User
+  void loadUserDetails(UserCredential cred) {
+    clearUserDetails(); // clear user details first to avoid sync issues
+    currentUserCredential = cred;
+    currentUser = cred.user;
+  }
+
+  // Clear the UserCredential and User currently stored in the class
+  void clearUserDetails() {
+    currentUserCredential = null;
+    currentUser = null;
+  }
+
   // Creates an account and an associated profile and then logs in
+  // TODO: handle usernames
   Future<void> createAccount(
     String emailAddress,
     String password,
@@ -22,21 +33,17 @@ class AuthService {
     String lastName,
   ) async {
     try {
-      UserEntry newUser = UserEntry(
+      // Create an account with the given email and password
+      // Returns a UserCredential
+      UserCredential cred = await _auth.createUserWithEmailAndPassword(
         email: emailAddress,
-        username: username,
-        firstName: firstName,
-        lastName: lastName,
-        role: 'user',
-        registeredOn: DateTime.now(),
+        password: password,
       );
-      UserCredential awaitingCredential = await _auth
-          .createUserWithEmailAndPassword(
-            email: emailAddress,
-            password: password,
-          );
-      loadUserDetails(awaitingCredential);
-      userDatabase.addUserEntry(newUser);
+
+      // Load the new user's details into the class storage
+      loadUserDetails(cred);
+
+      // Log into the newly created user account
       await login(emailAddress, password);
     } on FirebaseAuthException catch (e) {
       // TODO: pass exceptions up to a snackbar
@@ -50,21 +57,15 @@ class AuthService {
     }
   }
 
-  void loadUserDetails(UserCredential cred) {
-    currentUserCredential = cred;
-    currentUser = cred.user;
-  }
-
-  void clearUserDetails() {
-    currentUserCredential = null;
-    currentUser = null;
-  }
-
   // Log in to the app with an email address and password
   Future<void> login(String emailAddress, String password) async {
     try {
+      // Log into an account with the given email and password
+      // Returns a UserCredential
       UserCredential awaitingCredential = await _auth
           .signInWithEmailAndPassword(email: emailAddress, password: password);
+
+      // Load the user's details into the class storage
       loadUserDetails(awaitingCredential);
     } on FirebaseAuthException catch (e) {
       // TODO: pass exceptions up to a snackbar
@@ -105,6 +106,7 @@ class AuthService {
   }
 
   // Log out of the app
+  // TODO: rewrite to be async for consistency with the other rewritten functions
   void logout() {
     try {
       Future<void> awaitingLogout = _auth.signOut();
@@ -121,6 +123,7 @@ class AuthService {
     return _auth.authStateChanges();
   }
 
+  // TODO: update with new structure
   // Get the currently logged in user's email address
   // Returns an empty string if the user is not logged in
   String getEmail() {
