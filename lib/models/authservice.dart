@@ -178,4 +178,44 @@ class AuthService {
       print(_auth.currentUser?.runtimeType.toString());
     }
   }
+
+  // Continue new user info getters
+
+  String? getAllUserInfo() {}
+
+  String? getUserID() {}
+
+  String? getDisplayName() {}
+
+  String? getEmailNew() {}
+
+  bool isEmailVerified() {
+    return false;
+  }
+
+  bool isUserAnonymous() {
+    return false;
+  }
+
+  String? getAllUserMetadata() {}
+
+  DateTime? getUserCreationTime() {}
+
+  DateTime? getUserLastSignInTime() {}
+
+  String? getUserMultifactor() {}
+
+  String? getUserPhoneNumber() {}
+
+  String? getUserPhotoURL() {}
+
+  String? getUserProviderData() {}
+
+  String? getUserRefreshToken() {}
+
+  String? getUserTenantID() {}
+
+  String? getUserHashcode() {}
+
+  String? getUserRuntimeType() {}
 }
