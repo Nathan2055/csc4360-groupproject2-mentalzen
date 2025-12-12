@@ -10,7 +10,7 @@ void main() async {
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
   final FirestoreHelper dbHelper = FirestoreHelper();
-  final AuthService authService = AuthService(dbHelper);
+  final AuthService authService = AuthService();
 
   runApp(MyApp(authService, dbHelper));
 }

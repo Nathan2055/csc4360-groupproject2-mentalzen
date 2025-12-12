@@ -21,7 +21,7 @@ void main() {
       options: DefaultFirebaseOptions.currentPlatform,
     );
     final FirestoreHelper dbHelper = FirestoreHelper();
-    final AuthService authService = AuthService(dbHelper);
+    final AuthService authService = AuthService();
 
     // Build our app and trigger a frame.
     await tester.pumpWidget(MyApp(authService, dbHelper));
