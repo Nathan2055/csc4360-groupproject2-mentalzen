@@ -179,43 +179,157 @@ class AuthService {
     }
   }
 
+  void stuff() {
+    if (_auth.currentUser != null) {
+      print('User info:');
+      print(_auth.currentUser?.toString());
+      print('');
+      print('UID:');
+      print(_auth.currentUser?.uid);
+      print('Display name:');
+      print(_auth.currentUser?.displayName);
+      print('Email:');
+      print(_auth.currentUser?.email);
+      print('Email verified:');
+      print(_auth.currentUser?.emailVerified.toString());
+      print('Is user anonymous?:');
+      print(_auth.currentUser?.isAnonymous.toString());
+      print('User metadata:');
+      print(_auth.currentUser?.metadata.toString());
+      print('User creation time:');
+      print(_auth.currentUser?.metadata.creationTime.toString());
+      print('User last sign in time:');
+      print(_auth.currentUser?.metadata.lastSignInTime.toString());
+      print('User multifactor:');
+      print(_auth.currentUser?.multiFactor.toString());
+      print('User phone number:');
+      print(_auth.currentUser?.phoneNumber);
+      print('User photo URL:');
+      print(_auth.currentUser?.photoURL);
+      print('Provider data:');
+      print(_auth.currentUser?.providerData.toString());
+      print('Refresh token:');
+      print(_auth.currentUser?.refreshToken);
+      print('Tenant ID:');
+      print(_auth.currentUser?.tenantId);
+      print('UID:');
+      print(_auth.currentUser?.uid);
+      print('Hash code:');
+      print(_auth.currentUser?.hashCode.toString());
+      print('Runtime type:');
+      print(_auth.currentUser?.runtimeType.toString());
+    }
+  }
+
   // Continue new user info getters
 
-  String? getAllUserInfo() {}
+  /*
+  // Rewrote these with null operators, but I'm leaving this here for now in case something goes wrong
 
-  String? getUserID() {}
+  String? getAllUserInfo() {
+    return currentUser?.toString();
 
-  String? getDisplayName() {}
+    /*
+    if (currentUser != null) {
+      return currentUser!.toString();
+    } else {
+      return null;
+    }
+    */
+  }
 
-  String? getEmailNew() {}
+  String? getUserID() {
+    return currentUser?.uid;
+
+    /*
+    if (currentUser != null) {
+      return currentUser!.uid;
+    }
+    */
+  }
+  */
+
+  String? getAllUserInfo() {
+    return currentUser?.toString();
+  }
+
+  String? getUserID() {
+    return currentUser?.uid;
+  }
+
+  String? getDisplayName() {
+    return currentUser?.displayName;
+  }
+
+  String? getEmailNew() {
+    return currentUser?.email;
+  }
 
   bool isEmailVerified() {
-    return false;
+    if (currentUser != null) {
+      if (currentUser!.emailVerified) {
+        return true;
+      } else {
+        return false;
+      }
+    } else {
+      return false;
+    }
   }
 
   bool isUserAnonymous() {
-    return false;
+    if (currentUser != null) {
+      if (currentUser!.isAnonymous) {
+        return true;
+      } else {
+        return false;
+      }
+    } else {
+      return false;
+    }
   }
 
-  String? getAllUserMetadata() {}
+  String? getAllUserMetadata() {
+    return currentUser?.metadata.toString();
+  }
 
-  DateTime? getUserCreationTime() {}
+  DateTime? getUserCreationTime() {
+    return currentUser?.metadata.creationTime;
+  }
 
-  DateTime? getUserLastSignInTime() {}
+  DateTime? getUserLastSignInTime() {
+    return currentUser?.metadata.lastSignInTime;
+  }
 
-  String? getUserMultifactor() {}
+  String? getUserMultifactor() {
+    return currentUser?.multiFactor.toString();
+  }
 
-  String? getUserPhoneNumber() {}
+  String? getUserPhoneNumber() {
+    return currentUser?.phoneNumber;
+  }
 
-  String? getUserPhotoURL() {}
+  String? getUserPhotoURL() {
+    return currentUser?.photoURL;
+  }
 
-  String? getUserProviderData() {}
+  String? getUserProviderData() {
+    return currentUser?.providerData.toString();
+  }
 
-  String? getUserRefreshToken() {}
+  String? getUserRefreshToken() {
+    return currentUser?.refreshToken;
+  }
 
-  String? getUserTenantID() {}
+  String? getUserTenantID() {
+    return currentUser?.tenantId;
+  }
 
-  String? getUserHashcode() {}
+  String? getUserHashcode() {
+    return currentUser?.hashCode.toString();
+  }
 
-  String? getUserRuntimeType() {}
+  String? getUserRuntimeType() {
+    return currentUser?.runtimeType.toString();
+  }
 }
