@@ -14,13 +14,13 @@ class AuthService {
   User? currentUser;
 
   // Creates an account and an associated profile and then logs in
-  void createAccount(
+  Future<void> createAccount(
     String emailAddress,
     String password,
     String username,
     String firstName,
     String lastName,
-  ) {
+  ) async {
     try {
       UserEntry newUser = UserEntry(
         email: emailAddress,
@@ -30,40 +30,14 @@ class AuthService {
         role: 'user',
         registeredOn: DateTime.now(),
       );
-      /*
-      Future<UserCredential> awaitingCredential = _auth
-          .createUserWithEmailAndPassword(
-            email: emailAddress,
-            password: password,
-          );
-      awaitingCredential.then((value) {
-      
-      });
-      */
-      /*
       UserCredential awaitingCredential = await _auth
           .createUserWithEmailAndPassword(
             email: emailAddress,
             password: password,
           );
-      */
-      /*
-      Future<UserCredential> awaitingCredential = _auth
-          .createUserWithEmailAndPassword(
-            email: emailAddress,
-            password: password,
-          );
-      awaitingCredential.then((value) {
-        loadUserDetails(value);
-      });
-      */
-
-      _auth.createUserWithEmailAndPassword(
-        email: emailAddress,
-        password: password,
-      );
-
+      loadUserDetails(awaitingCredential);
       userDatabase.addUserEntry(newUser);
+      await login(emailAddress, password);
     } on FirebaseAuthException catch (e) {
       // TODO: pass exceptions up to a snackbar
       if (e.code == 'weak-password') {
@@ -87,21 +61,11 @@ class AuthService {
   }
 
   // Log in to the app with an email address and password
-  void login(String emailAddress, String password) {
+  Future<void> login(String emailAddress, String password) async {
     try {
-      /*
-      _auth.signInWithEmailAndPassword(email: emailAddress, password: password);
-      */
-
-      /*
-      Future<UserCredential> awaitingCredential = _auth
+      UserCredential awaitingCredential = await _auth
           .signInWithEmailAndPassword(email: emailAddress, password: password);
-      awaitingCredential.then((value) {
-        loadUserDetails(value);
-      });
-      */
-
-      _auth.signInWithEmailAndPassword(email: emailAddress, password: password);
+      loadUserDetails(awaitingCredential);
     } on FirebaseAuthException catch (e) {
       // TODO: pass exceptions up to a snackbar
       if (e.code == 'user-not-found') {
@@ -139,35 +103,6 @@ class AuthService {
       return false;
     }
   }
-
-  // This would be where I implemented a mechanism to update email
-  // addresses. However, Google has updated the Firebase library without
-  // updating their documentaton, and apparently no longer allows updating
-  // email addresses without also handling verification emails at the same time,
-  // which is beyond the scope of this homework.
-  /*
-  void updateEmail(String newEmail, String password) async {
-    try {
-      // Get the info for the current user
-      User currentUser = FirebaseAuth.instance.currentUser!;
-      String oldEmail = currentUser.email!;
-
-      // Get a new AuthCredential
-      AuthCredential cred = EmailAuthProvider.credential(
-        email: oldEmail,
-        password: password,
-      );
-
-      // Reauthenticate the user
-      await currentUser.reauthenticateWithCredential(cred);
-
-      // Update the email address
-      await currentUser.verifyBeforeUpdateEmail(newEmail);
-    } catch (e) {
-      print(e);
-    }
-  }
-  */
 
   // Log out of the app
   void logout() {

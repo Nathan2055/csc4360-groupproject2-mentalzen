@@ -42,8 +42,6 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
       firstName,
       lastName,
     );
-
-    widget.authService.login(emailAddress, password);
   }
 
   @override
