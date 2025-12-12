@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mentalzen/authservice.dart';
+import 'package:mentalzen/models/authservice.dart';
 import 'package:mentalzen/models/firestore_helper.dart';
 import 'package:mentalzen/screens/2-message_boards_listing/message_boards_listing.dart';
 import 'package:mentalzen/screens/4-profile_screen/profile_screen.dart';

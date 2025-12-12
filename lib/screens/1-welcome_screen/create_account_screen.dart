@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mentalzen/authservice.dart';
+import 'package:mentalzen/models/authservice.dart';
 import 'package:mentalzen/models/firestore_helper.dart';
 
 // Create Account screen

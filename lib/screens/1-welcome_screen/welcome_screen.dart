@@ -1,7 +1,7 @@
 import 'package:mentalzen/models/firestore_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:mentalzen/authservice.dart';
+import 'package:mentalzen/models/authservice.dart';
 import 'package:mentalzen/screens/1-welcome_screen/create_account_screen.dart';
 import 'package:mentalzen/screens/1-welcome_screen/login_screen.dart';
 import 'package:mentalzen/screens/home_screen.dart';
