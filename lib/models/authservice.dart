@@ -133,10 +133,6 @@ class AuthService {
 
   // TODO: implement new setters
 
-  String? getAllUserInfo() {
-    return currentUser?.toString();
-  }
-
   String? getUserID() {
     return currentUser?.uid;
   }
@@ -149,111 +145,11 @@ class AuthService {
     return currentUser?.email;
   }
 
-  bool isEmailVerified() {
-    if (currentUser != null) {
-      if (currentUser!.emailVerified) {
-        return true;
-      } else {
-        return false;
-      }
-    } else {
-      return false;
-    }
-  }
-
-  bool isUserAnonymous() {
-    if (currentUser != null) {
-      if (currentUser!.isAnonymous) {
-        return true;
-      } else {
-        return false;
-      }
-    } else {
-      return false;
-    }
-  }
-
-  String? getAllUserMetadata() {
-    return currentUser?.metadata.toString();
-  }
-
   DateTime? getUserCreationTime() {
     return currentUser?.metadata.creationTime;
   }
 
   DateTime? getUserLastSignInTime() {
     return currentUser?.metadata.lastSignInTime;
-  }
-
-  String? getUserMultifactor() {
-    return currentUser?.multiFactor.toString();
-  }
-
-  String? getUserPhoneNumber() {
-    return currentUser?.phoneNumber;
-  }
-
-  String? getUserPhotoURL() {
-    return currentUser?.photoURL;
-  }
-
-  String? getUserProviderData() {
-    return currentUser?.providerData.toString();
-  }
-
-  String? getUserRefreshToken() {
-    return currentUser?.refreshToken;
-  }
-
-  String? getUserTenantID() {
-    return currentUser?.tenantId;
-  }
-
-  String? getUserHashcode() {
-    return currentUser?.hashCode.toString();
-  }
-
-  String? getUserRuntimeType() {
-    return currentUser?.runtimeType.toString();
-  }
-
-  void validateGetters() {
-    print(_auth.currentUser?.toString() == getAllUserInfo());
-
-    print(_auth.currentUser?.uid == getUserID());
-
-    print(_auth.currentUser?.displayName == getDisplayName());
-
-    print(_auth.currentUser?.email == getEmail());
-
-    print(_auth.currentUser?.emailVerified == isEmailVerified());
-
-    print(_auth.currentUser?.isAnonymous == isUserAnonymous());
-
-    print(_auth.currentUser?.metadata.toString() == getAllUserMetadata());
-
-    print(_auth.currentUser?.metadata.creationTime == getUserCreationTime());
-
-    print(
-      _auth.currentUser?.metadata.lastSignInTime == getUserLastSignInTime(),
-    );
-
-    print(_auth.currentUser?.multiFactor.toString() == getUserMultifactor());
-
-    print(_auth.currentUser?.phoneNumber == getUserPhoneNumber());
-
-    print(_auth.currentUser?.photoURL == getUserPhotoURL());
-
-    print(_auth.currentUser?.providerData.toString() == getUserProviderData());
-
-    print(_auth.currentUser?.refreshToken == getUserRefreshToken());
-
-    print(_auth.currentUser?.tenantId == getUserTenantID());
-
-    print(_auth.currentUser?.uid == getUserID());
-
-    print(_auth.currentUser?.hashCode.toString() == getUserHashcode());
-
-    print(_auth.currentUser?.runtimeType.toString() == getUserRuntimeType());
   }
 }
