@@ -93,33 +93,6 @@ class AuthService {
     }
   }
 
-  // Updates the password for the currently logged in user
-  // Returns a Future that resolves to true if successful and false on failure
-  Future<bool> updatePassword(String oldPassword, String newPassword) async {
-    try {
-      // Get the info for the current user
-      User currentUser = FirebaseAuth.instance.currentUser!;
-
-      // Get a new AuthCredential with the old password
-      AuthCredential cred = EmailAuthProvider.credential(
-        email: currentUser.email!,
-        password: oldPassword,
-      );
-
-      // Reauthenticate the user
-      await currentUser.reauthenticateWithCredential(cred);
-
-      // Update the password
-      await currentUser.updatePassword(newPassword);
-
-      return true;
-    } catch (e) {
-      // TODO: pass exceptions up to a snackbar
-      debugPrint(e.toString());
-      return false;
-    }
-  }
-
   // Get a Stream of the app's authentication state
   Stream<User?>? getStream() {
     return _auth.authStateChanges();
@@ -155,5 +128,48 @@ class AuthService {
     return currentUser?.metadata.lastSignInTime;
   }
 
-  // TODO: implement new setters
+  // Updates the password for the currently logged in user
+  // Returns a Future that resolves to true if successful and false on failure
+  Future<bool> updatePassword(String oldPassword, String newPassword) async {
+    try {
+      // Get the info for the current user
+      User currentUser = FirebaseAuth.instance.currentUser!;
+
+      // Get a new AuthCredential with the old password
+      AuthCredential cred = EmailAuthProvider.credential(
+        email: currentUser.email!,
+        password: oldPassword,
+      );
+
+      // Reauthenticate the user
+      await currentUser.reauthenticateWithCredential(cred);
+
+      // Update the password
+      await currentUser.updatePassword(newPassword);
+
+      return true;
+    } catch (e) {
+      // TODO: pass exceptions up to a snackbar
+      debugPrint(e.toString());
+      return false;
+    }
+  }
+
+  // Updates the display name for the currently logged in user
+  // Returns a Future that resolves to true if successful and false on failure
+  Future<bool> updateDisplayName(String newName) async {
+    try {
+      // Get the info for the current user
+      User currentUser = FirebaseAuth.instance.currentUser!;
+
+      // Update the current user's display name
+      await currentUser.updateDisplayName(newName);
+
+      return true;
+    } catch (e) {
+      // TODO: pass exceptions up to a snackbar
+      debugPrint(e.toString());
+      return false;
+    }
+  }
 }
