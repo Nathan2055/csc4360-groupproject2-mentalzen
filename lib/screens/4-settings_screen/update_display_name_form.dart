@@ -1,31 +1,30 @@
 import 'package:flutter/material.dart';
-import 'package:mentalzen/authservice.dart';
+import 'package:mentalzen/models/authservice.dart';
 import 'package:mentalzen/models/firestore_helper.dart';
-import 'package:mentalzen/models/user_entry.dart';
 
-// Update Profile form
-class UpdateProfileForm extends StatefulWidget {
-  const UpdateProfileForm(this.authService, this.dbHelper, {super.key});
+// Update Display Name form
+class UpdateDisplayNameForm extends StatefulWidget {
+  const UpdateDisplayNameForm(this.authService, this.dbHelper, {super.key});
 
   final AuthService authService;
   final FirestoreHelper dbHelper;
 
   @override
-  State<UpdateProfileForm> createState() => _UpdateProfileFormState();
+  State<UpdateDisplayNameForm> createState() => _UpdateDisplayNameFormState();
 }
 
-class _UpdateProfileFormState extends State<UpdateProfileForm> {
+class _UpdateDisplayNameFormState extends State<UpdateDisplayNameForm> {
   // Form state key
   final _formKey = GlobalKey<FormState>();
 
-  // Text field controllers
-  final TextEditingController _usernameController = TextEditingController();
-  final TextEditingController _firstNameController = TextEditingController();
-  final TextEditingController _lastNameController = TextEditingController();
+  // Text field controller
+  final TextEditingController _displayNameController = TextEditingController();
 
-  // A copy of the current user's info, populated upon initialization
+  // A copy of the current user's display name, populated upon initialization
   // This should only be null while the widget is loading
-  UserEntry? _userInfo;
+  String? _currentDisplayName;
+
+  bool formReady = false;
 
   // Tracks status of submitted async update request
   // Either 'ready', 'pending', 'complete', or 'error'
@@ -44,18 +43,15 @@ class _UpdateProfileFormState extends State<UpdateProfileForm> {
   // Once it's available, copy the existing values into the form, then copy
   // the complete UserEntry into _userInfo
   void _loadUserInfo() {
-    widget.dbHelper.getUserEntryFromEmail(widget.authService.getEmail()).then((
-      result,
-    ) {
-      setState(() {
-        if (result != null) {
-          _usernameController.text = result.username!;
-          _firstNameController.text = result.firstName!;
-          _lastNameController.text = result.lastName!;
-          _userInfo = result;
-        }
-      });
+    _currentDisplayName = widget.authService.getDisplayName();
+
+    setState(() {
+      if (_currentDisplayName != null) {
+        _displayNameController.text = _currentDisplayName!;
+      }
     });
+
+    formReady = true;
   }
 
   void _submitForm() async {
@@ -65,11 +61,8 @@ class _UpdateProfileFormState extends State<UpdateProfileForm> {
     });
 
     // Send update and register function to update status on completion
-    bool result = await widget.dbHelper.updateUserProfile(
-      widget.authService.getEmail(),
-      _usernameController.text,
-      _firstNameController.text,
-      _lastNameController.text,
+    bool result = await widget.authService.updateDisplayName(
+      _displayNameController.text,
     );
 
     if (result) {
@@ -87,7 +80,9 @@ class _UpdateProfileFormState extends State<UpdateProfileForm> {
       if (_updateStatusCode == 'complete') {
         // Reload entire interface upon completion to avoid desyncs
         setState(() {
-          _userInfo = null;
+          formReady = false;
+          _currentDisplayName = null;
+          //_userInfo = null;
           _updateStatusCode = 'ready';
           _loadUserInfo();
         });
@@ -99,7 +94,7 @@ class _UpdateProfileFormState extends State<UpdateProfileForm> {
 
   @override
   Widget build(BuildContext context) {
-    if (_userInfo != null) {
+    if (formReady) {
       // Show form interface once the info is ready
       return Form(
         key: _formKey,
@@ -108,35 +103,11 @@ class _UpdateProfileFormState extends State<UpdateProfileForm> {
           mainAxisSize: MainAxisSize.min,
           spacing: 24.0,
           children: [
-            // Username field
+            // Display name field
             TextFormField(
-              controller: _usernameController,
+              controller: _displayNameController,
               decoration: InputDecoration(
-                labelText: 'Username',
-                prefixIcon: const Icon(Icons.person),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12),
-                ),
-              ),
-            ),
-
-            // First name field
-            TextFormField(
-              controller: _firstNameController,
-              decoration: InputDecoration(
-                labelText: 'First Name',
-                prefixIcon: const Icon(Icons.person),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12),
-                ),
-              ),
-            ),
-
-            // Last name field
-            TextFormField(
-              controller: _lastNameController,
-              decoration: InputDecoration(
-                labelText: 'Last Name',
+                labelText: 'Display Name',
                 prefixIcon: const Icon(Icons.person),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(12),

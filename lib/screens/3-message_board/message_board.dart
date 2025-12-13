@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mentalzen/authservice.dart';
+import 'package:mentalzen/models/authservice.dart';
 import 'package:mentalzen/models/firestore_helper.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:mentalzen/models/chat_entry.dart';
@@ -37,7 +37,7 @@ class _MessageBoardState extends State<MessageBoard> {
     super.initState();
 
     _chatStream = widget.dbHelper.getChatStream(widget.messageBoard);
-    _email = widget.authService.getEmail();
+    _email = widget.authService.getEmail() ?? ''; // this should never be null
   }
 
   void _submitChatForm() async {

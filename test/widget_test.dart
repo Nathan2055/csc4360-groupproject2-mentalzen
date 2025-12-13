@@ -10,7 +10,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:mentalzen/firebase_options.dart';
 import 'package:mentalzen/models/firestore_helper.dart';
-import 'package:mentalzen/authservice.dart';
+import 'package:mentalzen/models/authservice.dart';
 
 import 'package:mentalzen/main.dart';
 
@@ -21,7 +21,7 @@ void main() {
       options: DefaultFirebaseOptions.currentPlatform,
     );
     final FirestoreHelper dbHelper = FirestoreHelper();
-    final AuthService authService = AuthService(dbHelper);
+    final AuthService authService = AuthService();
 
     // Build our app and trigger a frame.
     await tester.pumpWidget(MyApp(authService, dbHelper));
