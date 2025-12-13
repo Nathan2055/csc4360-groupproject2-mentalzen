@@ -21,9 +21,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
   // Text field controllers
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  final TextEditingController _usernameController = TextEditingController();
-  final TextEditingController _firstNameController = TextEditingController();
-  final TextEditingController _lastNameController = TextEditingController();
+  final TextEditingController _displayNameController = TextEditingController();
 
   // Track password visibility for the "show password" toggle
   bool _isPasswordVisible = false;
@@ -31,17 +29,9 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
   void _submitForm() {
     String emailAddress = _emailController.text;
     String password = _passwordController.text;
-    String username = _usernameController.text;
-    String firstName = _firstNameController.text;
-    String lastName = _lastNameController.text;
+    String displayName = _displayNameController.text;
 
-    widget.authService.createAccount(
-      emailAddress,
-      password,
-      username,
-      firstName,
-      lastName,
-    );
+    widget.authService.createAccount(emailAddress, password, displayName);
   }
 
   @override
@@ -88,35 +78,11 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
             ),
           ),
 
-          // Username field
+          // Display name field
           TextFormField(
-            controller: _usernameController,
+            controller: _displayNameController,
             decoration: InputDecoration(
-              labelText: 'Username',
-              prefixIcon: const Icon(Icons.person),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(12),
-              ),
-            ),
-          ),
-
-          // First name field
-          TextFormField(
-            controller: _firstNameController,
-            decoration: InputDecoration(
-              labelText: 'First Name',
-              prefixIcon: const Icon(Icons.person),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(12),
-              ),
-            ),
-          ),
-
-          // Last name field
-          TextFormField(
-            controller: _lastNameController,
-            decoration: InputDecoration(
-              labelText: 'Last Name',
+              labelText: 'Display Name',
               prefixIcon: const Icon(Icons.person),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12),
