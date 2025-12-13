@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mentalzen/models/authservice.dart';
-import 'package:mentalzen/models/firestore_helper.dart';
+import 'package:mentalzen/services/authservice.dart';
+import 'package:mentalzen/services/firestore_helper.dart';
 
 // Create Account screen
 // Imported and shown on the welcome screen when the create account button is pressed

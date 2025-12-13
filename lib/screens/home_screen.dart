@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mentalzen/models/authservice.dart';
-import 'package:mentalzen/models/firestore_helper.dart';
+import 'package:mentalzen/services/authservice.dart';
+import 'package:mentalzen/services/firestore_helper.dart';
 import 'package:mentalzen/screens/2-message_boards_listing/message_boards_listing.dart';
 import 'package:mentalzen/screens/4-settings_screen/settings_screen.dart';
 

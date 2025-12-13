@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mentalzen/models/reminder_config.dart';
-import 'package:mentalzen/models/firestore_helper.dart';
+import 'package:mentalzen/services/firestore_helper.dart';
 
 class ReminderForm extends StatefulWidget {
   const ReminderForm(this.dbHelper, this.userEmail, {this.reminder, super.key});

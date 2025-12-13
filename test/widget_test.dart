@@ -9,8 +9,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:mentalzen/firebase_options.dart';
-import 'package:mentalzen/models/firestore_helper.dart';
-import 'package:mentalzen/models/authservice.dart';
+import 'package:mentalzen/services/firestore_helper.dart';
+import 'package:mentalzen/services/authservice.dart';
 
 import 'package:mentalzen/main.dart';
 

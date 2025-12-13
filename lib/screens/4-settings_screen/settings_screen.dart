@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mentalzen/models/authservice.dart';
-import 'package:mentalzen/models/firestore_helper.dart';
+import 'package:mentalzen/services/authservice.dart';
+import 'package:mentalzen/services/firestore_helper.dart';
 import 'package:mentalzen/screens/4-settings_screen/update_display_name_form.dart';
 import 'package:mentalzen/screens/4-settings_screen/update_password_form.dart';
 

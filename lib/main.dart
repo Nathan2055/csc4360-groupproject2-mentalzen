@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:mentalzen/firebase_options.dart';
-import 'package:mentalzen/models/authservice.dart';
+import 'package:mentalzen/services/authservice.dart';
 import 'package:mentalzen/screens/1-welcome_screen/welcome_screen.dart';
-import 'package:mentalzen/models/firestore_helper.dart';
+import 'package:mentalzen/services/firestore_helper.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
