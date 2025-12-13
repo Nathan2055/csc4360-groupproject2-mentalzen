@@ -307,4 +307,84 @@ class AuthService {
   String? getUserRuntimeType() {
     return currentUser?.runtimeType.toString();
   }
+
+  bool validateGetters() {
+    bool validated;
+
+    validated = (_auth.currentUser?.toString() != getAllUserInfo())
+        ? false
+        : true;
+
+    validated = (_auth.currentUser?.uid != getUserID()) ? false : true;
+
+    validated = (_auth.currentUser?.displayName != getDisplayName())
+        ? false
+        : true;
+
+    validated = (_auth.currentUser?.email != getEmailNew()) ? false : true;
+
+    validated =
+        (_auth.currentUser?.emailVerified.toString() != isEmailVerified())
+        ? false
+        : true;
+
+    validated = (_auth.currentUser?.isAnonymous.toString() != isUserAnonymous())
+        ? false
+        : true;
+
+    validated = (_auth.currentUser?.metadata.toString() != getAllUserMetadata())
+        ? false
+        : true;
+
+    validated =
+        (_auth.currentUser?.metadata.creationTime.toString() !=
+            getUserCreationTime())
+        ? false
+        : true;
+
+    validated =
+        (_auth.currentUser?.metadata.lastSignInTime.toString() !=
+            getUserLastSignInTime())
+        ? false
+        : true;
+
+    validated =
+        (_auth.currentUser?.multiFactor.toString() != getUserMultifactor())
+        ? false
+        : true;
+
+    validated = (_auth.currentUser?.phoneNumber != getUserPhoneNumber())
+        ? false
+        : true;
+
+    validated = (_auth.currentUser?.photoURL != getUserPhotoURL())
+        ? false
+        : true;
+
+    validated =
+        (_auth.currentUser?.providerData.toString() != getUserProviderData())
+        ? false
+        : true;
+
+    validated = (_auth.currentUser?.refreshToken != getUserRefreshToken())
+        ? false
+        : true;
+
+    validated = (_auth.currentUser?.tenantId != getUserTenantID())
+        ? false
+        : true;
+
+    validated = (_auth.currentUser?.uid != getUserID()) ? false : true;
+
+    validated = (_auth.currentUser?.hashCode.toString() != getUserHashcode())
+        ? false
+        : true;
+
+    validated =
+        (_auth.currentUser?.runtimeType.toString() != getUserRuntimeType())
+        ? false
+        : true;
+
+    return validated;
+  }
 }
