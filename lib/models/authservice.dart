@@ -308,83 +308,43 @@ class AuthService {
     return currentUser?.runtimeType.toString();
   }
 
-  bool validateGetters() {
-    bool validated;
+  void validateGetters() {
+    print(_auth.currentUser?.toString() == getAllUserInfo());
 
-    validated = (_auth.currentUser?.toString() != getAllUserInfo())
-        ? false
-        : true;
+    print(_auth.currentUser?.uid == getUserID());
 
-    validated = (_auth.currentUser?.uid != getUserID()) ? false : true;
+    print(_auth.currentUser?.displayName == getDisplayName());
 
-    validated = (_auth.currentUser?.displayName != getDisplayName())
-        ? false
-        : true;
+    print(_auth.currentUser?.email == getEmailNew());
 
-    validated = (_auth.currentUser?.email != getEmailNew()) ? false : true;
+    print(_auth.currentUser?.emailVerified == isEmailVerified());
 
-    validated =
-        (_auth.currentUser?.emailVerified.toString() != isEmailVerified())
-        ? false
-        : true;
+    print(_auth.currentUser?.isAnonymous == isUserAnonymous());
 
-    validated = (_auth.currentUser?.isAnonymous.toString() != isUserAnonymous())
-        ? false
-        : true;
+    print(_auth.currentUser?.metadata.toString() == getAllUserMetadata());
 
-    validated = (_auth.currentUser?.metadata.toString() != getAllUserMetadata())
-        ? false
-        : true;
+    print(_auth.currentUser?.metadata.creationTime == getUserCreationTime());
 
-    validated =
-        (_auth.currentUser?.metadata.creationTime.toString() !=
-            getUserCreationTime())
-        ? false
-        : true;
+    print(
+      _auth.currentUser?.metadata.lastSignInTime == getUserLastSignInTime(),
+    );
 
-    validated =
-        (_auth.currentUser?.metadata.lastSignInTime.toString() !=
-            getUserLastSignInTime())
-        ? false
-        : true;
+    print(_auth.currentUser?.multiFactor.toString() == getUserMultifactor());
 
-    validated =
-        (_auth.currentUser?.multiFactor.toString() != getUserMultifactor())
-        ? false
-        : true;
+    print(_auth.currentUser?.phoneNumber == getUserPhoneNumber());
 
-    validated = (_auth.currentUser?.phoneNumber != getUserPhoneNumber())
-        ? false
-        : true;
+    print(_auth.currentUser?.photoURL == getUserPhotoURL());
 
-    validated = (_auth.currentUser?.photoURL != getUserPhotoURL())
-        ? false
-        : true;
+    print(_auth.currentUser?.providerData.toString() == getUserProviderData());
 
-    validated =
-        (_auth.currentUser?.providerData.toString() != getUserProviderData())
-        ? false
-        : true;
+    print(_auth.currentUser?.refreshToken == getUserRefreshToken());
 
-    validated = (_auth.currentUser?.refreshToken != getUserRefreshToken())
-        ? false
-        : true;
+    print(_auth.currentUser?.tenantId == getUserTenantID());
 
-    validated = (_auth.currentUser?.tenantId != getUserTenantID())
-        ? false
-        : true;
+    print(_auth.currentUser?.uid == getUserID());
 
-    validated = (_auth.currentUser?.uid != getUserID()) ? false : true;
+    print(_auth.currentUser?.hashCode.toString() == getUserHashcode());
 
-    validated = (_auth.currentUser?.hashCode.toString() != getUserHashcode())
-        ? false
-        : true;
-
-    validated =
-        (_auth.currentUser?.runtimeType.toString() != getUserRuntimeType())
-        ? false
-        : true;
-
-    return validated;
+    print(_auth.currentUser?.runtimeType.toString() == getUserRuntimeType());
   }
 }
