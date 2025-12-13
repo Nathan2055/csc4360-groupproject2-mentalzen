@@ -54,7 +54,9 @@ class AuthService {
         debugPrint('The password provided is too weak.');
       } else if (e.code == 'email-already-in-use') {
         debugPrint('The account already exists for that email.');
-      } // TODO: missing else
+      } else {
+        debugPrint(e.toString());
+      }
     } catch (e) {
       debugPrint(e.toString());
     }
@@ -76,6 +78,8 @@ class AuthService {
         debugPrint('No user found for that email.');
       } else if (e.code == 'wrong-password') {
         debugPrint('Wrong password provided for that user.');
+      } else {
+        debugPrint(e.toString());
       }
     } catch (e) {
       debugPrint(e.toString());
