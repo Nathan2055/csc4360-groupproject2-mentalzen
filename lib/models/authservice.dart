@@ -123,33 +123,35 @@ class AuthService {
     return _auth.authStateChanges();
   }
 
-  // TODO: update with new structure
-  // Get the currently logged in user's email address
-  // Returns an empty string if the user is not logged in
-
-  // START new user info functions
-
-  // Continue new user info getters
-
-  // TODO: implement new setters
-
+  // Get the currently logged in user's user ID
+  // Returns null if the user is not logged in or the data is not available
   String? getUserID() {
     return currentUser?.uid;
   }
 
+  // Get the currently logged in user's display name
+  // Returns null if the user is not logged in or the data is not available
   String? getDisplayName() {
     return currentUser?.displayName;
   }
 
+  // Get the currently logged in user's email address
+  // Returns null if the user is not logged in or the data is not available
   String? getEmail() {
     return currentUser?.email;
   }
 
+  // Get the currently logged in user's creation time as a DateTime
+  // Returns null if the user is not logged in or the data is not available
   DateTime? getUserCreationTime() {
     return currentUser?.metadata.creationTime;
   }
 
+  // Get the currently logged in user's last sign in as a DateTime
+  // Returns null if the user is not logged in or the data is not available
   DateTime? getUserLastSignInTime() {
     return currentUser?.metadata.lastSignInTime;
   }
+
+  // TODO: implement new setters
 }
