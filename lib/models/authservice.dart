@@ -154,10 +154,13 @@ class AuthService {
       // Update the password
       await currentUser.updatePassword(newPassword);
 
+      // Return true on success
       return true;
     } catch (e) {
       // TODO: pass exceptions up to a snackbar
       debugPrint(e.toString());
+
+      // Return false on failure
       return false;
     }
   }
@@ -166,16 +169,23 @@ class AuthService {
   // Returns a Future that resolves to true if successful and false on failure
   Future<bool> updateDisplayName(String newName) async {
     try {
-      // Get the info for the current user
-      User currentUser = FirebaseAuth.instance.currentUser!;
+      // Update the stored user's display name
+      //
+      // This is done instead of generating a fresh User instance like how
+      // updatePassword() does it because we want to set the display name
+      // in the createAccount() method before logging in for the first time
+      //
+      // This avoids any instance where the user is logged in while we're still
+      // waiting for a display name update to sync
+      await currentUser?.updateDisplayName(newName);
 
-      // Update the current user's display name
-      await currentUser.updateDisplayName(newName);
-
+      // Return true on success
       return true;
     } catch (e) {
       // TODO: pass exceptions up to a snackbar
       debugPrint(e.toString());
+
+      // Return false on failure
       return false;
     }
   }
