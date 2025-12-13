@@ -9,7 +9,7 @@ class FcmService {
 
   FcmService({this.navigatorKey});
 
-  Future<void> registerDevice(String userId) async {
+  Future<void> registerDevice(String userEmail) async {
     try {
       // Request permission to receive notifications
       final settings = await _firebaseMessaging.requestPermission(
@@ -33,22 +33,23 @@ class FcmService {
         return;
       }
 
-      // Update the token in the database
-      await _firestore.collection('users').doc(userId).update({
+      // Update the token in the database (using email as document ID to match existing structure)
+      await _firestore.collection('users').doc(userEmail).set({
         'fcmToken': token,
         'fcmTokenLastUpdated': FieldValue.serverTimestamp(),
       }, SetOptions(merge: true));
 
-      debugPrint('FCM token registered for user: $userId');
+      debugPrint('FCM token registered for user: $userEmail');
 
       // Listen for token refresh
+      final emailForRefresh = userEmail; // Capture for closure
       _firebaseMessaging.onTokenRefresh.listen((newToken) async {
         try {
-          await _firestore.collection('users').doc(userId).update({
+          await _firestore.collection('users').doc(emailForRefresh).set({
             'fcmToken': newToken,
             'fcmTokenLastUpdated': FieldValue.serverTimestamp(),
           }, SetOptions(merge: true));
-          debugPrint('FCM token refreshed for user: $userId');
+          debugPrint('FCM token refreshed for user: $emailForRefresh');
         } catch (e) {
           debugPrint('Error updating refreshed token: $e');
         }
