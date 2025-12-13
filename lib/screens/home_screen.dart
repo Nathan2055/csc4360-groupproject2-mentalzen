@@ -51,7 +51,32 @@ class _HomeScreenState extends State<HomeScreen> {
             tooltip: 'User Info Test',
             onPressed: () {
               setState(() {
-                widget.authService.getUserInfo();
+                print('Old info:');
+                widget.authService.getUserInfoOld();
+                print('');
+
+                print('New info:');
+                widget.authService.getUserInfoNew();
+                print('');
+
+                print('Test system:');
+                widget.authService.validateGetters();
+                print('');
+
+                print('Old email getter:');
+                String oldEmail = widget.authService.getEmail();
+                print(oldEmail);
+                print('');
+
+                print('New email getter:');
+                String? newEmail = widget.authService.getEmailNew();
+                print(newEmail);
+                print('');
+
+                print('Test email comparison:');
+                bool emailTest = (oldEmail == newEmail);
+                print(emailTest);
+                print('');
               });
             },
           ),
