@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mentalzen/models/authservice.dart';
 import 'package:mentalzen/models/firestore_helper.dart';
-import 'package:mentalzen/models/user_entry.dart';
 
 // Update Profile form
 class UpdateProfileForm extends StatefulWidget {
@@ -18,16 +17,8 @@ class _UpdateProfileFormState extends State<UpdateProfileForm> {
   // Form state key
   final _formKey = GlobalKey<FormState>();
 
-  // Text field controllers
+  // Text field controller
   final TextEditingController _displayNameController = TextEditingController();
-
-  final TextEditingController _usernameController = TextEditingController();
-  final TextEditingController _firstNameController = TextEditingController();
-  final TextEditingController _lastNameController = TextEditingController();
-
-  // A copy of the current user's info, populated upon initialization
-  // This should only be null while the widget is loading
-  UserEntry? _userInfo;
 
   // A copy of the current user's display name, populated upon initialization
   // This should only be null while the widget is loading
@@ -60,22 +51,6 @@ class _UpdateProfileFormState extends State<UpdateProfileForm> {
       }
     });
 
-    /*
-    // TODO: implement new setters
-    widget.dbHelper.getUserEntryFromEmail(widget.authService.getEmail()!).then((
-      result,
-    ) {
-      setState(() {
-        if (result != null) {
-          _usernameController.text = result.username!;
-          _firstNameController.text = result.firstName!;
-          _lastNameController.text = result.lastName!;
-          _userInfo = result;
-        }
-      });
-    });
-    */
-
     formReady = true;
   }
 
@@ -89,16 +64,6 @@ class _UpdateProfileFormState extends State<UpdateProfileForm> {
     bool result = await widget.authService.updateDisplayName(
       _displayNameController.text,
     );
-
-    /*
-    // TODO: implement new setters
-    bool result = await widget.dbHelper.updateUserProfile(
-      widget.authService.getEmail()!,
-      _usernameController.text,
-      _firstNameController.text,
-      _lastNameController.text,
-    );
-    */
 
     if (result) {
       setState(() {
@@ -149,44 +114,6 @@ class _UpdateProfileFormState extends State<UpdateProfileForm> {
                 ),
               ),
             ),
-
-            /*
-            // Username field
-            TextFormField(
-              controller: _usernameController,
-              decoration: InputDecoration(
-                labelText: 'Username',
-                prefixIcon: const Icon(Icons.person),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12),
-                ),
-              ),
-            ),
-
-            // First name field
-            TextFormField(
-              controller: _firstNameController,
-              decoration: InputDecoration(
-                labelText: 'First Name',
-                prefixIcon: const Icon(Icons.person),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12),
-                ),
-              ),
-            ),
-
-            // Last name field
-            TextFormField(
-              controller: _lastNameController,
-              decoration: InputDecoration(
-                labelText: 'Last Name',
-                prefixIcon: const Icon(Icons.person),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12),
-                ),
-              ),
-            ),
-            */
 
             // Submit button
             ElevatedButton(
