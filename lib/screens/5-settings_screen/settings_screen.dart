@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mentalzen/models/authservice.dart';
 import 'package:mentalzen/models/firestore_helper.dart';
+import 'package:mentalzen/screens/4-profile_screen/update_profile_form.dart';
 import 'package:mentalzen/screens/5-settings_screen/update_password_form.dart';
 
 class SettingsScreen extends StatefulWidget {
@@ -26,12 +27,21 @@ class _SettingsScreenState extends State<SettingsScreen> {
         child: Column(
           children: [
             const Text(
+              'Update Display Name',
+              style: TextStyle(fontSize: 22.0, fontWeight: FontWeight.w400),
+            ),
+            const SizedBox(height: 20),
+            UpdateProfileForm(widget.authService, widget.dbHelper),
+            const SizedBox(height: 40),
+
+            const Text(
               'Update Password',
               style: TextStyle(fontSize: 22.0, fontWeight: FontWeight.w400),
             ),
             const SizedBox(height: 20),
             UpdatePasswordForm(widget.authService, widget.dbHelper),
             const SizedBox(height: 40),
+
             const Text(
               'Log out',
               style: TextStyle(fontSize: 22.0, fontWeight: FontWeight.w400),
