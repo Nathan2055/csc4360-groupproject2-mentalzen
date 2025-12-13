@@ -41,8 +41,8 @@ class AuthService {
       loadUserDetails(cred);
 
       // Save the new user's display name
-      bool displayNameSuccess = await updateDisplayName(displayName);
-      if (!displayNameSuccess) {
+      bool updateDisplayNameSuccess = await updateDisplayName(displayName);
+      if (!updateDisplayNameSuccess) {
         throw Exception('Failed to set display name');
       }
 
@@ -67,11 +67,13 @@ class AuthService {
     try {
       // Log into an account with the given email and password
       // Returns a UserCredential
-      UserCredential awaitingCredential = await _auth
-          .signInWithEmailAndPassword(email: emailAddress, password: password);
+      UserCredential cred = await _auth.signInWithEmailAndPassword(
+        email: emailAddress,
+        password: password,
+      );
 
       // Load the user's details into the class storage
-      loadUserDetails(awaitingCredential);
+      loadUserDetails(cred);
     } on FirebaseAuthException catch (e) {
       // TODO: pass exceptions up to a snackbar
       if (e.code == 'user-not-found') {
