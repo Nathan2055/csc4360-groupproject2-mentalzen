@@ -137,7 +137,7 @@ class AuthService {
   }
 
   // START new user info functions
-  void getUserInfo() {
+  void getUserInfoOld() {
     if (_auth.currentUser != null) {
       print('User info:');
       print(_auth.currentUser?.toString());
@@ -179,75 +179,50 @@ class AuthService {
     }
   }
 
-  void stuff() {
+  // START new user info functions
+  void getUserInfoNew() {
     if (_auth.currentUser != null) {
       print('User info:');
-      print(_auth.currentUser?.toString());
+      print(getAllUserInfo());
       print('');
       print('UID:');
-      print(_auth.currentUser?.uid);
+      print(getUserID());
       print('Display name:');
-      print(_auth.currentUser?.displayName);
+      print(getDisplayName());
       print('Email:');
-      print(_auth.currentUser?.email);
+      print(getEmailNew());
       print('Email verified:');
-      print(_auth.currentUser?.emailVerified.toString());
+      print(isEmailVerified());
       print('Is user anonymous?:');
-      print(_auth.currentUser?.isAnonymous.toString());
+      print(isUserAnonymous());
       print('User metadata:');
-      print(_auth.currentUser?.metadata.toString());
+      print(getAllUserMetadata());
       print('User creation time:');
-      print(_auth.currentUser?.metadata.creationTime.toString());
+      print(getUserCreationTime());
       print('User last sign in time:');
-      print(_auth.currentUser?.metadata.lastSignInTime.toString());
+      print(getUserLastSignInTime());
       print('User multifactor:');
-      print(_auth.currentUser?.multiFactor.toString());
+      print(getUserMultifactor());
       print('User phone number:');
-      print(_auth.currentUser?.phoneNumber);
+      print(getUserPhoneNumber());
       print('User photo URL:');
-      print(_auth.currentUser?.photoURL);
+      print(getUserPhotoURL());
       print('Provider data:');
-      print(_auth.currentUser?.providerData.toString());
+      print(getUserProviderData());
       print('Refresh token:');
-      print(_auth.currentUser?.refreshToken);
+      print(getUserRefreshToken());
       print('Tenant ID:');
-      print(_auth.currentUser?.tenantId);
+      print(getUserTenantID());
       print('UID:');
-      print(_auth.currentUser?.uid);
+      print(getUserID());
       print('Hash code:');
-      print(_auth.currentUser?.hashCode.toString());
+      print(getUserHashcode());
       print('Runtime type:');
-      print(_auth.currentUser?.runtimeType.toString());
+      print(getUserRuntimeType());
     }
   }
 
   // Continue new user info getters
-
-  /*
-  // Rewrote these with null operators, but I'm leaving this here for now in case something goes wrong
-
-  String? getAllUserInfo() {
-    return currentUser?.toString();
-
-    /*
-    if (currentUser != null) {
-      return currentUser!.toString();
-    } else {
-      return null;
-    }
-    */
-  }
-
-  String? getUserID() {
-    return currentUser?.uid;
-
-    /*
-    if (currentUser != null) {
-      return currentUser!.uid;
-    }
-    */
-  }
-  */
 
   String? getAllUserInfo() {
     return currentUser?.toString();
