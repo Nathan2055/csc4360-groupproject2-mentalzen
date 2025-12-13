@@ -11,10 +11,23 @@ class AuthService {
   User? currentUser;
 
   // Load user details from a UserCredential into the class storage as a User
-  void loadUserDetails(UserCredential cred) {
+  void loadUserDetailsFromCred(UserCredential cred) {
     clearUserDetails(); // clear user details first to avoid sync issues
     currentUserCredential = cred;
     currentUser = cred.user;
+  }
+
+  // Load user details from the current login into the class storage as a User
+  // Returns true if successful and false on failure
+  bool loadUserDetailsFromCurrent() {
+    User? thisUser = FirebaseAuth.instance.currentUser;
+    if (thisUser == null) {
+      return false;
+    } else {
+      clearUserDetails(); // clear user details first to avoid sync issues
+      currentUser = thisUser;
+      return true;
+    }
   }
 
   // Clear the UserCredential and User currently stored in the class
@@ -38,7 +51,7 @@ class AuthService {
       );
 
       // Load the new user's details into the class storage
-      loadUserDetails(cred);
+      loadUserDetailsFromCred(cred);
 
       // Save the new user's display name
       bool updateDisplayNameSuccess = await updateDisplayName(displayName);
@@ -73,7 +86,7 @@ class AuthService {
       );
 
       // Load the user's details into the class storage
-      loadUserDetails(cred);
+      loadUserDetailsFromCred(cred);
     } on FirebaseAuthException catch (e) {
       // TODO: pass exceptions up to a snackbar
       if (e.code == 'user-not-found') {
