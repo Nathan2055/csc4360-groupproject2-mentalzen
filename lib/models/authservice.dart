@@ -181,6 +181,9 @@ class AuthService {
       // waiting for a display name update to sync
       await currentUser?.updateDisplayName(newName);
 
+      // Reload the user information
+      await currentUser?.reload();
+
       // Return true on success
       return true;
     } catch (e) {
