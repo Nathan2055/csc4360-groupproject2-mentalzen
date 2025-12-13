@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mentalzen/models/authservice.dart';
 import 'package:mentalzen/models/firestore_helper.dart';
-import 'package:mentalzen/screens/4-profile_screen/update_profile_form.dart';
-import 'package:mentalzen/screens/5-settings_screen/update_password_form.dart';
+import 'package:mentalzen/screens/4-settings_screen/update_profile_form.dart';
+import 'package:mentalzen/screens/4-settings_screen/update_password_form.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen(this.authService, this.dbHelper, {super.key});
