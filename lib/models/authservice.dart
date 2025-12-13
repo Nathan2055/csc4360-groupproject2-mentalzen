@@ -79,6 +79,20 @@ class AuthService {
     }
   }
 
+  // Log out of the app
+  Future<void> logout() async {
+    try {
+      // Log out of the current user account
+      await _auth.signOut();
+
+      // Clear user details from the class storage
+      clearUserDetails();
+    } catch (e) {
+      // TODO: pass exceptions up to a snackbar
+      debugPrint(e.toString());
+    }
+  }
+
   // Updates the password for the currently logged in user
   // Returns a Future that resolves to true if successful and false on failure
   Future<bool> updatePassword(String oldPassword, String newPassword) async {
@@ -100,21 +114,9 @@ class AuthService {
 
       return true;
     } catch (e) {
+      // TODO: pass exceptions up to a snackbar
       debugPrint(e.toString());
       return false;
-    }
-  }
-
-  // Log out of the app
-  // TODO: rewrite to be async for consistency with the other rewritten functions
-  void logout() {
-    try {
-      Future<void> awaitingLogout = _auth.signOut();
-      awaitingLogout.then((value) {
-        clearUserDetails();
-      });
-    } catch (e) {
-      debugPrint(e.toString());
     }
   }
 
