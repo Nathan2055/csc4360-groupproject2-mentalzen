@@ -19,6 +19,8 @@ class _UpdateProfileFormState extends State<UpdateProfileForm> {
   final _formKey = GlobalKey<FormState>();
 
   // Text field controllers
+  final TextEditingController _displayNameController = TextEditingController();
+
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _firstNameController = TextEditingController();
   final TextEditingController _lastNameController = TextEditingController();
@@ -26,6 +28,12 @@ class _UpdateProfileFormState extends State<UpdateProfileForm> {
   // A copy of the current user's info, populated upon initialization
   // This should only be null while the widget is loading
   UserEntry? _userInfo;
+
+  // A copy of the current user's display name, populated upon initialization
+  // This should only be null while the widget is loading
+  String? _currentDisplayName;
+
+  bool formReady = false;
 
   // Tracks status of submitted async update request
   // Either 'ready', 'pending', 'complete', or 'error'
@@ -44,6 +52,15 @@ class _UpdateProfileFormState extends State<UpdateProfileForm> {
   // Once it's available, copy the existing values into the form, then copy
   // the complete UserEntry into _userInfo
   void _loadUserInfo() {
+    _currentDisplayName = widget.authService.getDisplayName();
+
+    setState(() {
+      if (_currentDisplayName != null) {
+        _displayNameController.text = _currentDisplayName!;
+      }
+    });
+
+    /*
     // TODO: implement new setters
     widget.dbHelper.getUserEntryFromEmail(widget.authService.getEmail()!).then((
       result,
@@ -57,6 +74,9 @@ class _UpdateProfileFormState extends State<UpdateProfileForm> {
         }
       });
     });
+    */
+
+    formReady = true;
   }
 
   void _submitForm() async {
@@ -66,6 +86,11 @@ class _UpdateProfileFormState extends State<UpdateProfileForm> {
     });
 
     // Send update and register function to update status on completion
+    bool result = await widget.authService.updateDisplayName(
+      _displayNameController.text,
+    );
+
+    /*
     // TODO: implement new setters
     bool result = await widget.dbHelper.updateUserProfile(
       widget.authService.getEmail()!,
@@ -73,6 +98,7 @@ class _UpdateProfileFormState extends State<UpdateProfileForm> {
       _firstNameController.text,
       _lastNameController.text,
     );
+    */
 
     if (result) {
       setState(() {
@@ -89,7 +115,9 @@ class _UpdateProfileFormState extends State<UpdateProfileForm> {
       if (_updateStatusCode == 'complete') {
         // Reload entire interface upon completion to avoid desyncs
         setState(() {
-          _userInfo = null;
+          formReady = false;
+          _currentDisplayName = null;
+          //_userInfo = null;
           _updateStatusCode = 'ready';
           _loadUserInfo();
         });
@@ -101,7 +129,7 @@ class _UpdateProfileFormState extends State<UpdateProfileForm> {
 
   @override
   Widget build(BuildContext context) {
-    if (_userInfo != null) {
+    if (formReady) {
       // Show form interface once the info is ready
       return Form(
         key: _formKey,
@@ -110,6 +138,19 @@ class _UpdateProfileFormState extends State<UpdateProfileForm> {
           mainAxisSize: MainAxisSize.min,
           spacing: 24.0,
           children: [
+            // Display name field
+            TextFormField(
+              controller: _displayNameController,
+              decoration: InputDecoration(
+                labelText: 'Display Name',
+                prefixIcon: const Icon(Icons.person),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+              ),
+            ),
+
+            /*
             // Username field
             TextFormField(
               controller: _usernameController,
@@ -145,6 +186,7 @@ class _UpdateProfileFormState extends State<UpdateProfileForm> {
                 ),
               ),
             ),
+            */
 
             // Submit button
             ElevatedButton(
