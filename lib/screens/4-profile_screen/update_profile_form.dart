@@ -44,18 +44,19 @@ class _UpdateProfileFormState extends State<UpdateProfileForm> {
   // Once it's available, copy the existing values into the form, then copy
   // the complete UserEntry into _userInfo
   void _loadUserInfo() {
-    widget.dbHelper.getUserEntryFromEmail(widget.authService.getEmail()).then((
-      result,
-    ) {
-      setState(() {
-        if (result != null) {
-          _usernameController.text = result.username!;
-          _firstNameController.text = result.firstName!;
-          _lastNameController.text = result.lastName!;
-          _userInfo = result;
-        }
-      });
-    });
+    // TODO: implement new setters
+    widget.dbHelper
+        .getUserEntryFromEmail(widget.authService.getEmailNew()!)
+        .then((result) {
+          setState(() {
+            if (result != null) {
+              _usernameController.text = result.username!;
+              _firstNameController.text = result.firstName!;
+              _lastNameController.text = result.lastName!;
+              _userInfo = result;
+            }
+          });
+        });
   }
 
   void _submitForm() async {
@@ -65,8 +66,9 @@ class _UpdateProfileFormState extends State<UpdateProfileForm> {
     });
 
     // Send update and register function to update status on completion
+    // TODO: implement new setters
     bool result = await widget.dbHelper.updateUserProfile(
-      widget.authService.getEmail(),
+      widget.authService.getEmailNew()!,
       _usernameController.text,
       _firstNameController.text,
       _lastNameController.text,

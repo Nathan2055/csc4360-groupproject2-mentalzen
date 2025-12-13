@@ -126,103 +126,12 @@ class AuthService {
   // TODO: update with new structure
   // Get the currently logged in user's email address
   // Returns an empty string if the user is not logged in
-  String getEmail() {
-    if (_auth.currentUser != null) {
-      for (final providerProfile in _auth.currentUser!.providerData) {
-        final emailAddress = providerProfile.email!;
-        return emailAddress;
-      }
-    }
-    return '';
-  }
 
   // START new user info functions
-  void getUserInfoOld() {
-    if (_auth.currentUser != null) {
-      print('User info:');
-      print(_auth.currentUser?.toString());
-      print('');
-      print('UID:');
-      print(_auth.currentUser?.uid);
-      print('Display name:');
-      print(_auth.currentUser?.displayName);
-      print('Email:');
-      print(_auth.currentUser?.email);
-      print('Email verified:');
-      print(_auth.currentUser?.emailVerified.toString());
-      print('Is user anonymous?:');
-      print(_auth.currentUser?.isAnonymous.toString());
-      print('User metadata:');
-      print(_auth.currentUser?.metadata.toString());
-      print('User creation time:');
-      print(_auth.currentUser?.metadata.creationTime.toString());
-      print('User last sign in time:');
-      print(_auth.currentUser?.metadata.lastSignInTime.toString());
-      print('User multifactor:');
-      print(_auth.currentUser?.multiFactor.toString());
-      print('User phone number:');
-      print(_auth.currentUser?.phoneNumber);
-      print('User photo URL:');
-      print(_auth.currentUser?.photoURL);
-      print('Provider data:');
-      print(_auth.currentUser?.providerData.toString());
-      print('Refresh token:');
-      print(_auth.currentUser?.refreshToken);
-      print('Tenant ID:');
-      print(_auth.currentUser?.tenantId);
-      print('UID:');
-      print(_auth.currentUser?.uid);
-      print('Hash code:');
-      print(_auth.currentUser?.hashCode.toString());
-      print('Runtime type:');
-      print(_auth.currentUser?.runtimeType.toString());
-    }
-  }
-
-  // START new user info functions
-  void getUserInfoNew() {
-    if (_auth.currentUser != null) {
-      print('User info:');
-      print(getAllUserInfo());
-      print('');
-      print('UID:');
-      print(getUserID());
-      print('Display name:');
-      print(getDisplayName());
-      print('Email:');
-      print(getEmailNew());
-      print('Email verified:');
-      print(isEmailVerified());
-      print('Is user anonymous?:');
-      print(isUserAnonymous());
-      print('User metadata:');
-      print(getAllUserMetadata());
-      print('User creation time:');
-      print(getUserCreationTime());
-      print('User last sign in time:');
-      print(getUserLastSignInTime());
-      print('User multifactor:');
-      print(getUserMultifactor());
-      print('User phone number:');
-      print(getUserPhoneNumber());
-      print('User photo URL:');
-      print(getUserPhotoURL());
-      print('Provider data:');
-      print(getUserProviderData());
-      print('Refresh token:');
-      print(getUserRefreshToken());
-      print('Tenant ID:');
-      print(getUserTenantID());
-      print('UID:');
-      print(getUserID());
-      print('Hash code:');
-      print(getUserHashcode());
-      print('Runtime type:');
-      print(getUserRuntimeType());
-    }
-  }
 
   // Continue new user info getters
+
+  // TODO: implement new setters
 
   String? getAllUserInfo() {
     return currentUser?.toString();
