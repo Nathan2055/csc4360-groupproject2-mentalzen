@@ -24,13 +24,10 @@ class AuthService {
   }
 
   // Creates an account and an associated profile and then logs in
-  // TODO: handle usernames
   Future<void> createAccount(
     String emailAddress,
     String password,
-    String username,
-    String firstName,
-    String lastName,
+    String displayName,
   ) async {
     try {
       // Create an account with the given email and password
@@ -43,6 +40,12 @@ class AuthService {
       // Load the new user's details into the class storage
       loadUserDetails(cred);
 
+      // Save the new user's display name
+      bool displayNameSuccess = await updateDisplayName(displayName);
+      if (!displayNameSuccess) {
+        throw Exception('Failed to set display name');
+      }
+
       // Log into the newly created user account
       await login(emailAddress, password);
     } on FirebaseAuthException catch (e) {
@@ -51,7 +54,7 @@ class AuthService {
         debugPrint('The password provided is too weak.');
       } else if (e.code == 'email-already-in-use') {
         debugPrint('The account already exists for that email.');
-      }
+      } // TODO: missing else
     } catch (e) {
       debugPrint(e.toString());
     }
