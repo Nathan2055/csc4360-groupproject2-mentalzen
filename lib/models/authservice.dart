@@ -7,13 +7,11 @@ class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
   // Class-based storage for user information
-  UserCredential? currentUserCredential;
   User? currentUser;
 
   // Load user details from a UserCredential into the class storage as a User
   void loadUserDetailsFromCred(UserCredential cred) {
     clearUserDetails(); // clear user details first to avoid sync issues
-    currentUserCredential = cred;
     currentUser = cred.user;
   }
 
@@ -32,7 +30,6 @@ class AuthService {
 
   // Clear the UserCredential and User currently stored in the class
   void clearUserDetails() {
-    currentUserCredential = null;
     currentUser = null;
   }
 
