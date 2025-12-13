@@ -2,18 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:mentalzen/models/authservice.dart';
 import 'package:mentalzen/models/firestore_helper.dart';
 
-// Update Profile form
-class UpdateProfileForm extends StatefulWidget {
-  const UpdateProfileForm(this.authService, this.dbHelper, {super.key});
+// Update Display Name form
+class UpdateDisplayNameForm extends StatefulWidget {
+  const UpdateDisplayNameForm(this.authService, this.dbHelper, {super.key});
 
   final AuthService authService;
   final FirestoreHelper dbHelper;
 
   @override
-  State<UpdateProfileForm> createState() => _UpdateProfileFormState();
+  State<UpdateDisplayNameForm> createState() => _UpdateDisplayNameFormState();
 }
 
-class _UpdateProfileFormState extends State<UpdateProfileForm> {
+class _UpdateDisplayNameFormState extends State<UpdateDisplayNameForm> {
   // Form state key
   final _formKey = GlobalKey<FormState>();
 
