@@ -45,18 +45,18 @@ class _UpdateProfileFormState extends State<UpdateProfileForm> {
   // the complete UserEntry into _userInfo
   void _loadUserInfo() {
     // TODO: implement new setters
-    widget.dbHelper
-        .getUserEntryFromEmail(widget.authService.getEmailNew()!)
-        .then((result) {
-          setState(() {
-            if (result != null) {
-              _usernameController.text = result.username!;
-              _firstNameController.text = result.firstName!;
-              _lastNameController.text = result.lastName!;
-              _userInfo = result;
-            }
-          });
-        });
+    widget.dbHelper.getUserEntryFromEmail(widget.authService.getEmail()!).then((
+      result,
+    ) {
+      setState(() {
+        if (result != null) {
+          _usernameController.text = result.username!;
+          _firstNameController.text = result.firstName!;
+          _lastNameController.text = result.lastName!;
+          _userInfo = result;
+        }
+      });
+    });
   }
 
   void _submitForm() async {
@@ -68,7 +68,7 @@ class _UpdateProfileFormState extends State<UpdateProfileForm> {
     // Send update and register function to update status on completion
     // TODO: implement new setters
     bool result = await widget.dbHelper.updateUserProfile(
-      widget.authService.getEmailNew()!,
+      widget.authService.getEmail()!,
       _usernameController.text,
       _firstNameController.text,
       _lastNameController.text,

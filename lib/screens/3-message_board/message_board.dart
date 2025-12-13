@@ -37,8 +37,7 @@ class _MessageBoardState extends State<MessageBoard> {
     super.initState();
 
     _chatStream = widget.dbHelper.getChatStream(widget.messageBoard);
-    _email =
-        widget.authService.getEmailNew() ?? ''; // this should never be null
+    _email = widget.authService.getEmail() ?? ''; // this should never be null
   }
 
   void _submitChatForm() async {

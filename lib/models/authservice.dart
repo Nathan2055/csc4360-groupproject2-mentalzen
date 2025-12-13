@@ -145,7 +145,7 @@ class AuthService {
     return currentUser?.displayName;
   }
 
-  String? getEmailNew() {
+  String? getEmail() {
     return currentUser?.email;
   }
 
@@ -224,7 +224,7 @@ class AuthService {
 
     print(_auth.currentUser?.displayName == getDisplayName());
 
-    print(_auth.currentUser?.email == getEmailNew());
+    print(_auth.currentUser?.email == getEmail());
 
     print(_auth.currentUser?.emailVerified == isEmailVerified());
 
