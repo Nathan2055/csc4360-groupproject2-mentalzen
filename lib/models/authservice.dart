@@ -194,6 +194,12 @@ class AuthService {
       // Reload the user information
       await currentUser?.reload();
 
+      // Update the stored user information
+      bool updateSuccess = loadUserDetailsFromCurrent();
+      if (!updateSuccess) {
+        throw Exception('Failed to update cached user information');
+      }
+
       // Return true on success
       return true;
     } catch (e) {
