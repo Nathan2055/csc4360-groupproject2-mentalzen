@@ -1,1 +1,44 @@
-{"flutter":{"platforms":{"android":{"default":{"projectId":"csc4360-grpproject2-mentalzen","appId":"1:894474126176:android:12e41223759e633ac75405","fileOutput":"android/app/google-services.json"}},"ios":{"default":{"projectId":"csc4360-grpproject2-mentalzen","appId":"1:894474126176:ios:44e928d0e789c035c75405","uploadDebugSymbols":false,"fileOutput":"ios/Runner/GoogleService-Info.plist"}},"macos":{"default":{"projectId":"csc4360-grpproject2-mentalzen","appId":"1:894474126176:ios:3f5b0cce1782b24bc75405","uploadDebugSymbols":false,"fileOutput":"macos/Runner/GoogleService-Info.plist"}},"dart":{"lib/firebase_options.dart":{"projectId":"csc4360-grpproject2-mentalzen","configurations":{"android":"1:894474126176:android:12e41223759e633ac75405","ios":"1:894474126176:ios:44e928d0e789c035c75405","macos":"1:894474126176:ios:3f5b0cce1782b24bc75405","web":"1:894474126176:web:deaf8d8fae053938c75405","windows":"1:894474126176:web:22dc974343e3e060c75405"}}}}}}
+{
+    "functions": {
+      "source": "functions"
+    },
+    "flutter": {
+      "platforms": {
+        "android": {
+          "default": {
+            "projectId": "csc4360-grpproject2-mentalzen",
+            "appId": "1:894474126176:android:12e41223759e633ac75405",
+            "fileOutput": "android/app/google-services.json"
+          }
+        },
+        "ios": {
+          "default": {
+            "projectId": "csc4360-grpproject2-mentalzen",
+            "appId": "1:894474126176:ios:44e928d0e789c035c75405",
+            "uploadDebugSymbols": false,
+            "fileOutput": "ios/Runner/GoogleService-Info.plist"
+          }
+        },
+        "macos": {
+          "default": {
+            "projectId": "csc4360-grpproject2-mentalzen",
+            "appId": "1:894474126176:ios:3f5b0cce1782b24bc75405",
+            "uploadDebugSymbols": false,
+            "fileOutput": "macos/Runner/GoogleService-Info.plist"
+          }
+        },
+        "dart": {
+          "lib/firebase_options.dart": {
+            "projectId": "csc4360-grpproject2-mentalzen",
+            "configurations": {
+              "android": "1:894474126176:android:12e41223759e633ac75405",
+              "ios": "1:894474126176:ios:44e928d0e789c035c75405",
+              "macos": "1:894474126176:ios:3f5b0cce1782b24bc75405",
+              "web": "1:894474126176:web:deaf8d8fae053938c75405",
+              "windows": "1:894474126176:web:22dc974343e3e060c75405"
+            }
+          }
+        }
+      }
+    }
+  }
