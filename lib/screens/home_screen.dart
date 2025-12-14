@@ -15,23 +15,43 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  late AppBar _homeScreenAppBar;
-
-  late Column _homeColumn;
-
   String _visibleScreen = 'home';
+  Key _messageBoardKey = UniqueKey();
 
   @override
   void initState() {
     super.initState();
-
-    _buildHomeScreenAppBar();
-    _buildHomeColumn();
   }
 
-  void _buildHomeScreenAppBar() {
+  void _resetMessageBoard() {
     setState(() {
-      _homeScreenAppBar = AppBar(
+      _messageBoardKey = UniqueKey();
+    });
+  }
+
+  Widget _getCurrentScreen() {
+    switch (_visibleScreen) {
+      case 'home':
+        return MessageBoardsListing(
+          widget.authService,
+          widget.dbHelper,
+          key: _messageBoardKey,
+        );
+      case 'settings':
+        return SettingsScreen(widget.authService, widget.dbHelper);
+      default:
+        return MessageBoardsListing(
+          widget.authService,
+          widget.dbHelper,
+          key: _messageBoardKey,
+        );
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
         title: const Text('Mental Zen'),
         actions: <Widget>[
           IconButton(
@@ -40,52 +60,22 @@ class _HomeScreenState extends State<HomeScreen> {
             onPressed: () {
               setState(() {
                 _visibleScreen = 'home';
-                _buildHomeColumn();
+                _resetMessageBoard();
               });
             },
           ),
-
           IconButton(
             icon: const Icon(Icons.settings),
             tooltip: 'Settings',
             onPressed: () {
               setState(() {
                 _visibleScreen = 'settings';
-                _buildHomeColumn();
               });
             },
           ),
         ],
-      );
-    });
-  }
-
-  void _buildHomeColumn() {
-    setState(() {
-      _homeColumn = Column(
-        children: [
-          (_visibleScreen == 'home')
-              ? MessageBoardsListing(widget.authService, widget.dbHelper)
-              : Container(),
-
-          (_visibleScreen == 'settings')
-              ? SettingsScreen(widget.authService, widget.dbHelper)
-              : Container(),
-        ],
-      );
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: _homeScreenAppBar,
-      body: Center(
-        child: SingleChildScrollView(
-          padding: const EdgeInsets.all(64.0),
-          child: _homeColumn,
-        ),
       ),
+      body: _getCurrentScreen(),
     );
   }
 }
