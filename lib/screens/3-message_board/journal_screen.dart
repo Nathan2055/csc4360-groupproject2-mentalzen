@@ -16,64 +16,15 @@ class JournalScreen extends StatefulWidget {
 }
 
 class _JournalScreenState extends State<JournalScreen> {
-  late String _email;
-
   late Stream<QuerySnapshot> _journalStream;
-
-  final TextEditingController _messageController = TextEditingController();
-  final _formKey = GlobalKey<FormState>();
-
-  // Tracks status of submitted async update request
-  // Either 'ready', 'pending', 'complete', or 'error'
-  String _sendingMessage = 'ready';
 
   @override
   void initState() {
     super.initState();
 
-    _email = widget.authService.getEmail() ?? ''; // this should never be null
-
-    _journalStream = widget.dbHelper.getJournalEntryStream(_email);
-  }
-
-  void _submitJournalForm() async {
-    // Lock interface, prepare to send update
-    setState(() {
-      _sendingMessage = 'pending';
-    });
-
-    JournalEntry entry = JournalEntry(
-      message: _messageController.text,
-      userId: _email,
-      createdAt: DateTime.now(),
-      updatedAt: DateTime.now(),
+    _journalStream = widget.dbHelper.getJournalEntryStream(
+      widget.authService.getEmail() ?? '',
     );
-
-    // Send message and register function to update status on completion
-    bool result = await widget.dbHelper.addJournalEntry(_email, entry);
-
-    if (result) {
-      setState(() {
-        _sendingMessage = 'complete';
-      });
-    } else {
-      setState(() {
-        _sendingMessage = 'error';
-      });
-    }
-
-    // Wait for update to commit and then update status
-    while (_sendingMessage != 'ready') {
-      if (_sendingMessage == 'complete') {
-        // Reload entire interface upon completion to avoid desyncs
-        setState(() {
-          _messageController.text = '';
-          _sendingMessage = 'ready';
-        });
-      } else if (_sendingMessage == 'error') {
-        // TODO: send error up the chain
-      }
-    }
   }
 
   void _showJournalEntryForm({JournalEntry? journalEntry}) {
