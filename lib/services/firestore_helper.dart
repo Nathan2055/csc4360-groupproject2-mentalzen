@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:mentalzen/models/chat_entry.dart';
+import 'package:mentalzen/models/journal_entry.dart';
 import 'package:mentalzen/models/reminder_config.dart';
 import 'package:mentalzen/models/notification_job.dart';
 
@@ -8,19 +8,22 @@ import 'package:mentalzen/models/notification_job.dart';
 class FirestoreHelper {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
-  // BEGIN chat message code for rewrite
-  // Adds a new chat entry, returns a boolean for success
-  Future<bool> addChatEntry(String messageBoard, ChatEntry chatMessage) async {
+  // Journal entry methods start here
+  // Creates a new journal entry in the users/{userId}/journal subcollection
+  // Returns a Future that resolves to true if successful and false on failure
+  Future<bool> addJournalEntry(String userId, JournalEntry journalEntry) async {
     try {
       final docRef = _firestore
-          .collection(messageBoard)
+          .collection('users')
+          .doc(userId)
+          .collection('journal')
           .withConverter(
-            fromFirestore: ChatEntry.fromFirestore,
-            toFirestore: (ChatEntry chatMessage, options) =>
-                chatMessage.toFirestore(),
+            fromFirestore: JournalEntry.fromFirestore,
+            toFirestore: (JournalEntry journalEntry, options) =>
+                journalEntry.toFirestore(),
           )
           .doc();
-      await docRef.set(chatMessage);
+      await docRef.set(journalEntry);
       return true;
     } catch (e) {
       debugPrint(e.toString());
@@ -28,14 +31,71 @@ class FirestoreHelper {
     }
   }
 
-  Stream<QuerySnapshot> getChatStream(String messageBoard) {
-    return _firestore.collection(messageBoard).snapshots();
+  // Gets a Stream of all of a user's journal entries
+  Stream<QuerySnapshot> getJournalEntryStream(String userId) {
+    return _firestore
+        .collection('users')
+        .doc(userId)
+        .collection('journal')
+        .snapshots();
   }
-  // END chat message code for rewrite
 
-  // BEGIN reminder code
-  // Reminder notification functions start here
+  // Updates a journal entry
+  // Returns a Future that resolves to true if successful and false on failure
+  Future<bool> updateJournalEntry(
+    String userId,
+    String journalEntryId,
+    JournalEntry journalEntry,
+  ) async {
+    try {
+      final docRef = _firestore
+          .collection('users')
+          .doc(userId)
+          .collection('journal')
+          .withConverter(
+            fromFirestore: JournalEntry.fromFirestore,
+            toFirestore: (JournalEntry journalEntry, options) =>
+                journalEntry.toFirestore(),
+          )
+          .doc(journalEntryId);
+
+      // Update with new updatedAt timestamp
+      final updatedJournalEntry = JournalEntry(
+        id: journalEntryId,
+        message: journalEntry.message,
+        userId: userId,
+        createdAt: journalEntry.createdAt,
+        updatedAt: DateTime.now(),
+      );
+
+      await docRef.set(updatedJournalEntry);
+      return true;
+    } catch (e) {
+      debugPrint('Error updating journal entry: $e');
+      return false;
+    }
+  }
+
+  // Deletes a journal entry
+  // Returns a Future that resolves to true if successful and false on failure
+  Future<bool> deleteJournalEntry(String userId, String journalEntryId) async {
+    try {
+      await _firestore
+          .collection('users')
+          .doc(userId)
+          .collection('journal')
+          .doc(journalEntryId)
+          .delete();
+      return true;
+    } catch (e) {
+      debugPrint('Error deleting journal entry: $e');
+      return false;
+    }
+  }
+
+  // Reminder notification methods start here
   // Creates a new reminder in users/{userId}/reminders subcollection
+  // Returns a Future that resolves to true if successful and false on failure
   Future<bool> createReminder(String userId, ReminderConfig reminder) async {
     try {
       final docRef = _firestore
@@ -69,7 +129,7 @@ class FirestoreHelper {
     }
   }
 
-  // Gets a stream of all reminders for a user
+  // Gets a Stream of all reminders for a user
   Stream<List<ReminderConfig>> getUserReminders(String userId) {
     return _firestore
         .collection('users')
@@ -84,6 +144,7 @@ class FirestoreHelper {
   }
 
   // Updates an existing reminder
+  // Returns a Future that resolves to true if successful and false on failure
   Future<bool> updateReminder(
     String userId,
     String reminderId,
@@ -122,6 +183,7 @@ class FirestoreHelper {
   }
 
   // Deletes a reminder
+  // Returns a Future that resolves to true if successful and false on failure
   Future<bool> deleteReminder(String userId, String reminderId) async {
     try {
       await _firestore
@@ -136,11 +198,10 @@ class FirestoreHelper {
       return false;
     }
   }
-  // END reminder code
 
-  // BEGIN notification job functions
   // Notification job functions start here
   // Creates a notification job in the notification_jobs collection
+  // Returns a Future that resolves to true if successful and false on failure
   Future<bool> createNotificationJob(NotificationJob job) async {
     try {
       final docRef = _firestore
@@ -173,11 +234,9 @@ class FirestoreHelper {
     }
   }
 
-  // END notification job functions
-
-  // BEGIN FCM functions
-  // FCM job functions start here
+  // FCM token functions start here
   // Creates or updates the user's stored FCM token
+  // Returns a Future that resolves to true if successful and false on failure
   Future<bool> saveFCMToken(String userId, String? token) async {
     try {
       await _firestore
@@ -196,6 +255,4 @@ class FirestoreHelper {
       return false;
     }
   }
-
-  // END FCM functions
 }

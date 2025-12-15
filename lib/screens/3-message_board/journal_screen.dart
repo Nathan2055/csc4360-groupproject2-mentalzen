@@ -2,28 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:mentalzen/services/authservice.dart';
 import 'package:mentalzen/services/firestore_helper.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:mentalzen/models/chat_entry.dart';
+import 'package:mentalzen/models/journal_entry.dart';
 
-class MessageBoard extends StatefulWidget {
-  const MessageBoard(
-    this.authService,
-    this.dbHelper,
-    this.messageBoard, {
-    super.key,
-  });
+class JournalScreen extends StatefulWidget {
+  const JournalScreen(this.authService, this.dbHelper, {super.key});
 
   final AuthService authService;
   final FirestoreHelper dbHelper;
-  final String messageBoard;
 
   @override
-  State<MessageBoard> createState() => _MessageBoardState();
+  State<JournalScreen> createState() => _JournalScreenState();
 }
 
-class _MessageBoardState extends State<MessageBoard> {
+class _JournalScreenState extends State<JournalScreen> {
   late String _email;
 
-  late Stream<QuerySnapshot> _chatStream;
+  late Stream<QuerySnapshot> _journalStream;
 
   final TextEditingController _messageController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
@@ -36,27 +30,26 @@ class _MessageBoardState extends State<MessageBoard> {
   void initState() {
     super.initState();
 
-    _chatStream = widget.dbHelper.getChatStream(widget.messageBoard);
     _email = widget.authService.getEmail() ?? ''; // this should never be null
+
+    _journalStream = widget.dbHelper.getJournalEntryStream(_email);
   }
 
-  void _submitChatForm() async {
+  void _submitJournalForm() async {
     // Lock interface, prepare to send update
     setState(() {
       _sendingMessage = 'pending';
     });
 
-    ChatEntry message = ChatEntry(
+    JournalEntry entry = JournalEntry(
       message: _messageController.text,
-      userEmail: _email,
+      userId: _email,
       createdAt: DateTime.now(),
+      updatedAt: DateTime.now(),
     );
 
     // Send message and register function to update status on completion
-    bool result = await widget.dbHelper.addChatEntry(
-      widget.messageBoard,
-      message,
-    );
+    bool result = await widget.dbHelper.addJournalEntry(_email, entry);
 
     if (result) {
       setState(() {
@@ -89,9 +82,9 @@ class _MessageBoardState extends State<MessageBoard> {
         SingleChildScrollView(
           padding: const EdgeInsets.all(8.0),
           child:
-              // Chat message stream
+              // Journal entry stream
               StreamBuilder<QuerySnapshot>(
-                stream: _chatStream,
+                stream: _journalStream,
                 builder:
                     (
                       BuildContext context,
@@ -123,21 +116,23 @@ class _MessageBoardState extends State<MessageBoard> {
                             .map((DocumentSnapshot document) {
                               Map<String, dynamic> data =
                                   document.data()! as Map<String, dynamic>;
-                              ChatEntry message = ChatEntry.fromMap(data);
+                              JournalEntry entry = JournalEntry.fromMap(data);
 
                               // Null/emptiness check
-                              if (message.message == null ||
-                                  message.userEmail == null ||
-                                  message.createdAt == null ||
-                                  message.message == '' ||
-                                  message.userEmail == '') {
+                              if (entry.message == null ||
+                                  entry.userId == null ||
+                                  entry.createdAt == null ||
+                                  entry.updatedAt == null ||
+                                  entry.message == '' ||
+                                  entry.userId == '') {
                                 return Container();
                               }
 
                               return ListTile(
-                                title: Text(message.message!),
+                                title: Text(entry.message!),
                                 subtitle: Text(
-                                  'Sent by ${message.userEmail!} at ${message.createdAt!.toString()}',
+                                  // TODO: update this
+                                  'Sent by ${entry.userId!} at ${entry.createdAt!.toString()}',
                                 ),
                               );
                             })
@@ -150,7 +145,7 @@ class _MessageBoardState extends State<MessageBoard> {
 
         SizedBox(height: 20.0),
 
-        // Chat message form
+        // Journal entry form
         Form(
           key: _formKey,
           child: Column(
@@ -158,12 +153,12 @@ class _MessageBoardState extends State<MessageBoard> {
             mainAxisSize: MainAxisSize.min,
             spacing: 24.0,
             children: [
-              // Username field
+              // Message field
               TextFormField(
                 enabled: (_sendingMessage == 'ready'),
                 controller: _messageController,
                 decoration: InputDecoration(
-                  labelText: 'Chat Message',
+                  labelText: 'Journal Entry',
                   prefixIcon: const Icon(Icons.message),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12),
@@ -175,10 +170,10 @@ class _MessageBoardState extends State<MessageBoard> {
               ElevatedButton(
                 onPressed: (_sendingMessage != 'ready')
                     ? null
-                    : _submitChatForm,
+                    : _submitJournalForm,
                 child: const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: [Text('Send Message')],
+                  children: [Text('Save Journal Entry')],
                 ),
               ),
             ],

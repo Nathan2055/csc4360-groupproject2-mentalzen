@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mentalzen/services/authservice.dart';
 import 'package:mentalzen/services/firestore_helper.dart';
-import 'package:mentalzen/screens/3-message_board/message_board.dart';
+import 'package:mentalzen/screens/3-message_board/journal_screen.dart';
 import 'package:mentalzen/screens/mood_tracker_screen.dart';
 import 'package:mentalzen/screens/resources_screen.dart';
 
@@ -131,6 +131,7 @@ class _MessageBoardsListingState extends State<MessageBoardsListing> {
       case 'resources':
         return ResourcesScreen(widget.authService, widget.dbHelper);
       case 'journal':
+        return JournalScreen(widget.authService, widget.dbHelper);
       case 'insights':
         return Center(
           child: Column(
@@ -156,7 +157,29 @@ class _MessageBoardsListingState extends State<MessageBoardsListing> {
           ),
         );
       default:
-        return MessageBoard(widget.authService, widget.dbHelper, _visibleBoard);
+        return Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Icon(Icons.construction, size: 64, color: Colors.grey),
+              const SizedBox(height: 16),
+              const Text(
+                'Something went wrong',
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 8),
+              Text(
+                'An unknown error has occurred',
+                style: TextStyle(fontSize: 16, color: Colors.grey.shade600),
+              ),
+              const SizedBox(height: 24),
+              ElevatedButton(
+                onPressed: () => _displayBoard(''),
+                child: const Text('Back to Dashboard'),
+              ),
+            ],
+          ),
+        );
     }
   }
 
