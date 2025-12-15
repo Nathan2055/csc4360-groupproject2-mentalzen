@@ -2,6 +2,7 @@ import 'package:mentalzen/services/firestore_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:mentalzen/services/authservice.dart';
+import 'package:mentalzen/services/fcm_service.dart';
 import 'package:mentalzen/screens/1-welcome_screen/create_account_screen.dart';
 import 'package:mentalzen/screens/1-welcome_screen/login_screen.dart';
 import 'package:mentalzen/screens/home_screen.dart';
@@ -9,10 +10,11 @@ import 'package:mentalzen/screens/home_screen.dart';
 // Initial welcome screen shown on app startup
 // Includes login and create account options
 class WelcomeScreen extends StatefulWidget {
-  const WelcomeScreen(this.authService, this.dbHelper, {super.key});
+  const WelcomeScreen(this.authService, this.dbHelper, this.fcmService, {super.key});
 
   final AuthService authService;
   final FirestoreHelper dbHelper;
+  final FcmService fcmService;
 
   @override
   State<WelcomeScreen> createState() => _WelcomeScreenState();
@@ -187,6 +189,11 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             // Don't use setState() here since it will trigger a rebuild we don't need yet
             loginSelected = false;
             createAccountSelected = false;
+            // Register FCM token when user logs in
+            final userEmail = snapshot.data?.email ?? '';
+            if (userEmail.isNotEmpty) {
+              widget.fcmService.registerDevice(userEmail);
+            }
             return HomeScreen(widget.authService, widget.dbHelper);
           }
         },
