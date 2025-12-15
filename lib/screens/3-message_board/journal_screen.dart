@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mentalzen/screens/3-message_board/journal_entry_form.dart';
 import 'package:mentalzen/services/authservice.dart';
 import 'package:mentalzen/services/firestore_helper.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -15,64 +16,91 @@ class JournalScreen extends StatefulWidget {
 }
 
 class _JournalScreenState extends State<JournalScreen> {
-  late String _email;
-
   late Stream<QuerySnapshot> _journalStream;
-
-  final TextEditingController _messageController = TextEditingController();
-  final _formKey = GlobalKey<FormState>();
-
-  // Tracks status of submitted async update request
-  // Either 'ready', 'pending', 'complete', or 'error'
-  String _sendingMessage = 'ready';
 
   @override
   void initState() {
     super.initState();
 
-    _email = widget.authService.getEmail() ?? ''; // this should never be null
-
-    _journalStream = widget.dbHelper.getJournalEntryStream(_email);
+    _journalStream = widget.dbHelper.getJournalEntryStream(
+      widget.authService.getEmail() ?? '',
+    );
   }
 
-  void _submitJournalForm() async {
-    // Lock interface, prepare to send update
-    setState(() {
-      _sendingMessage = 'pending';
-    });
-
-    JournalEntry entry = JournalEntry(
-      message: _messageController.text,
-      userId: _email,
-      createdAt: DateTime.now(),
-      updatedAt: DateTime.now(),
+  Future<void> _deleteJournalEntry(String journalEntryId) async {
+    final confirmed = await showDialog<bool>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('Delete Journal Entry'),
+        content: const Text(
+          'Are you sure you want to delete this journal entry?',
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(false),
+            child: const Text('Cancel'),
+          ),
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(true),
+            child: const Text('Delete'),
+          ),
+        ],
+      ),
     );
 
-    // Send message and register function to update status on completion
-    bool result = await widget.dbHelper.addJournalEntry(_email, entry);
-
-    if (result) {
-      setState(() {
-        _sendingMessage = 'complete';
-      });
-    } else {
-      setState(() {
-        _sendingMessage = 'error';
-      });
-    }
-
-    // Wait for update to commit and then update status
-    while (_sendingMessage != 'ready') {
-      if (_sendingMessage == 'complete') {
-        // Reload entire interface upon completion to avoid desyncs
-        setState(() {
-          _messageController.text = '';
-          _sendingMessage = 'ready';
-        });
-      } else if (_sendingMessage == 'error') {
-        // TODO: send error up the chain
+    if (confirmed == true) {
+      final success = await widget.dbHelper.deleteJournalEntry(
+        widget.authService.getEmail() ?? '',
+        journalEntryId,
+      );
+      if (success && mounted) {
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(const SnackBar(content: Text('Reminder deleted')));
       }
     }
+  }
+
+  void _showJournalEntryForm({JournalEntry? journalEntry}) {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: Colors.transparent,
+      builder: (context) => Container(
+        height: MediaQuery.of(context).size.height * 0.9,
+        decoration: const BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(20),
+            topRight: Radius.circular(20),
+          ),
+        ),
+        child: Column(
+          children: [
+            // Drag handle
+            Container(
+              margin: const EdgeInsets.only(top: 12, bottom: 8),
+              width: 40,
+              height: 4,
+              decoration: BoxDecoration(
+                color: Colors.grey.shade300,
+                borderRadius: BorderRadius.circular(2),
+              ),
+            ),
+            Expanded(
+              child: SingleChildScrollView(
+                padding: const EdgeInsets.all(16.0),
+                child: JournalEntryForm(
+                  widget.authService,
+                  widget.dbHelper,
+                  journalEntry: journalEntry,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 
   @override
@@ -128,11 +156,35 @@ class _JournalScreenState extends State<JournalScreen> {
                                 return Container();
                               }
 
+                              Text timing;
+                              if (entry.createdAt != entry.updatedAt) {
+                                timing = Text(
+                                  'Entry originally saved at ${entry.createdAt.toString()}\nEntry last edited at ${entry.updatedAt.toString()}',
+                                );
+                              } else {
+                                timing = Text(
+                                  'Entry saved at ${entry.createdAt.toString()}',
+                                );
+                              }
+
                               return ListTile(
                                 title: Text(entry.message!),
-                                subtitle: Text(
-                                  // TODO: update this
-                                  'Sent by ${entry.userId!} at ${entry.createdAt!.toString()}',
+                                subtitle: timing,
+                                trailing: Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    IconButton(
+                                      icon: const Icon(Icons.edit),
+                                      onPressed: () => _showJournalEntryForm(
+                                        journalEntry: entry,
+                                      ),
+                                    ),
+                                    IconButton(
+                                      icon: const Icon(Icons.delete),
+                                      onPressed: () =>
+                                          _deleteJournalEntry(entry.id!),
+                                    ),
+                                  ],
                                 ),
                               );
                             })
@@ -145,39 +197,10 @@ class _JournalScreenState extends State<JournalScreen> {
 
         SizedBox(height: 20.0),
 
-        // Journal entry form
-        Form(
-          key: _formKey,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            mainAxisSize: MainAxisSize.min,
-            spacing: 24.0,
-            children: [
-              // Message field
-              TextFormField(
-                enabled: (_sendingMessage == 'ready'),
-                controller: _messageController,
-                decoration: InputDecoration(
-                  labelText: 'Journal Entry',
-                  prefixIcon: const Icon(Icons.message),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                ),
-              ),
-
-              // Submit button
-              ElevatedButton(
-                onPressed: (_sendingMessage != 'ready')
-                    ? null
-                    : _submitJournalForm,
-                child: const Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [Text('Save Journal Entry')],
-                ),
-              ),
-            ],
-          ),
+        ElevatedButton.icon(
+          onPressed: () => _showJournalEntryForm(),
+          icon: const Icon(Icons.add),
+          label: const Text('Add Journal Entry'),
         ),
       ],
     );
