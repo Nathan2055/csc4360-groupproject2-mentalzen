@@ -57,6 +57,7 @@ class _JournalEntryFormState extends State<JournalEntryForm> {
     final DateTime now = DateTime.now();
 
     final JournalEntry entry = JournalEntry(
+      id: widget.journalEntry?.id ?? '',
       message: _messageController.text,
       userId: widget.authService.getEmail() ?? '',
       createdAt: widget.journalEntry?.createdAt ?? now,
