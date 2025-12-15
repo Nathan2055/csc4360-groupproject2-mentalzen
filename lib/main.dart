@@ -18,6 +18,8 @@ void main() async {
 
   final FirestoreHelper dbHelper = FirestoreHelper();
   final AuthService authService = AuthService();
+  // Initialize currentUser from Firebase Auth if user is already logged in
+  authService.loadUserDetailsFromCurrent();
   FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
 
   runApp(MyApp(authService, dbHelper));

@@ -120,31 +120,36 @@ class AuthService {
   // Get the currently logged in user's user ID
   // Returns null if the user is not logged in or the data is not available
   String? getUserID() {
-    return currentUser?.uid;
+    // Fall back to Firebase Auth if currentUser is not set
+    return currentUser?.uid ?? _auth.currentUser?.uid;
   }
 
   // Get the currently logged in user's display name
   // Returns null if the user is not logged in or the data is not available
   String? getDisplayName() {
-    return currentUser?.displayName;
+    // Fall back to Firebase Auth if currentUser is not set
+    return currentUser?.displayName ?? _auth.currentUser?.displayName;
   }
 
   // Get the currently logged in user's email address
   // Returns null if the user is not logged in or the data is not available
   String? getEmail() {
-    return currentUser?.email;
+    // Fall back to Firebase Auth if currentUser is not set
+    return currentUser?.email ?? _auth.currentUser?.email;
   }
 
   // Get the currently logged in user's creation time as a DateTime
   // Returns null if the user is not logged in or the data is not available
   DateTime? getUserCreationTime() {
-    return currentUser?.metadata.creationTime;
+    // Fall back to Firebase Auth if currentUser is not set
+    return currentUser?.metadata.creationTime ?? _auth.currentUser?.metadata.creationTime;
   }
 
   // Get the currently logged in user's last sign in as a DateTime
   // Returns null if the user is not logged in or the data is not available
   DateTime? getUserLastSignInTime() {
-    return currentUser?.metadata.lastSignInTime;
+    // Fall back to Firebase Auth if currentUser is not set
+    return currentUser?.metadata.lastSignInTime ?? _auth.currentUser?.metadata.lastSignInTime;
   }
 
   // Updates the password for the currently logged in user
