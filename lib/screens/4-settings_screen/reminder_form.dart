@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:mentalzen/models/reminder_config.dart';
+import 'package:mentalzen/services/authservice.dart';
 import 'package:mentalzen/services/firestore_helper.dart';
+import 'package:mentalzen/models/reminder_config.dart';
 
 class ReminderForm extends StatefulWidget {
-  const ReminderForm(this.dbHelper, this.userEmail, {this.reminder, super.key});
+  const ReminderForm(
+    this.authService,
+    this.dbHelper, {
+    this.reminder,
+    super.key,
+  });
 
+  final AuthService authService;
   final FirestoreHelper dbHelper;
-  final String userEmail;
+
   final ReminderConfig?
   reminder; // If provided, we're editing; otherwise, creating
 
@@ -124,7 +131,7 @@ class _ReminderFormState extends State<ReminderForm> {
 
     final reminder = ReminderConfig(
       id: widget.reminder?.id ?? '',
-      userId: widget.userEmail,
+      userId: widget.authService.getEmail() ?? '',
       types: selectedTypesList,
       time: timeString,
       daysOfWeek: selectedDaysList,
@@ -137,14 +144,14 @@ class _ReminderFormState extends State<ReminderForm> {
     if (widget.reminder != null) {
       // Update existing reminder
       success = await widget.dbHelper.updateReminder(
-        widget.userEmail,
+        widget.authService.getEmail() ?? '',
         widget.reminder!.id,
         reminder,
       );
     } else {
       // Create new reminder
       success = await widget.dbHelper.createReminder(
-        widget.userEmail,
+        widget.authService.getEmail() ?? '',
         reminder,
       );
     }

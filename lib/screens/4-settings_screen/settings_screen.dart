@@ -17,14 +17,6 @@ class SettingsScreen extends StatefulWidget {
 }
 
 class _SettingsScreenState extends State<SettingsScreen> {
-  void _logout() {
-    widget.authService.logout();
-  }
-
-  String _getUserEmail() {
-    return widget.authService.getEmail() ?? '';
-  }
-
   String _formatReminderTypes(List<String> types) {
     return types.map((t) => t[0].toUpperCase() + t.substring(1)).join(', ');
   }
@@ -44,7 +36,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
   Future<void> _toggleReminder(String reminderId, bool currentValue) async {
     // Get the reminder first
-    final remindersStream = widget.dbHelper.getUserReminders(_getUserEmail());
+    final remindersStream = widget.dbHelper.getUserReminders(
+      widget.authService.getEmail() ?? '',
+    );
     final reminders = await remindersStream.first;
     final reminder = reminders.firstWhere((r) => r.id == reminderId);
 
@@ -61,7 +55,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
     );
 
     final success = await widget.dbHelper.updateReminder(
-      _getUserEmail(),
+      widget.authService.getEmail() ?? '',
       reminderId,
       updatedReminder,
     );
@@ -98,7 +92,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
     if (confirmed == true) {
       final success = await widget.dbHelper.deleteReminder(
-        _getUserEmail(),
+        widget.authService.getEmail() ?? '',
         reminderId,
       );
       if (success && mounted) {
@@ -139,8 +133,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
               child: SingleChildScrollView(
                 padding: const EdgeInsets.all(16.0),
                 child: ReminderForm(
+                  widget.authService,
                   widget.dbHelper,
-                  _getUserEmail(),
                   reminder: reminder,
                 ),
               ),
@@ -153,8 +147,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final userEmail = _getUserEmail();
-
     return SingleChildScrollView(
       padding: const EdgeInsets.all(16.0),
       child: Column(
@@ -172,7 +164,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
           ),
           const SizedBox(height: 20),
           StreamBuilder<List<ReminderConfig>>(
-            stream: widget.dbHelper.getUserReminders(userEmail),
+            stream: widget.dbHelper.getUserReminders(
+              widget.authService.getEmail() ?? '',
+            ),
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.waiting) {
                 return const CircularProgressIndicator();
@@ -249,7 +243,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
           ),
           const SizedBox(height: 20),
           ElevatedButton(
-            onPressed: _logout,
+            onPressed: widget.authService.logout,
             child: const Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [Text('Log out')],
