@@ -87,7 +87,8 @@ exports.sendScheduledNotifications = functions.pubsub
           console.log(`✅ Processing reminder for user ${userId} at ${reminderTime}`);
 
           // Get user's FCM token
-          const userDoc = await db.collection('users').doc(userId).get();
+          const userDoc = await db.collection('users').doc(userId).collection('fcmToken')
+          .doc('fcmToken').get();
           if (!userDoc.exists) {
             console.log(`User ${userId} not found, skipping`);
             continue;

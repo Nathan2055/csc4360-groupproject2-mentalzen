@@ -6,7 +6,12 @@ import 'package:mentalzen/screens/mood_tracker_screen.dart';
 import 'package:mentalzen/screens/resources_screen.dart';
 
 class MessageBoardsListing extends StatefulWidget {
-  const MessageBoardsListing(this.authService, this.dbHelper, {super.key, this.resetState});
+  const MessageBoardsListing(
+    this.authService,
+    this.dbHelper, {
+    super.key,
+    this.resetState,
+  });
 
   final AuthService authService;
   final FirestoreHelper dbHelper;

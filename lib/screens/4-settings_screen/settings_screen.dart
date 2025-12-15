@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:mentalzen/services/authservice.dart';
 import 'package:mentalzen/services/firestore_helper.dart';
 import 'package:mentalzen/models/reminder_config.dart';
-import 'package:mentalzen/screens/4-settings_screen/update_password_form.dart';
 import 'package:mentalzen/screens/4-settings_screen/reminder_form.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:mentalzen/screens/4-settings_screen/update_password_form.dart';
+import 'package:mentalzen/screens/4-settings_screen/update_display_name_form.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen(this.authService, this.dbHelper, {super.key});
@@ -17,15 +17,6 @@ class SettingsScreen extends StatefulWidget {
 }
 
 class _SettingsScreenState extends State<SettingsScreen> {
-  void _logout() {
-    widget.authService.logout();
-  }
-
-  String _getUserEmail() {
-    final user = FirebaseAuth.instance.currentUser;
-    return user?.email ?? '';
-  }
-
   String _formatReminderTypes(List<String> types) {
     return types.map((t) => t[0].toUpperCase() + t.substring(1)).join(', ');
   }
@@ -45,7 +36,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
   Future<void> _toggleReminder(String reminderId, bool currentValue) async {
     // Get the reminder first
-    final remindersStream = widget.dbHelper.getUserReminders(_getUserEmail());
+    final remindersStream = widget.dbHelper.getUserReminders(
+      widget.authService.getEmail() ?? '',
+    );
     final reminders = await remindersStream.first;
     final reminder = reminders.firstWhere((r) => r.id == reminderId);
 
@@ -62,7 +55,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
     );
 
     final success = await widget.dbHelper.updateReminder(
-      _getUserEmail(),
+      widget.authService.getEmail() ?? '',
       reminderId,
       updatedReminder,
     );
@@ -71,9 +64,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text(
-            !currentValue
-                ? 'Reminder enabled'
-                : 'Reminder disabled',
+            !currentValue ? 'Reminder enabled' : 'Reminder disabled',
           ),
         ),
       );
@@ -100,11 +91,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
     );
 
     if (confirmed == true) {
-      final success = await widget.dbHelper.deleteReminder(_getUserEmail(), reminderId);
+      final success = await widget.dbHelper.deleteReminder(
+        widget.authService.getEmail() ?? '',
+        reminderId,
+      );
       if (success && mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Reminder deleted')),
-        );
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(const SnackBar(content: Text('Reminder deleted')));
       }
     }
   }
@@ -139,8 +133,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
               child: SingleChildScrollView(
                 padding: const EdgeInsets.all(16.0),
                 child: ReminderForm(
+                  widget.authService,
                   widget.dbHelper,
-                  _getUserEmail(),
                   reminder: reminder,
                 ),
               ),
@@ -153,98 +147,110 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final userEmail = _getUserEmail();
-
     return SingleChildScrollView(
       padding: const EdgeInsets.all(16.0),
       child: Column(
-          children: [
-            // Reminders Section
-            const Text(
-              'Wellness Reminders',
-              style: TextStyle(fontSize: 22.0, fontWeight: FontWeight.w400),
+        children: [
+          // Reminders Section
+          const Text(
+            'Wellness Reminders',
+            style: TextStyle(fontSize: 22.0, fontWeight: FontWeight.w400),
+          ),
+          const SizedBox(height: 20),
+          ElevatedButton.icon(
+            onPressed: () => _showReminderForm(),
+            icon: const Icon(Icons.add),
+            label: const Text('Add Reminder'),
+          ),
+          const SizedBox(height: 20),
+          StreamBuilder<List<ReminderConfig>>(
+            stream: widget.dbHelper.getUserReminders(
+              widget.authService.getEmail() ?? '',
             ),
-            const SizedBox(height: 20),
-            ElevatedButton.icon(
-              onPressed: () => _showReminderForm(),
-              icon: const Icon(Icons.add),
-              label: const Text('Add Reminder'),
-            ),
-            const SizedBox(height: 20),
-            StreamBuilder<List<ReminderConfig>>(
-              stream: widget.dbHelper.getUserReminders(userEmail),
-              builder: (context, snapshot) {
-                if (snapshot.connectionState == ConnectionState.waiting) {
-                  return const CircularProgressIndicator();
-                }
-                if (snapshot.hasError) {
-                  return Text('Error: ${snapshot.error}');
-                }
-                if (!snapshot.hasData || snapshot.data!.isEmpty) {
-                  return const Text('No reminders set. Add one to get started!');
-                }
+            builder: (context, snapshot) {
+              if (snapshot.connectionState == ConnectionState.waiting) {
+                return const CircularProgressIndicator();
+              }
+              if (snapshot.hasError) {
+                return Text('Error: ${snapshot.error}');
+              }
+              if (!snapshot.hasData || snapshot.data!.isEmpty) {
+                return const Text('No reminders set. Add one to get started!');
+              }
 
-                return Column(
-                  children: snapshot.data!.map((reminder) {
-                    return Card(
-                      margin: const EdgeInsets.symmetric(vertical: 8.0),
-                      child: ListTile(
-                        title: Text(
-                          '${reminder.time} - ${_formatReminderTypes(reminder.types)}',
-                        ),
-                        subtitle: Text(
-                          '${_formatDaysOfWeek(reminder.daysOfWeek)}${reminder.isEnabled ? '' : ' (Disabled)'}',
-                        ),
-                        trailing: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Switch(
-                              value: reminder.isEnabled,
-                              onChanged: (value) =>
-                                  _toggleReminder(reminder.id, reminder.isEnabled),
-                            ),
-                            IconButton(
-                              icon: const Icon(Icons.edit),
-                              onPressed: () => _showReminderForm(reminder: reminder),
-                            ),
-                            IconButton(
-                              icon: const Icon(Icons.delete),
-                              onPressed: () => _deleteReminder(reminder.id),
-                            ),
-                          ],
-                        ),
+              return Column(
+                children: snapshot.data!.map((reminder) {
+                  return Card(
+                    margin: const EdgeInsets.symmetric(vertical: 8.0),
+                    child: ListTile(
+                      title: Text(
+                        '${reminder.time} - ${_formatReminderTypes(reminder.types)}',
                       ),
-                    );
-                  }).toList(),
-                );
-              },
-            ),
-            const SizedBox(height: 40),
+                      subtitle: Text(
+                        '${_formatDaysOfWeek(reminder.daysOfWeek)}${reminder.isEnabled ? '' : ' (Disabled)'}',
+                      ),
+                      trailing: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Switch(
+                            value: reminder.isEnabled,
+                            onChanged: (value) => _toggleReminder(
+                              reminder.id,
+                              reminder.isEnabled,
+                            ),
+                          ),
+                          IconButton(
+                            icon: const Icon(Icons.edit),
+                            onPressed: () =>
+                                _showReminderForm(reminder: reminder),
+                          ),
+                          IconButton(
+                            icon: const Icon(Icons.delete),
+                            onPressed: () => _deleteReminder(reminder.id),
+                          ),
+                        ],
+                      ),
+                    ),
+                  );
+                }).toList(),
+              );
+            },
+          ),
+          const SizedBox(height: 40),
 
-            // Update Password Section
-            const Text(
-              'Update Password',
-              style: TextStyle(fontSize: 22.0, fontWeight: FontWeight.w400),
-            ),
-            const SizedBox(height: 20),
-            UpdatePasswordForm(widget.authService, widget.dbHelper),
-            const SizedBox(height: 40),
+          // Update Display Name Section
+          const Text(
+            'Update Display Name',
+            style: TextStyle(fontSize: 22.0, fontWeight: FontWeight.w400),
+          ),
+          const SizedBox(height: 20),
+          UpdateDisplayNameForm(widget.authService, widget.dbHelper),
+          const SizedBox(height: 40),
 
-            // Logout Section
-            const Text(
-              'Log out',
-              style: TextStyle(fontSize: 22.0, fontWeight: FontWeight.w400),
+          // Update Password Section
+          const Text(
+            'Update Password',
+            style: TextStyle(fontSize: 22.0, fontWeight: FontWeight.w400),
+          ),
+          const SizedBox(height: 20),
+          UpdatePasswordForm(widget.authService, widget.dbHelper),
+          const SizedBox(height: 40),
+
+          // Logout Section
+          const Text(
+            'Log out',
+            style: TextStyle(fontSize: 22.0, fontWeight: FontWeight.w400),
+          ),
+          const SizedBox(height: 20),
+          ElevatedButton(
+            onPressed: widget.authService.logout,
+            child: const Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [Text('Log out')],
             ),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: _logout,
-              child: const Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [Text('Log out')],
-              ),
-            ),
-          ],
-        ),
-      );
+          ),
+        ],
+      ),
+    );
   }
 }
