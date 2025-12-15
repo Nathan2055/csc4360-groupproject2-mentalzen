@@ -180,7 +180,7 @@ class FirestoreHelper {
   // Creates or updates the user's stored FCM token
   Future<bool> saveFCMToken(String userId, String? token) async {
     try {
-      _firestore
+      await _firestore
           .collection('users')
           .doc(userId)
           .collection('fcmToken')
