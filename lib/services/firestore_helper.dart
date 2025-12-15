@@ -8,6 +8,7 @@ import 'package:mentalzen/models/notification_job.dart';
 class FirestoreHelper {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
+  // BEGIN chat message code for rewrite
   // Adds a new chat entry, returns a boolean for success
   Future<bool> addChatEntry(String messageBoard, ChatEntry chatMessage) async {
     try {
@@ -30,7 +31,9 @@ class FirestoreHelper {
   Stream<QuerySnapshot> getChatStream(String messageBoard) {
     return _firestore.collection(messageBoard).snapshots();
   }
+  // END chat message code for rewrite
 
+  // BEGIN reminder code
   // Reminder notification functions start here
   // Creates a new reminder in users/{userId}/reminders subcollection
   Future<bool> createReminder(String userId, ReminderConfig reminder) async {
@@ -133,7 +136,9 @@ class FirestoreHelper {
       return false;
     }
   }
+  // END reminder code
 
+  // BEGIN notification job functions
   // Notification job functions start here
   // Creates a notification job in the notification_jobs collection
   Future<bool> createNotificationJob(NotificationJob job) async {
@@ -167,4 +172,6 @@ class FirestoreHelper {
       return false;
     }
   }
+
+  // END notification job functions
 }

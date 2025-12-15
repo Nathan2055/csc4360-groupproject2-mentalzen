@@ -28,7 +28,7 @@ class _MoodTrackerScreenState extends State<MoodTrackerScreen> {
     'Tired',
     'Energetic',
     'Grateful',
-    'Frustrated'
+    'Frustrated',
   ];
 
   final Map<int, Map<String, dynamic>> _moodData = {
@@ -49,12 +49,12 @@ class _MoodTrackerScreenState extends State<MoodTrackerScreen> {
           .doc(user.email)
           .collection('mood_entries')
           .add({
-        'mood_rating': _selectedMood,
-        'mood_label': _moodData[_selectedMood]!['label'],
-        'tags': _selectedTags,
-        'notes': _notesController.text,
-        'created_at': FieldValue.serverTimestamp(),
-      });
+            'mood_rating': _selectedMood,
+            'mood_label': _moodData[_selectedMood]!['label'],
+            'tags': _selectedTags,
+            'notes': _notesController.text,
+            'created_at': FieldValue.serverTimestamp(),
+          });
 
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
@@ -68,9 +68,9 @@ class _MoodTrackerScreenState extends State<MoodTrackerScreen> {
       }
     } catch (e) {
       if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Error saving mood entry: $e')),
-        );
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(SnackBar(content: Text('Error saving mood entry: $e')));
       }
     }
   }
@@ -80,124 +80,124 @@ class _MoodTrackerScreenState extends State<MoodTrackerScreen> {
     return SingleChildScrollView(
       padding: const EdgeInsets.all(16.0),
       child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text(
-              'How are you feeling today?',
-              style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 32),
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text(
+            'How are you feeling today?',
+            style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+          ),
+          const SizedBox(height: 32),
 
-            // Mood selector
-            Center(
-              child: Column(
-                children: [
-                  Text(
-                    _moodData[_selectedMood]!['emoji'],
-                    style: const TextStyle(fontSize: 80),
+          // Mood selector
+          Center(
+            child: Column(
+              children: [
+                Text(
+                  _moodData[_selectedMood]!['emoji'],
+                  style: const TextStyle(fontSize: 80),
+                ),
+                const SizedBox(height: 16),
+                Text(
+                  _moodData[_selectedMood]!['label'],
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.w600,
+                    color: _moodData[_selectedMood]!['color'],
                   ),
-                  const SizedBox(height: 16),
-                  Text(
-                    _moodData[_selectedMood]!['label'],
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.w600,
-                      color: _moodData[_selectedMood]!['color'],
-                    ),
-                  ),
-                  const SizedBox(height: 24),
-                  Slider(
-                    value: _selectedMood.toDouble(),
-                    min: 1,
-                    max: 5,
-                    divisions: 4,
-                    activeColor: _moodData[_selectedMood]!['color'],
-                    onChanged: (value) {
-                      setState(() {
-                        _selectedMood = value.toInt();
-                      });
-                    },
-                  ),
-                ],
-              ),
-            ),
-
-            const SizedBox(height: 32),
-
-            // Mood tags
-            const Text(
-              'Add tags (optional)',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
-            ),
-            const SizedBox(height: 12),
-            Wrap(
-              spacing: 8,
-              runSpacing: 8,
-              children: _availableTags.map((tag) {
-                final isSelected = _selectedTags.contains(tag);
-                return FilterChip(
-                  label: Text(tag),
-                  selected: isSelected,
-                  onSelected: (selected) {
+                ),
+                const SizedBox(height: 24),
+                Slider(
+                  value: _selectedMood.toDouble(),
+                  min: 1,
+                  max: 5,
+                  divisions: 4,
+                  activeColor: _moodData[_selectedMood]!['color'],
+                  onChanged: (value) {
                     setState(() {
-                      if (selected) {
-                        _selectedTags.add(tag);
-                      } else {
-                        _selectedTags.remove(tag);
-                      }
+                      _selectedMood = value.toInt();
                     });
                   },
-                  selectedColor: Colors.blue.shade100,
-                  checkmarkColor: Colors.blue.shade700,
-                );
-              }).toList(),
+                ),
+              ],
             ),
+          ),
 
-            const SizedBox(height: 32),
+          const SizedBox(height: 32),
 
-            // Notes
-            const Text(
-              'Add notes (optional)',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+          // Mood tags
+          const Text(
+            'Add tags (optional)',
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+          ),
+          const SizedBox(height: 12),
+          Wrap(
+            spacing: 8,
+            runSpacing: 8,
+            children: _availableTags.map((tag) {
+              final isSelected = _selectedTags.contains(tag);
+              return FilterChip(
+                label: Text(tag),
+                selected: isSelected,
+                onSelected: (selected) {
+                  setState(() {
+                    if (selected) {
+                      _selectedTags.add(tag);
+                    } else {
+                      _selectedTags.remove(tag);
+                    }
+                  });
+                },
+                selectedColor: Colors.blue.shade100,
+                checkmarkColor: Colors.blue.shade700,
+              );
+            }).toList(),
+          ),
+
+          const SizedBox(height: 32),
+
+          // Notes
+          const Text(
+            'Add notes (optional)',
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+          ),
+          const SizedBox(height: 12),
+          TextField(
+            controller: _notesController,
+            maxLines: 4,
+            decoration: InputDecoration(
+              hintText: 'What\'s on your mind?',
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
+              filled: true,
+              fillColor: Colors.grey.shade50,
             ),
-            const SizedBox(height: 12),
-            TextField(
-              controller: _notesController,
-              maxLines: 4,
-              decoration: InputDecoration(
-                hintText: 'What\'s on your mind?',
-                border: OutlineInputBorder(
+          ),
+
+          const SizedBox(height: 32),
+
+          // Save button
+          SizedBox(
+            width: double.infinity,
+            child: ElevatedButton(
+              onPressed: _saveMoodEntry,
+              style: ElevatedButton.styleFrom(
+                padding: const EdgeInsets.symmetric(vertical: 16),
+                backgroundColor: _moodData[_selectedMood]!['color'],
+                foregroundColor: Colors.white,
+                shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
-                filled: true,
-                fillColor: Colors.grey.shade50,
+              ),
+              child: const Text(
+                'Save Mood Entry',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
             ),
-
-            const SizedBox(height: 32),
-
-            // Save button
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: _saveMoodEntry,
-                style: ElevatedButton.styleFrom(
-                  padding: const EdgeInsets.symmetric(vertical: 16),
-                  backgroundColor: _moodData[_selectedMood]!['color'],
-                  foregroundColor: Colors.white,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                ),
-                child: const Text(
-                  'Save Mood Entry',
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                ),
-              ),
-            ),
-          ],
-        ),
-      );
+          ),
+        ],
+      ),
+    );
   }
 
   @override
