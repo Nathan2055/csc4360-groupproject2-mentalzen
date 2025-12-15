@@ -27,6 +27,40 @@ class _JournalScreenState extends State<JournalScreen> {
     );
   }
 
+  Future<void> _deleteJournalEntry(String journalEntryId) async {
+    final confirmed = await showDialog<bool>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('Delete Journal Entry'),
+        content: const Text(
+          'Are you sure you want to delete this journal entry?',
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(false),
+            child: const Text('Cancel'),
+          ),
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(true),
+            child: const Text('Delete'),
+          ),
+        ],
+      ),
+    );
+
+    if (confirmed == true) {
+      final success = await widget.dbHelper.deleteJournalEntry(
+        widget.authService.getEmail() ?? '',
+        journalEntryId,
+      );
+      if (success && mounted) {
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(const SnackBar(content: Text('Reminder deleted')));
+      }
+    }
+  }
+
   void _showJournalEntryForm({JournalEntry? journalEntry}) {
     showModalBottomSheet(
       context: context,
@@ -122,11 +156,35 @@ class _JournalScreenState extends State<JournalScreen> {
                                 return Container();
                               }
 
+                              Text timing;
+                              if (entry.createdAt != entry.updatedAt) {
+                                timing = Text(
+                                  'Entry originally saved at ${entry.createdAt.toString()}\nEntry last edited at ${entry.updatedAt.toString()}',
+                                );
+                              } else {
+                                timing = Text(
+                                  'Entry saved at ${entry.createdAt.toString()}',
+                                );
+                              }
+
                               return ListTile(
                                 title: Text(entry.message!),
-                                subtitle: Text(
-                                  // TODO: update this
-                                  'Sent by ${entry.userId!} at ${entry.createdAt!.toString()}',
+                                subtitle: timing,
+                                trailing: Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    IconButton(
+                                      icon: const Icon(Icons.edit),
+                                      onPressed: () => _showJournalEntryForm(
+                                        journalEntry: entry,
+                                      ),
+                                    ),
+                                    IconButton(
+                                      icon: const Icon(Icons.delete),
+                                      onPressed: () =>
+                                          _deleteJournalEntry(entry.id!),
+                                    ),
+                                  ],
                                 ),
                               );
                             })
