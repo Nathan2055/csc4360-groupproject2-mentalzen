@@ -1,41 +1,55 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-// Representation of one chat posting
-// Includes an id, a message, a userEmail, and a DateTime of posting
-class ChatEntry {
+// Representation of one journal entry
+// Includes an id, a message, a userId, a DateTime of posting,
+// and a DateTime of update
+class JournalEntry {
   // Chat entry fields
   final String? id;
   final String? message;
-  final String? userEmail;
+  final String? userId;
   final DateTime? createdAt;
+  final DateTime? updatedAt;
 
   // Basic constructor
-  ChatEntry({this.id, this.message, this.userEmail, this.createdAt});
+  JournalEntry({
+    this.id,
+    this.message,
+    this.userId,
+    this.createdAt,
+    this.updatedAt,
+  });
 
   // Constructor from a Firestore DocumentSnapshot
-  factory ChatEntry.fromFirestore(
+  factory JournalEntry.fromFirestore(
     DocumentSnapshot<Map<String, dynamic>> snapshot,
     SnapshotOptions? options,
   ) {
     final data = snapshot.data();
-    return ChatEntry(
+    return JournalEntry(
       id: data?['id'],
       message: data?['message'],
-      userEmail: data?['userEmail'],
-      createdAt: data?['registeredOn'] != null
+      userId: data?['userId'],
+      createdAt: data?['createdAt'] != null
           ? DateTime.parse(data?['createdAt'])
+          : null,
+      updatedAt: data?['updatedAt'] != null
+          ? DateTime.parse(data?['updatedAt'])
           : null,
     );
   }
 
   // Constructor from a properly formatted Map<String, dynamic>
-  factory ChatEntry.fromMap(Map<String, dynamic> map) {
-    return ChatEntry(
+  factory JournalEntry.fromMap(Map<String, dynamic> map) {
+    return JournalEntry(
       id: map['id'],
       message: map['message'],
-      userEmail: map['userEmail'],
+      userId: map['userId'],
       createdAt: map['createdAt'] != null
           ? DateTime.parse(map['createdAt'])
+          : null,
+      updatedAt: map['updatedAt'] != null
+          ? DateTime.parse(map['updatedAt'])
           : null,
     );
   }
@@ -45,8 +59,9 @@ class ChatEntry {
     return {
       if (id != null) "id": id,
       if (message != null) "message": message,
-      if (userEmail != null) "userEmail": userEmail,
+      if (userId != null) "userId": userId,
       if (createdAt != null) "createdAt": createdAt.toString(),
+      if (updatedAt != null) "updatedAt": updatedAt.toString(),
     };
   }
 }
