@@ -5,7 +5,6 @@ import 'package:mentalzen/models/reminder_config.dart';
 import 'package:mentalzen/screens/4-settings_screen/reminder_form.dart';
 import 'package:mentalzen/screens/4-settings_screen/update_password_form.dart';
 import 'package:mentalzen/screens/4-settings_screen/update_display_name_form.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen(this.authService, this.dbHelper, {super.key});
@@ -23,8 +22,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   }
 
   String _getUserEmail() {
-    final user = FirebaseAuth.instance.currentUser;
-    return user?.email ?? '';
+    return widget.authService.getEmail() ?? '';
   }
 
   String _formatReminderTypes(List<String> types) {
