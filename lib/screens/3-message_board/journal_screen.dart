@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mentalzen/screens/3-message_board/journal_entry_form.dart';
 import 'package:mentalzen/services/authservice.dart';
 import 'package:mentalzen/services/firestore_helper.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -75,6 +76,48 @@ class _JournalScreenState extends State<JournalScreen> {
     }
   }
 
+  void _showJournalEntryForm({JournalEntry? journalEntry}) {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: Colors.transparent,
+      builder: (context) => Container(
+        height: MediaQuery.of(context).size.height * 0.9,
+        decoration: const BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(20),
+            topRight: Radius.circular(20),
+          ),
+        ),
+        child: Column(
+          children: [
+            // Drag handle
+            Container(
+              margin: const EdgeInsets.only(top: 12, bottom: 8),
+              width: 40,
+              height: 4,
+              decoration: BoxDecoration(
+                color: Colors.grey.shade300,
+                borderRadius: BorderRadius.circular(2),
+              ),
+            ),
+            Expanded(
+              child: SingleChildScrollView(
+                padding: const EdgeInsets.all(16.0),
+                child: JournalEntryForm(
+                  widget.authService,
+                  widget.dbHelper,
+                  journalEntry: journalEntry,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -145,39 +188,10 @@ class _JournalScreenState extends State<JournalScreen> {
 
         SizedBox(height: 20.0),
 
-        // Journal entry form
-        Form(
-          key: _formKey,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            mainAxisSize: MainAxisSize.min,
-            spacing: 24.0,
-            children: [
-              // Message field
-              TextFormField(
-                enabled: (_sendingMessage == 'ready'),
-                controller: _messageController,
-                decoration: InputDecoration(
-                  labelText: 'Journal Entry',
-                  prefixIcon: const Icon(Icons.message),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                ),
-              ),
-
-              // Submit button
-              ElevatedButton(
-                onPressed: (_sendingMessage != 'ready')
-                    ? null
-                    : _submitJournalForm,
-                child: const Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [Text('Save Journal Entry')],
-                ),
-              ),
-            ],
-          ),
+        ElevatedButton.icon(
+          onPressed: () => _showJournalEntryForm(),
+          icon: const Icon(Icons.add),
+          label: const Text('Add Journal Entry'),
         ),
       ],
     );
