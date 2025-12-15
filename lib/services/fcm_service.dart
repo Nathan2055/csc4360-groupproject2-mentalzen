@@ -1,13 +1,14 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:mentalzen/services/firestore_helper.dart';
 import 'package:flutter/material.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 
 class FcmService {
   final FirebaseMessaging _firebaseMessaging = FirebaseMessaging.instance;
-  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   GlobalKey<NavigatorState>? navigatorKey;
 
-  FcmService({this.navigatorKey});
+  final FirestoreHelper dbHelper;
+
+  FcmService(this.dbHelper, {this.navigatorKey});
 
   Future<void> registerDevice(String userEmail) async {
     try {
@@ -34,21 +35,14 @@ class FcmService {
       }
 
       // Update the token in the database (using email as document ID to match existing structure)
-      await _firestore.collection('users').doc(userEmail).set({
-        'fcmToken': token,
-        'fcmTokenLastUpdated': FieldValue.serverTimestamp(),
-      }, SetOptions(merge: true));
-
+      await dbHelper.saveFCMToken(userEmail, token);
       debugPrint('FCM token registered for user: $userEmail');
 
       // Listen for token refresh
       final emailForRefresh = userEmail; // Capture for closure
       _firebaseMessaging.onTokenRefresh.listen((newToken) async {
         try {
-          await _firestore.collection('users').doc(emailForRefresh).set({
-            'fcmToken': newToken,
-            'fcmTokenLastUpdated': FieldValue.serverTimestamp(),
-          }, SetOptions(merge: true));
+          await dbHelper.saveFCMToken(emailForRefresh, newToken);
           debugPrint('FCM token refreshed for user: $emailForRefresh');
         } catch (e) {
           debugPrint('Error updating refreshed token: $e');

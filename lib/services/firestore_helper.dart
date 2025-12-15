@@ -174,4 +174,28 @@ class FirestoreHelper {
   }
 
   // END notification job functions
+
+  // BEGIN FCM functions
+  // FCM job functions start here
+  // Creates or updates the user's stored FCM token
+  Future<bool> saveFCMToken(String userId, String? token) async {
+    try {
+      _firestore
+          .collection('users')
+          .doc(userId)
+          .collection('fcmToken')
+          .doc('fcmToken')
+          .set({
+            'fcmToken': token,
+            'fcmTokenLastUpdated': FieldValue.serverTimestamp(),
+          }, SetOptions(merge: true));
+
+      return true;
+    } catch (e) {
+      debugPrint('Error saving FCM token: $e');
+      return false;
+    }
+  }
+
+  // END FCM functions
 }
