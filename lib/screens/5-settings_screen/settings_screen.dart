@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:mentalzen/services/authservice.dart';
-import 'package:mentalzen/services/firestore_helper.dart';
+import 'package:mentalzen/authservice.dart';
+import 'package:mentalzen/models/firestore_helper.dart';
 import 'package:mentalzen/models/reminder_config.dart';
-import 'package:mentalzen/screens/4-settings_screen/update_password_form.dart';
-import 'package:mentalzen/screens/4-settings_screen/reminder_form.dart';
+import 'package:mentalzen/screens/5-settings_screen/update_password_form.dart';
+import 'package:mentalzen/screens/5-settings_screen/reminder_form.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class SettingsScreen extends StatefulWidget {
